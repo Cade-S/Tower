@@ -4,13 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://eouq7ps5mpx7" path="res://objects/32x48.png" id="2_wdqws"]
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character_body_2d.tscn" id="3_p4xvs"]
 [ext_resource type="Script" path="res://RESET.gd" id="4_67ief"]
-[ext_resource type="Script" path="res://playable.gd" id="4_ywh8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16aao"]
 size = Vector2(640, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h2p"]
 size = Vector2(48, 32)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qa240"]
+radius = 8.0
+height = 16.0
 
 [node name="TestArea" type="Node2D"]
 
@@ -42,61 +45,49 @@ position = Vector2(528, -170)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_16aao")
 
-[node name="box" type="StaticBody2D" parent="."]
+[node name="box1" type="StaticBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="box"]
+[node name="Sprite2D" type="Sprite2D" parent="box1"]
 texture_filter = 1
 position = Vector2(312, 448)
 texture = ExtResource("2_wdqws")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box1"]
 position = Vector2(312, 448)
 shape = SubResource("RectangleShape2D_m0h2p")
 
-[node name="box" type="StaticBody2D" parent="box"]
+[node name="box3" type="StaticBody2D" parent="box1"]
 
-[node name="Sprite2D" type="Sprite2D" parent="box/box"]
+[node name="Sprite2D" type="Sprite2D" parent="box1/box3"]
 texture_filter = 1
 position = Vector2(360, 448)
 texture = ExtResource("2_wdqws")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box/box"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box1/box3"]
 position = Vector2(360, 448)
 shape = SubResource("RectangleShape2D_m0h2p")
 
-[node name="box2" type="StaticBody2D" parent="box"]
+[node name="box2_grab_test" type="StaticBody2D" parent="box1"]
 
-[node name="Sprite2D" type="Sprite2D" parent="box/box2"]
+[node name="Sprite2D" type="Sprite2D" parent="box1/box2_grab_test"]
 texture_filter = 1
 position = Vector2(360, 416)
 texture = ExtResource("2_wdqws")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box/box2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box1/box2_grab_test"]
 position = Vector2(360, 416)
 shape = SubResource("RectangleShape2D_m0h2p")
 
-[node name="box" type="StaticBody2D" parent="box/box2"]
+[node name="grab_me" type="Area2D" parent="box1/box2_grab_test"]
+position = Vector2(384, 400)
 
-[node name="Sprite2D" type="Sprite2D" parent="box/box2/box"]
-texture_filter = 1
-position = Vector2(360, 448)
-texture = ExtResource("2_wdqws")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box/box2/box"]
-position = Vector2(360, 448)
-shape = SubResource("RectangleShape2D_m0h2p")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box1/box2_grab_test/grab_me"]
+shape = SubResource("CapsuleShape2D_qa240")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_p4xvs")]
 position = Vector2(64, 200)
-script = ExtResource("4_ywh8d")
-GRAVITY = 600
-SPEED = 69.0
-SPRINT_SPEED = 120.0
-JUMP_VELOCITY = -200.0
-ACCELERATION = 350.0
-DECELERATION = 950.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-512, 504)
+position = Vector2(-472, 632)
 target_position = Vector2(1024, 0)
 script = ExtResource("4_67ief")

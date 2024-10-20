@@ -22,6 +22,10 @@ var is_sprinting = false
 var target_speed = 0.0  # The speed we're moving towards
 
 func _physics_process(delta: float) -> void:
+	
+	if $Grab_64.is_colliding():
+		print("True")
+	
 	# Apply gravity
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
@@ -71,6 +75,8 @@ func _physics_process(delta: float) -> void:
 		# Gradually slow down when no input is provided
 		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
 
+
+
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -79,8 +85,14 @@ func _physics_process(delta: float) -> void:
 		print("Transitioning to JUMP state")  # Debugging
 		return  # Exit to avoid falling logic
 
+
+
 	# Apply movement
 	move_and_slide()
+
+
+
+
 
 # Function to handle animation when finished
 func _on_animated_sprite_2d_animation_finished() -> void:
