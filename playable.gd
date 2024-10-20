@@ -20,14 +20,30 @@ enum State {
 var current_state = State.IDLE
 var is_sprinting = false
 var target_speed = 0.0  # The speed we're moving towards
+var is_grabbing = false
+
 
 func _physics_process(delta: float) -> void:
 	
+# Detect if the player is colliding with the object "grab_me"
 	if $Grab_64.is_colliding():
-		print("True")
-	
+		var collider = $Grab_64.get_collider().name
+		if collider == "grab_me" and $Grab_64/Timer.is_stopped():
+			is_grabbing = true
+			velocity = Vector2.ZERO  # Freeze movement while grabbing
+		else:
+			is_grabbing = false
+			
+			
+	# Handle input for jump while grabbing
+	if is_grabbing:
+		if Input.is_action_pressed("jump"):
+			$Grab_64/Timer.start()
+			is_grabbing = false
+
+			
 	# Apply gravity
-	if not is_on_floor():
+	if !is_on_floor() and !is_grabbing:
 		velocity.y += GRAVITY * delta
 
 		# If falling, ensure FALL animation is played only if not already in JUMP

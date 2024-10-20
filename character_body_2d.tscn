@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=39 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://kjc8xupcdd0x" path="res://character/Human Male Model/Sections/HMM Idle Bare.png" id="2_nrwnw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8mjksyy2s7p0" path="res://character/Human Male Model/Sections/HMM Jump Bare.png" id="4_4183j"]
 [ext_resource type="Texture2D" uid="uid://c0snitdwafb8y" path="res://character/Human Male Model/Sections/HMM Walk Bare.png" id="5_p8bdd"]
 [ext_resource type="Script" path="res://grab_64.gd" id="6_ryv12"]
+[ext_resource type="Script" path="res://timer.gd" id="7_t34e1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vb61"]
 atlas = ExtResource("4_4183j")
@@ -284,4 +285,9 @@ hit_from_inside = true
 collide_with_areas = true
 script = ExtResource("6_ryv12")
 
+[node name="Timer" type="Timer" parent="Grab_64"]
+one_shot = true
+script = ExtResource("7_t34e1")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Grab_64/Timer" to="Grab_64" method="_on_timer_timeout"]
