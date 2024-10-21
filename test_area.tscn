@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://da1cocq3rvbon" path="res://dark_forest.tscn" id="5_up3vo"]
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://bridge.tscn" id="6_itd8a"]
 [ext_resource type="PackedScene" uid="uid://ckwkg4ji4v0g6" path="res://lightpole.tscn" id="6_y3bta"]
-[ext_resource type="Script" path="res://addons/ropesim/Rope.gd" id="8_0g3g3"]
+[ext_resource type="PackedScene" uid="uid://bla3hhaxfuyyk" path="res://rope.tscn" id="8_2lew3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h2p"]
 size = Vector2(48, 32)
@@ -129,7 +129,5 @@ metadata/use_color_temperature = true
 metadata/color_temperature = 6500
 metadata/color_filter = Color(0.292969, 0.292969, 0.292969, 0.580392)
 
-[node name="Rope" type="Node2D" parent="."]
-position = Vector2(323, 341)
-script = ExtResource("8_0g3g3")
-fixate_begin = false
+[node name="Rope" parent="." instance=ExtResource("8_2lew3")]
+position = Vector2(165, 416)

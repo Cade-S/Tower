@@ -22,14 +22,13 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(8, 32)
 shape = SubResource("RectangleShape2D_nuatk")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank"]
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Plank"]
 position = Vector2(14, 32)
 rotation = 1.5708
 node_a = NodePath("..")
 node_b = NodePath("../../Plank2")
 length = 1.0
-stiffness = 64.0
-damping = 2.21
+initial_offset = 1.0
 
 [node name="Plank2" type="RigidBody2D" parent="."]
 position = Vector2(22, 17)
@@ -45,14 +44,13 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(8, 32)
 shape = SubResource("RectangleShape2D_nuatk")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank2"]
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Plank2"]
 position = Vector2(14, 32)
 rotation = 1.5708
 node_a = NodePath("..")
 node_b = NodePath("../../Plank3")
 length = 1.0
-stiffness = 64.0
-damping = 2.06
+initial_offset = 1.0
 
 [node name="Plank3" type="RigidBody2D" parent="."]
 position = Vector2(34, 17)
@@ -68,14 +66,13 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(8, 32)
 shape = SubResource("RectangleShape2D_nuatk")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank3"]
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Plank3"]
 position = Vector2(14, 32)
 rotation = 1.5708
 node_a = NodePath("..")
 node_b = NodePath("../../Plank4")
 length = 1.0
-stiffness = 64.0
-damping = 2.61
+initial_offset = 1.0
 
 [node name="Plank4" type="RigidBody2D" parent="."]
 position = Vector2(46, 17)
@@ -91,14 +88,13 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(8, 32)
 shape = SubResource("RectangleShape2D_nuatk")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank4"]
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Plank4"]
 position = Vector2(14, 32)
 rotation = 1.5708
 node_a = NodePath("..")
 node_b = NodePath("../../Plank5")
 length = 1.0
-stiffness = 64.0
-damping = 2.71
+initial_offset = 1.0
 
 [node name="Plank5" type="RigidBody2D" parent="."]
 position = Vector2(58, 17)
@@ -114,14 +110,13 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(8, 32)
 shape = SubResource("RectangleShape2D_nuatk")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank5"]
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Plank5"]
 position = Vector2(14, 32)
 rotation = 1.5708
 node_a = NodePath("..")
 node_b = NodePath("../../Plank6")
 length = 1.0
-stiffness = 64.0
-damping = 4.01
+initial_offset = 1.0
 
 [node name="Plank6" type="RigidBody2D" parent="."]
 position = Vector2(70, 17)
