@@ -280,7 +280,7 @@ offset = Vector2(0, -18)
 zoom = Vector2(3, 3)
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 18.0
+position_smoothing_speed = 19.0
 rotation_smoothing_enabled = true
 editor_draw_limits = true
 

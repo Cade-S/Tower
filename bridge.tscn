@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8uqnjraa50b2"]
+
+[ext_resource type="Texture2D" uid="uid://bge8di30x4sx5" path="res://objects/16x48.png" id="1_q4bdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuatk"]
+size = Vector2(12, 4)
+
+[node name="Bridge" type="Node2D"]
+
+[node name="Plank" type="RigidBody2D" parent="."]
+position = Vector2(10, 17)
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Plank"]
+position = Vector2(8, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_q4bdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plank"]
+position = Vector2(8, 32)
+shape = SubResource("RectangleShape2D_nuatk")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank"]
+position = Vector2(14, 32)
+rotation = 1.5708
+node_a = NodePath("..")
+node_b = NodePath("../../Plank2")
+length = 1.0
+stiffness = 64.0
+damping = 2.21
+
+[node name="Plank2" type="RigidBody2D" parent="."]
+position = Vector2(22, 17)
+mass = 0.5
+gravity_scale = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="Plank2"]
+position = Vector2(8, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_q4bdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plank2"]
+position = Vector2(8, 32)
+shape = SubResource("RectangleShape2D_nuatk")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank2"]
+position = Vector2(14, 32)
+rotation = 1.5708
+node_a = NodePath("..")
+node_b = NodePath("../../Plank3")
+length = 1.0
+stiffness = 64.0
+damping = 2.06
+
+[node name="Plank3" type="RigidBody2D" parent="."]
+position = Vector2(34, 17)
+mass = 0.5
+gravity_scale = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="Plank3"]
+position = Vector2(8, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_q4bdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plank3"]
+position = Vector2(8, 32)
+shape = SubResource("RectangleShape2D_nuatk")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank3"]
+position = Vector2(14, 32)
+rotation = 1.5708
+node_a = NodePath("..")
+node_b = NodePath("../../Plank4")
+length = 1.0
+stiffness = 64.0
+damping = 2.61
+
+[node name="Plank4" type="RigidBody2D" parent="."]
+position = Vector2(46, 17)
+mass = 0.5
+gravity_scale = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="Plank4"]
+position = Vector2(8, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_q4bdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plank4"]
+position = Vector2(8, 32)
+shape = SubResource("RectangleShape2D_nuatk")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank4"]
+position = Vector2(14, 32)
+rotation = 1.5708
+node_a = NodePath("..")
+node_b = NodePath("../../Plank5")
+length = 1.0
+stiffness = 64.0
+damping = 2.71
+
+[node name="Plank5" type="RigidBody2D" parent="."]
+position = Vector2(58, 17)
+mass = 0.5
+gravity_scale = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="Plank5"]
+position = Vector2(8, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_q4bdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plank5"]
+position = Vector2(8, 32)
+shape = SubResource("RectangleShape2D_nuatk")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Plank5"]
+position = Vector2(14, 32)
+rotation = 1.5708
+node_a = NodePath("..")
+node_b = NodePath("../../Plank6")
+length = 1.0
+stiffness = 64.0
+damping = 4.01
+
+[node name="Plank6" type="RigidBody2D" parent="."]
+position = Vector2(70, 17)
+mass = 0.5
+gravity_scale = 0.5
+lock_rotation = true
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Plank6"]
+position = Vector2(8, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_q4bdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plank6"]
+position = Vector2(8, 32)
+shape = SubResource("RectangleShape2D_nuatk")

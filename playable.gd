@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var ACCELERATION = 350.0  # Adjust this to control how fast you pick up speed
 @export var DECELERATION = 950.0  # Adjust this for how fast you slow down
 
+
 # Character states
 enum State {
 	IDLE,

@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://e7yscap23s86"]
+[gd_scene load_steps=12 format=3 uid="uid://e7yscap23s86"]
 
 [ext_resource type="Texture2D" uid="uid://eouq7ps5mpx7" path="res://objects/32x48.png" id="2_wdqws"]
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character_body_2d.tscn" id="3_p4xvs"]
 [ext_resource type="Script" path="res://RESET.gd" id="4_67ief"]
 [ext_resource type="Texture2D" uid="uid://lfd6qxupisqj" path="res://backgrounds/Dark Forest/Background layers/Layer_0000_9.png" id="5_bm51q"]
 [ext_resource type="PackedScene" uid="uid://da1cocq3rvbon" path="res://dark_forest.tscn" id="5_up3vo"]
+[ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://bridge.tscn" id="6_itd8a"]
 [ext_resource type="PackedScene" uid="uid://ckwkg4ji4v0g6" path="res://lightpole.tscn" id="6_y3bta"]
+[ext_resource type="Script" path="res://addons/ropesim/Rope.gd" id="8_0g3g3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h2p"]
 size = Vector2(48, 32)
@@ -14,7 +16,7 @@ size = Vector2(48, 32)
 radius = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ty67h"]
-size = Vector2(863, 20)
+size = Vector2(1691, 20)
 
 [node name="TestArea" type="Node2D"]
 position = Vector2(30, 29)
@@ -60,9 +62,9 @@ position = Vector2(384, 400)
 shape = SubResource("CircleShape2D_r03f1")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_p4xvs")]
-position = Vector2(102, 303)
+position = Vector2(297, 415)
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RESET_Raycast" type="RayCast2D" parent="."]
 position = Vector2(-472, 632)
 target_position = Vector2(1024, 0)
 script = ExtResource("4_67ief")
@@ -73,17 +75,31 @@ position = Vector2(-49, 100)
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(341, 474)
+position = Vector2(154.5, 474)
 shape = SubResource("RectangleShape2D_ty67h")
 
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+[node name="ground_1" type="Sprite2D" parent="Ground"]
 show_behind_parent = true
 z_index = 2
 position = Vector2(140, 290)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_bm51q")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Ground"]
+[node name="ground_2" type="Sprite2D" parent="Ground"]
+show_behind_parent = true
+z_index = 2
+position = Vector2(-323, 290)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bm51q")
+
+[node name="ground_3" type="Sprite2D" parent="Ground"]
+show_behind_parent = true
+z_index = 2
+position = Vector2(-787, 290)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bm51q")
+
+[node name="ground_4" type="Sprite2D" parent="Ground"]
 show_behind_parent = true
 z_index = 2
 position = Vector2(604, 290)
@@ -91,6 +107,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_bm51q")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(6, 3)
 color = Color(0.136826, 0.136826, 0.136826, 1)
 
 [node name="Lightpole" parent="." instance=ExtResource("6_y3bta")]
@@ -98,3 +115,21 @@ color = Color(0.136826, 0.136826, 0.136826, 1)
 [node name="Lightpole2" parent="." instance=ExtResource("6_y3bta")]
 z_index = 0
 position = Vector2(223, 440)
+
+[node name="Bridge" parent="." instance=ExtResource("6_itd8a")]
+position = Vector2(372, 353)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+position = Vector2(294, -237)
+color = Color(0.720423, 0.718108, 0.707529, 1)
+energy = 0.79
+height = 0.33
+metadata/use_color_temperature = true
+metadata/color_temperature = 6500
+metadata/color_filter = Color(0.292969, 0.292969, 0.292969, 0.580392)
+
+[node name="Rope" type="Node2D" parent="."]
+position = Vector2(323, 341)
+script = ExtResource("8_0g3g3")
+fixate_begin = false
