@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2eulc5xp4mh"
+path="res://.godot/imported/Audio 9.wav-da28eb2300edacb76b4df15c2121e954.sample"
+
+[deps]
+
+source_file="res://SoundFX/footsteps/grass/Audio 9.wav"
+dest_files=["res://.godot/imported/Audio 9.wav-da28eb2300edacb76b4df15c2121e954.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

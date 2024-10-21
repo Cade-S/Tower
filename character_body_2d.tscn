@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=41 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://kjc8xupcdd0x" path="res://character/Human Male Model/Sections/HMM Idle Bare.png" id="2_nrwnw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c0snitdwafb8y" path="res://character/Human Male Model/Sections/HMM Walk Bare.png" id="5_p8bdd"]
 [ext_resource type="Script" path="res://grab_64.gd" id="6_ryv12"]
 [ext_resource type="Script" path="res://timer.gd" id="7_t34e1"]
+[ext_resource type="Script" path="res://audio_stream_player.gd" id="8_4cgmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vb61"]
 atlas = ExtResource("4_4183j")
@@ -257,6 +258,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tq77f"]
 size = Vector2(8.5, 20.5)
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_ucoag"]
+
 [node name="player_char" type="CharacterBody2D"]
 script = ExtResource("1_q25qh")
 
@@ -272,10 +275,14 @@ position = Vector2(-1, 4.75)
 shape = SubResource("RectangleShape2D_tq77f")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -23)
 offset = Vector2(0, -18)
 zoom = Vector2(3, 3)
+limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 15.0
+position_smoothing_speed = 18.0
+rotation_smoothing_enabled = true
+editor_draw_limits = true
 
 [node name="Grab_64" type="RayCast2D" parent="."]
 position = Vector2(-6, -16)
@@ -288,6 +295,10 @@ script = ExtResource("6_ryv12")
 [node name="Timer" type="Timer" parent="Grab_64"]
 one_shot = true
 script = ExtResource("7_t34e1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamWAV_ucoag")
+script = ExtResource("8_4cgmy")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Grab_64/Timer" to="Grab_64" method="_on_timer_timeout"]

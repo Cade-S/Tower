@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://e7yscap23s86"]
+[gd_scene load_steps=10 format=3 uid="uid://e7yscap23s86"]
 
-[ext_resource type="Texture2D" uid="uid://bge8di30x4sx5" path="res://objects/16x48.png" id="1_nxd61"]
 [ext_resource type="Texture2D" uid="uid://eouq7ps5mpx7" path="res://objects/32x48.png" id="2_wdqws"]
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character_body_2d.tscn" id="3_p4xvs"]
 [ext_resource type="Script" path="res://RESET.gd" id="4_67ief"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_16aao"]
-size = Vector2(640, 16)
+[ext_resource type="Texture2D" uid="uid://lfd6qxupisqj" path="res://backgrounds/Dark Forest/Background layers/Layer_0000_9.png" id="5_bm51q"]
+[ext_resource type="PackedScene" uid="uid://da1cocq3rvbon" path="res://dark_forest.tscn" id="5_up3vo"]
+[ext_resource type="PackedScene" uid="uid://ckwkg4ji4v0g6" path="res://lightpole.tscn" id="6_y3bta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h2p"]
 size = Vector2(48, 32)
@@ -14,36 +13,11 @@ size = Vector2(48, 32)
 [sub_resource type="CircleShape2D" id="CircleShape2D_r03f1"]
 radius = 16.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty67h"]
+size = Vector2(863, 20)
+
 [node name="TestArea" type="Node2D"]
 position = Vector2(30, 29)
-
-[node name="ground" type="StaticBody2D" parent="."]
-position = Vector2(52, 157)
-
-[node name="16x48" type="Sprite2D" parent="ground"]
-texture_filter = 1
-position = Vector2(268, 315)
-scale = Vector2(13.3333, 1)
-texture = ExtResource("1_nxd61")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
-position = Vector2(268, 315)
-shape = SubResource("RectangleShape2D_16aao")
-
-[node name="ground" type="StaticBody2D" parent="ground"]
-position = Vector2(52, 157)
-
-[node name="16x48" type="Sprite2D" parent="ground/ground"]
-texture_filter = 1
-position = Vector2(528, -170)
-rotation = 1.5708
-scale = Vector2(13.3333, 1)
-texture = ExtResource("1_nxd61")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/ground"]
-position = Vector2(528, -170)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_16aao")
 
 [node name="box1" type="StaticBody2D" parent="."]
 
@@ -86,9 +60,41 @@ position = Vector2(384, 400)
 shape = SubResource("CircleShape2D_r03f1")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_p4xvs")]
-position = Vector2(64, 200)
+position = Vector2(102, 303)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-472, 632)
 target_position = Vector2(1024, 0)
 script = ExtResource("4_67ief")
+
+[node name="Dark Forest" parent="." instance=ExtResource("5_up3vo")]
+position = Vector2(-49, 100)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(341, 474)
+shape = SubResource("RectangleShape2D_ty67h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+show_behind_parent = true
+z_index = 2
+position = Vector2(140, 290)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bm51q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground"]
+show_behind_parent = true
+z_index = 2
+position = Vector2(604, 290)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bm51q")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[node name="Lightpole" parent="." instance=ExtResource("6_y3bta")]
+
+[node name="Lightpole2" parent="." instance=ExtResource("6_y3bta")]
+z_index = 0
+position = Vector2(223, 440)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckwkg4ji4v0g6"]
+
+[ext_resource type="Texture2D" uid="uid://c1sa1hbphwevj" path="res://objects/lightpole.png" id="1_qcaxr"]
+[ext_resource type="Texture2D" uid="uid://c80pmsdtcb6iw" path="res://Lighting Textures/light_ball_512.png" id="2_djlsu"]
+
+[node name="Lightpole" type="Sprite2D"]
+z_index = -1
+position = Vector2(561, 440)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_qcaxr")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(2.5, 2.5)
+color = Color(0.880615, 0.878016, 0.756263, 1)
+texture = ExtResource("2_djlsu")
+texture_scale = 0.5
+metadata/use_color_temperature = true
+metadata/color_temperature = 6502
+metadata/color_filter = Color(1, 1, 0, 0.478431)
