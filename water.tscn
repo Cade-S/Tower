@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqrq1qit05x1q"]
+
+[ext_resource type="Script" path="res://addons/godot-rapier2d/fluid_2d_shader_renderer.gd" id="1_ise3g"]
+[ext_resource type="Script" path="res://addons/godot-rapier2d/fluid_2d_circle.gd" id="1_m2bxg"]
+[ext_resource type="Material" uid="uid://cysnk7s2ll173" path="res://addons/godot-rapier2d/water_shader.tres" id="2_lipip"]
+
+[sub_resource type="FluidEffect2DElasticity" id="FluidEffect2DElasticity_erbmv"]
+young_modulus = 10.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fluid2D" type="Fluid2D" parent="."]
+density = 1000.0
+effects = Array[Resource]([SubResource("FluidEffect2DElasticity_erbmv")])
+points = PackedVector2Array(0, 0, 100, 100, -100, -100)
+position = Vector2(21, 16)
+script = ExtResource("1_m2bxg")
+circle_radius = 1
+
+[node name="Fluid2DShaderRenderer" type="CanvasLayer" parent="Fluid2D" node_paths=PackedStringArray("fluid", "camera")]
+script = ExtResource("1_ise3g")
+fluid = NodePath("..")
+camera = NodePath("")
+water_material = ExtResource("2_lipip")

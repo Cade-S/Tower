@@ -13,3 +13,5 @@ func _physics_process(_delta):
 			var col = body.get_slide_collision(i)
 			if col.get_collider() is RigidBody2D:
 				col.get_collider().apply_central_impulse(-col.get_normal() * pushForce)
+			if col.get_collider() is Rope:
+				col.get_collider().apply_central_impulse(-col.get_normal() * pushForce)

@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://b708yo7d5uvk6"]
+
+[ext_resource type="Texture2D" uid="uid://dpc273x3pydjw" path="res://backgrounds/Island/Layers/L1.png" id="1_6ajpx"]
+[ext_resource type="Texture2D" uid="uid://di3xrdimxp3a1" path="res://backgrounds/Island/Layers/L2.png" id="2_lp0de"]
+[ext_resource type="Texture2D" uid="uid://hnehi7lhan5t" path="res://backgrounds/Island/Layers/L3.png" id="3_o87v3"]
+[ext_resource type="Texture2D" uid="uid://do6bqqoc27m44" path="res://backgrounds/Island/Layers/L4.png" id="4_5v2e4"]
+[ext_resource type="Texture2D" uid="uid://c78r6jl0khwog" path="res://backgrounds/Island/Layers/L5.png" id="5_r3w1n"]
+
+[node name="Island_Background" type="Node2D"]
+position = Vector2(335, 208)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+follow_viewport_enabled = true
+scroll_ignore_camera_zoom = true
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+z_index = -1
+scroll_scale = Vector2(0.005, 0)
+scroll_offset = Vector2(670, 416)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+texture_filter = 1
+texture = ExtResource("1_6ajpx")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(0.2, -0.1)
+scroll_offset = Vector2(670, 416)
+ignore_camera_scroll = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
+texture_filter = 1
+texture = ExtResource("2_lp0de")
+
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
+z_index = 1
+scroll_scale = Vector2(0.3, -0.1)
+scroll_offset = Vector2(670, 416)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
+z_index = 1
+texture_filter = 1
+texture = ExtResource("3_o87v3")
+
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
+z_index = 2
+scroll_scale = Vector2(0.4, -0.1)
+scroll_offset = Vector2(670, 416)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("4_5v2e4")
+
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
+z_index = 3
+scroll_scale = Vector2(0.5, -0.1)
+scroll_offset = Vector2(670, 416)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
+z_index = 4
+texture_filter = 1
+texture = ExtResource("5_r3w1n")
