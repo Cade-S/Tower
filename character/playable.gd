@@ -3,9 +3,10 @@ extends CharacterBody2D
 @export var GRAVITY = 600
 @export var SPEED = 69.0
 @export var SPRINT_SPEED = 120.0
-@export var JUMP_VELOCITY = -200.0
+@export var JUMP_VELOCITY = -250.0
 @export var ACCELERATION = 350.0  # Adjust this to control how fast you pick up speed
 @export var DECELERATION = 950.0  # Adjust this for how fast you slow down
+
 
 
 # Character states
@@ -15,36 +16,24 @@ enum State {
 	RUN,
 	JUMP,
 	FALL,
-	LAND
+	LAND,
+	LEDGE
 }
 
 var current_state = State.IDLE
 var is_sprinting = false
 var target_speed = 0.0  # The speed we're moving towards
-var is_grabbing = false
 
 
 func _physics_process(delta: float) -> void:
 	
-# Detect if the player is colliding with the object "grab_me"
-	if $Grab_64.is_colliding():
-		var collider = $Grab_64.get_collider().name
-		if collider == "grab_me" and $Grab_64/Timer.is_stopped():
-			is_grabbing = true
-			velocity = Vector2.ZERO  # Freeze movement while grabbing
-		else:
-			is_grabbing = false
-			
-			
-	# Handle input for jump while grabbing
-	if is_grabbing:
-		if Input.is_action_pressed("jump"):
-			$Grab_64/Timer.start()
-			is_grabbing = false
 
+	#Ledge Grab
+	if current_state in [State.JUMP, State.FALL]:
+		check_ledge_grab()
 			
 	# Apply gravity
-	if !is_on_floor() and !is_grabbing:
+	if !is_on_floor():
 		velocity.y += GRAVITY * delta
 
 		# If falling, ensure FALL animation is played only if not already in JUMP
@@ -63,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	# Handle movement and sprinting
 	var direction = Input.get_axis("move_left", "move_right")
 
-	if is_on_floor():  # Only handle sprinting and walking when on the ground
+	if is_on_floor() and current_state != State.LEDGE:  # Only handle sprinting and walking when on the ground
 		is_sprinting = Input.is_action_pressed("sprint") && direction != 0  # Check if sprinting
 		if is_sprinting:
 			target_speed = SPRINT_SPEED
@@ -94,7 +83,8 @@ func _physics_process(delta: float) -> void:
 
 
 
-	# Handle jump
+
+	#Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		current_state = State.JUMP
@@ -109,7 +99,9 @@ func _physics_process(delta: float) -> void:
 
 
 
-
+func check_ledge_grab() -> void:
+	if $WallCheck.is_colliding() and not $FloorCheck.is_colliding() and velocity.y == 0:
+		current_state = State.LEDGE
 
 # Function to handle animation when finished
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -145,3 +137,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			# If running, ensure running animation plays
 			$AnimatedSprite2D.play("RUN")  # Loop RUN animation
 			print("Continuing RUN animation")
+		State.LEDGE:
+			#Ledge Animation
+			$AnimatedSprite2D.play("LEDGE")
+			print("Ledge animation")

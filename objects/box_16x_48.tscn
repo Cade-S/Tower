@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp44e56avxafr"]
+
+[ext_resource type="Texture2D" uid="uid://bge8di30x4sx5" path="res://objects/16x48.png" id="1_10nw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kykil"]
+size = Vector2(48, 16)
+
+[node name="box_16x48" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_kykil")
+
+[node name="16x48" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_10nw5")

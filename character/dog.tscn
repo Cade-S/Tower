@@ -1,6 +1,6 @@
 [gd_scene load_steps=58 format=3 uid="uid://7ql051xrmu81"]
 
-[ext_resource type="Script" path="res://dog.gd" id="1_uhbnc"]
+[ext_resource type="Script" path="res://character/dog.gd" id="1_uhbnc"]
 [ext_resource type="Texture2D" uid="uid://bnaa5esd342jh" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-001.png" id="2_pl4uv"]
 [ext_resource type="Texture2D" uid="uid://oqrg4nml5hbo" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-002.png" id="3_j0ccs"]
 [ext_resource type="Texture2D" uid="uid://dq2ysb82yshmv" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-003.png" id="4_3s1u7"]

@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://e7yscap23s86"]
 
-[ext_resource type="Texture2D" uid="uid://eouq7ps5mpx7" path="res://objects/32x48.png" id="2_wdqws"]
-[ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character_body_2d.tscn" id="3_p4xvs"]
-[ext_resource type="Script" path="res://RESET.gd" id="4_67ief"]
-[ext_resource type="Texture2D" uid="uid://lfd6qxupisqj" path="res://backgrounds/Dark Forest/Background layers/Layer_0000_9.png" id="5_bm51q"]
-[ext_resource type="PackedScene" uid="uid://da1cocq3rvbon" path="res://dark_forest.tscn" id="5_up3vo"]
-[ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://bridge.tscn" id="6_itd8a"]
-[ext_resource type="PackedScene" uid="uid://ckwkg4ji4v0g6" path="res://lightpole.tscn" id="6_y3bta"]
-[ext_resource type="PackedScene" uid="uid://7ql051xrmu81" path="res://dog.tscn" id="8_mh8nh"]
+[ext_resource type="Texture2D" uid="uid://eouq7ps5mpx7" path="res://objects/32x48.png" id="1_eyoas"]
+[ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="2_4lyoy"]
+[ext_resource type="Script" path="res://RESET.gd" id="3_pt76o"]
+[ext_resource type="Texture2D" uid="uid://lfd6qxupisqj" path="res://backgrounds/Dark Forest/Background layers/Layer_0000_9.png" id="4_1wn03"]
+[ext_resource type="PackedScene" uid="uid://ckwkg4ji4v0g6" path="res://objects/lightpole.tscn" id="5_llsw2"]
+[ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="6_8gqim"]
+[ext_resource type="PackedScene" uid="uid://da1cocq3rvbon" path="res://backgrounds/Dark Forest/dark_forest.tscn" id="7_usi64"]
+[ext_resource type="PackedScene" uid="uid://7ql051xrmu81" path="res://character/dog.tscn" id="8_xrn0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h2p"]
 size = Vector2(48, 32)
@@ -26,7 +26,7 @@ position = Vector2(30, 29)
 [node name="Sprite2D" type="Sprite2D" parent="box1"]
 texture_filter = 1
 position = Vector2(312, 448)
-texture = ExtResource("2_wdqws")
+texture = ExtResource("1_eyoas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box1"]
 position = Vector2(312, 448)
@@ -37,7 +37,7 @@ shape = SubResource("RectangleShape2D_m0h2p")
 [node name="Sprite2D" type="Sprite2D" parent="box1/box3"]
 texture_filter = 1
 position = Vector2(360, 448)
-texture = ExtResource("2_wdqws")
+texture = ExtResource("1_eyoas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box1/box3"]
 position = Vector2(360, 448)
@@ -48,7 +48,7 @@ shape = SubResource("RectangleShape2D_m0h2p")
 [node name="Sprite2D" type="Sprite2D" parent="box1/box2_grab_test"]
 texture_filter = 1
 position = Vector2(360, 416)
-texture = ExtResource("2_wdqws")
+texture = ExtResource("1_eyoas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box1/box2_grab_test"]
 position = Vector2(360, 416)
@@ -61,13 +61,13 @@ position = Vector2(384, 400)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box1/box2_grab_test/grab_me"]
 shape = SubResource("CircleShape2D_r03f1")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_p4xvs")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_4lyoy")]
 position = Vector2(297, 415)
 
 [node name="RESET_Raycast" type="RayCast2D" parent="."]
 position = Vector2(-472, 632)
 target_position = Vector2(1024, 0)
-script = ExtResource("4_67ief")
+script = ExtResource("3_pt76o")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
@@ -80,40 +80,40 @@ show_behind_parent = true
 z_index = 2
 position = Vector2(140, 290)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_bm51q")
+texture = ExtResource("4_1wn03")
 
 [node name="ground_2" type="Sprite2D" parent="Ground"]
 show_behind_parent = true
 z_index = 2
 position = Vector2(-323, 290)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_bm51q")
+texture = ExtResource("4_1wn03")
 
 [node name="ground_3" type="Sprite2D" parent="Ground"]
 show_behind_parent = true
 z_index = 2
 position = Vector2(-787, 290)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_bm51q")
+texture = ExtResource("4_1wn03")
 
 [node name="ground_4" type="Sprite2D" parent="Ground"]
 show_behind_parent = true
 z_index = 2
 position = Vector2(604, 290)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_bm51q")
+texture = ExtResource("4_1wn03")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(6, 3)
 color = Color(0.136826, 0.136826, 0.136826, 1)
 
-[node name="Lightpole" parent="." instance=ExtResource("6_y3bta")]
+[node name="Lightpole" parent="." instance=ExtResource("5_llsw2")]
 
-[node name="Lightpole2" parent="." instance=ExtResource("6_y3bta")]
+[node name="Lightpole2" parent="." instance=ExtResource("5_llsw2")]
 z_index = 0
 position = Vector2(223, 440)
 
-[node name="Bridge" parent="." instance=ExtResource("6_itd8a")]
+[node name="Bridge" parent="." instance=ExtResource("6_8gqim")]
 position = Vector2(372, 353)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
@@ -126,7 +126,7 @@ metadata/use_color_temperature = true
 metadata/color_temperature = 6500
 metadata/color_filter = Color(0.292969, 0.292969, 0.292969, 0.580392)
 
-[node name="Dark Forest" parent="." instance=ExtResource("5_up3vo")]
+[node name="Dark Forest" parent="." instance=ExtResource("7_usi64")]
 
-[node name="Dog" parent="." instance=ExtResource("8_mh8nh")]
+[node name="Dog" parent="." instance=ExtResource("8_xrn0w")]
 position = Vector2(624, 419)

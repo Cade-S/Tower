@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://ct0kak7yufm38"]
+
+[ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_7n61o"]
+[ext_resource type="Texture2D" uid="uid://biqvgiah3aybr" path="res://backgrounds/Dark Forest/Background layers/Layer_0010_1.png" id="2_hkr7s"]
+[ext_resource type="PackedScene" uid="uid://mpd77kh13ptd" path="res://objects/square.tscn" id="3_af1c0"]
+[ext_resource type="PackedScene" uid="uid://vkr8gkmbkd1j" path="res://objects/triangle.tscn" id="4_ga365"]
+[ext_resource type="PackedScene" uid="uid://bp44e56avxafr" path="res://objects/box_16x_48.tscn" id="5_38m6v"]
+[ext_resource type="PackedScene" uid="uid://dcthmq51mneco" path="res://objects/box_32x_48.tscn" id="6_8ikge"]
+[ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="7_ufyi3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5y6y"]
+size = Vector2(2232, 32)
+
+[node name="Test_Area 2" type="Node2D"]
+
+[node name="player_char" parent="." instance=ExtResource("1_7n61o")]
+z_index = 1
+position = Vector2(328, 432)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-544, 80)
+texture = ExtResource("2_hkr7s")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(384, 80)
+texture = ExtResource("2_hkr7s")
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(1312, 80)
+texture = ExtResource("2_hkr7s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="floor" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2(-888, 0)
+scale = Vector2(1.5, 1)
+polygon = PackedVector2Array(-80, 448, 37.3333, 448, 80, 416, 122.667, 416, 165.821, 448, 208, 448, 250.667, 440, 293.555, 448, 1776, 448, 1776, 480, -80, 480)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(660, 464)
+shape = SubResource("RectangleShape2D_i5y6y")
+one_way_collision_margin = 128.0
+
+[node name="square" parent="." instance=ExtResource("3_af1c0")]
+position = Vector2(1272, 32)
+
+[node name="square2" parent="." instance=ExtResource("3_af1c0")]
+position = Vector2(1240, 32)
+
+[node name="square3" parent="." instance=ExtResource("3_af1c0")]
+position = Vector2(1240, 16)
+
+[node name="square4" parent="." instance=ExtResource("3_af1c0")]
+position = Vector2(1272, 16)
+
+[node name="triangle" parent="." instance=ExtResource("4_ga365")]
+position = Vector2(1040, 1024)
+rotation = -4.73508
+
+[node name="triangle2" parent="." instance=ExtResource("4_ga365")]
+position = Vector2(1280, 56)
+
+[node name="triangle3" parent="." instance=ExtResource("4_ga365")]
+position = Vector2(1280, 72)
+
+[node name="box_16x48" parent="." instance=ExtResource("5_38m6v")]
+position = Vector2(616, 432)
+
+[node name="box_32x48" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(700, 416)
+
+[node name="box_32x49" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(748, 416)
+
+[node name="box_32x50" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(796, 384)
+
+[node name="box_32x51" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(796, 416)
+
+[node name="box_32x52" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(910, 416)
+
+[node name="box_32x53" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(916, 384)
+
+[node name="box_32x55" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(390, 416)
+
+[node name="box_32x54" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(958, 416)
+
+[node name="box_32x56" parent="." instance=ExtResource("6_8ikge")]
+position = Vector2(390, 384)
+
+[node name="Bridge" parent="." instance=ExtResource("7_ufyi3")]
+position = Vector2(832, 337)

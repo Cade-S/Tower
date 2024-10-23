@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tower"
-run/main_scene="res://test_area.tscn"
+run/main_scene="res://levels/area_2.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/show_image=false
 
@@ -19,10 +19,11 @@ boot_splash/show_image=false
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/HaSa1002.light-tools/plugin.cfg")
+enabled=PackedStringArray("res://addons/HaSa1002.light-tools/plugin.cfg", "res://addons/ropesim/plugin.cfg")
 
 [input]
 
@@ -54,3 +55,7 @@ sprint={
 [physics]
 
 2d/physics_engine="Rapier2D"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

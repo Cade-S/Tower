@@ -26,11 +26,10 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(14, 32)
 node_a = NodePath("..")
 node_b = NodePath("../../Plank2")
+softness = 3.0
 
 [node name="Plank2" type="RigidBody2D" parent="."]
 position = Vector2(22, 17)
-mass = 0.5
-gravity_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plank2"]
 position = Vector2(8, 32)
@@ -45,11 +44,10 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(14, 32)
 node_a = NodePath("..")
 node_b = NodePath("../../Plank3")
+softness = 3.0
 
 [node name="Plank3" type="RigidBody2D" parent="."]
 position = Vector2(34, 17)
-mass = 0.5
-gravity_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plank3"]
 position = Vector2(8, 32)
@@ -64,11 +62,10 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(14, 32)
 node_a = NodePath("..")
 node_b = NodePath("../../Plank4")
+softness = 3.0
 
 [node name="Plank4" type="RigidBody2D" parent="."]
 position = Vector2(46, 17)
-mass = 0.5
-gravity_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plank4"]
 position = Vector2(8, 32)
@@ -83,11 +80,10 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(14, 32)
 node_a = NodePath("..")
 node_b = NodePath("../../Plank5")
+softness = 3.0
 
 [node name="Plank5" type="RigidBody2D" parent="."]
 position = Vector2(58, 17)
-mass = 0.5
-gravity_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plank5"]
 position = Vector2(8, 32)
@@ -102,13 +98,12 @@ texture = ExtResource("1_q4bdi")
 position = Vector2(14, 32)
 node_a = NodePath("..")
 node_b = NodePath("../../Plank6")
+softness = 3.0
 angular_limit_enabled = true
 angular_limit_lower = -0.539307
 
 [node name="Plank6" type="RigidBody2D" parent="."]
 position = Vector2(70, 17)
-mass = 0.5
-gravity_scale = 0.5
 lock_rotation = true
 freeze = true
 
@@ -120,3 +115,7 @@ shape = SubResource("RectangleShape2D_nuatk")
 position = Vector2(8, 32)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_q4bdi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(47, 50)
+zoom = Vector2(3, 3)
