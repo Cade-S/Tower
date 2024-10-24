@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ct0kak7yufm38"]
+[gd_scene load_steps=10 format=3 uid="uid://ct0kak7yufm38"]
 
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_7n61o"]
 [ext_resource type="Texture2D" uid="uid://biqvgiah3aybr" path="res://backgrounds/Dark Forest/Background layers/Layer_0010_1.png" id="2_hkr7s"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bp44e56avxafr" path="res://objects/box_16x_48.tscn" id="5_38m6v"]
 [ext_resource type="PackedScene" uid="uid://dcthmq51mneco" path="res://objects/box_32x_48.tscn" id="6_8ikge"]
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="7_ufyi3"]
+[ext_resource type="PackedScene" uid="uid://7ql051xrmu81" path="res://character/dog.tscn" id="8_v1gxl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5y6y"]
 size = Vector2(2232, 32)
@@ -42,6 +43,9 @@ position = Vector2(660, 464)
 shape = SubResource("RectangleShape2D_i5y6y")
 one_way_collision_margin = 128.0
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-449, 448, -512, 440, -576, 448, -639, 448, -704, 416, -768, 416, -832, 448, -1008, 448, -1008, 480, -451, 480, -451, 480)
+
 [node name="square" parent="." instance=ExtResource("3_af1c0")]
 position = Vector2(1272, 32)
 
@@ -55,14 +59,14 @@ position = Vector2(1240, 16)
 position = Vector2(1272, 16)
 
 [node name="triangle" parent="." instance=ExtResource("4_ga365")]
-position = Vector2(1040, 1024)
+position = Vector2(1011, 991)
 rotation = -4.73508
 
 [node name="triangle2" parent="." instance=ExtResource("4_ga365")]
-position = Vector2(1280, 56)
+position = Vector2(1239, -6)
 
 [node name="triangle3" parent="." instance=ExtResource("4_ga365")]
-position = Vector2(1280, 72)
+position = Vector2(1247, -27)
 
 [node name="box_16x48" parent="." instance=ExtResource("5_38m6v")]
 position = Vector2(616, 432)
@@ -96,3 +100,6 @@ position = Vector2(390, 384)
 
 [node name="Bridge" parent="." instance=ExtResource("7_ufyi3")]
 position = Vector2(832, 337)
+
+[node name="Dog" parent="." instance=ExtResource("8_v1gxl")]
+position = Vector2(270, 433)

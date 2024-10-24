@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=44 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://kjc8xupcdd0x" path="res://character/Human Male Model/Sections/HMM Idle Bare.png" id="2_nrwnw"]
@@ -173,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_r1l2b")
 }],
-"loop": true,
+"loop": false,
 "name": &"LEDGE",
 "speed": 5.0
 }, {
@@ -273,7 +273,11 @@ size = Vector2(11.91, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aoujr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdckq"]
+size = Vector2(16, 4)
+
 [node name="player_char" type="CharacterBody2D"]
+position = Vector2(-0.0936432, -0.0936441)
 platform_floor_layers = 4294967294
 script = ExtResource("1_q25qh")
 
@@ -282,6 +286,7 @@ texture_filter = 1
 position = Vector2(0, -0.0625)
 sprite_frames = SubResource("SpriteFrames_kldte")
 animation = &"LEDGE"
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0625, 4.75)
@@ -309,12 +314,17 @@ position = Vector2(-0.0394453, -5.99282)
 shape = SubResource("RectangleShape2D_nswjc")
 
 [node name="WallCheck" type="ShapeCast2D" parent="."]
-position = Vector2(-0.0517807, -9.78467)
+position = Vector2(-0.144752, -4.87944)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_aoujr")
-target_position = Vector2(0.0936584, -0.198359)
+target_position = Vector2(-0.00655772, 11.8982)
 
 [node name="FloorCheck" type="RayCast2D" parent="."]
 target_position = Vector2(0, 19.708)
+
+[node name="TopCheck" type="ShapeCast2D" parent="."]
+position = Vector2(-0.102322, -8.04155)
+shape = SubResource("RectangleShape2D_bdckq")
+target_position = Vector2(0, 0)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

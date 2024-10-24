@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 
 
-# Character states
+#Character states
 enum State {
 	IDLE,
 	WALK,
@@ -22,16 +22,33 @@ enum State {
 
 var current_state = State.IDLE
 var is_sprinting = false
-var target_speed = 0.0  # The speed we're moving towards
+var target_speed = 0.0  #The speed we're moving towards
 
 
 func _physics_process(delta: float) -> void:
 	
 
 	#Ledge Grab
+			
 	if current_state in [State.JUMP, State.FALL]:
 		check_ledge_grab()
+		if current_state == State.LEDGE:
+			#Ledge Animation
+			$AnimatedSprite2D.play("LEDGE")
+			print("Ledge animation")
 			
+			#For edge-case ledge issues
+			velocity.x = 0
+			var collider = $WallCheck.get_collision_normal(0)
+			if collider.x == -1:
+				$AnimatedSprite2D.flip_h = true
+				if not is_on_wall():
+					velocity.x = -25
+			else:
+				$AnimatedSprite2D.flip_h = false
+				if not is_on_wall():
+					velocity.x = 25
+		
 	# Apply gravity
 	if !is_on_floor():
 		velocity.y += GRAVITY * delta
@@ -74,7 +91,7 @@ func _physics_process(delta: float) -> void:
 				print("Transitioning to IDLE state")  # Debugging
 
 	# Gradually change the horizontal velocity towards the target speed
-	if direction != 0:
+	if direction != 0 and !current_state == State.LEDGE:
 		velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
 		$AnimatedSprite2D.flip_h = direction < 0
 	else:
@@ -97,7 +114,7 @@ func _physics_process(delta: float) -> void:
 	# Apply movement
 	move_and_slide()
 
-
+	$LedgeGrab.disabled = current_state in [State.RUN, State.IDLE] or velocity.y < 0 or ($TopCheck.is_colliding() and current_state != State.LEDGE) or Input.is_action_pressed("crouch")
 
 func check_ledge_grab() -> void:
 	if $WallCheck.is_colliding() and not $FloorCheck.is_colliding() and velocity.y == 0:
@@ -138,6 +155,4 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			$AnimatedSprite2D.play("RUN")  # Loop RUN animation
 			print("Continuing RUN animation")
 		State.LEDGE:
-			#Ledge Animation
-			$AnimatedSprite2D.play("LEDGE")
-			print("Ledge animation")
+			pass

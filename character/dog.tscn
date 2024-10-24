@@ -57,7 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://53er0w44h2wi" path="res://character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-005.png" id="55_rlnuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cvma"]
-size = Vector2(69, 49)
+size = Vector2(20, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hv2ri"]
 animations = [{
@@ -270,13 +270,15 @@ animations = [{
 }]
 
 [node name="Dog" type="RigidBody2D"]
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_uhbnc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 25.5)
+position = Vector2(1, 7.5)
 shape = SubResource("RectangleShape2D_7cvma")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_hv2ri")
 animation = &"Idle blink"
 autoplay = "Idle blink"
