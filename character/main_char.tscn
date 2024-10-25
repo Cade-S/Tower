@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=45 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://kjc8xupcdd0x" path="res://character/Human Male Model/Sections/HMM Idle Bare.png" id="2_nrwnw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c5lpg1rg3by6t" path="res://character/Human Male Model/Sections/LEDGE.png" id="4_r1l2b"]
 [ext_resource type="Texture2D" uid="uid://c0snitdwafb8y" path="res://character/Human Male Model/Sections/HMM Walk Bare.png" id="5_p8bdd"]
 [ext_resource type="Script" path="res://audio_stream_player.gd" id="8_4cgmy"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="9_meuls"]
 [ext_resource type="Script" path="res://pusher.gd" id="9_vicmv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vb61"]
@@ -276,8 +277,9 @@ size = Vector2(11.91, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdckq"]
 size = Vector2(16, 4)
 
-[node name="player_char" type="CharacterBody2D"]
+[node name="player_char" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-0.0936432, -0.0936441)
+collision_mask = 5
 platform_floor_layers = 4294967294
 script = ExtResource("1_q25qh")
 
@@ -291,16 +293,6 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0625, 4.75)
 shape = SubResource("RectangleShape2D_tq77f")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -23)
-offset = Vector2(0, -18)
-zoom = Vector2(3, 3)
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 19.0
-rotation_smoothing_enabled = true
-editor_draw_limits = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamWAV_ucoag")
@@ -318,13 +310,23 @@ position = Vector2(-0.144752, -4.87944)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_aoujr")
 target_position = Vector2(-0.00655772, 11.8982)
+collision_mask = 4
 
 [node name="FloorCheck" type="RayCast2D" parent="."]
 target_position = Vector2(0, 19.708)
+collision_mask = 5
 
 [node name="TopCheck" type="ShapeCast2D" parent="."]
 position = Vector2(-0.102322, -8.04155)
 shape = SubResource("RectangleShape2D_bdckq")
 target_position = Vector2(0, 0)
+collision_mask = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("9_meuls")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

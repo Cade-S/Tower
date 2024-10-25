@@ -5,7 +5,6 @@ extends Node2D
 @onready var body: CharacterBody2D = get_node(bodyPath)
 
 
-
 func _physics_process(delta):
 	for i in body.get_slide_collision_count():
 		var c = body.get_slide_collision(i)

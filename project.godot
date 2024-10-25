@@ -15,6 +15,10 @@ run/main_scene="res://levels/area_2.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/show_image=false
 
+[autoload]
+
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
 [display]
 
 window/size/viewport_width=640
@@ -23,7 +27,11 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/HaSa1002.light-tools/plugin.cfg", "res://addons/ropesim/plugin.cfg")
+enabled=PackedStringArray("res://addons/HaSa1002.light-tools/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/ropesim/plugin.cfg")
+
+[global_group]
+
+player=""
 
 [input]
 
@@ -57,6 +65,12 @@ crouch={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Dog"
+2d_physics/layer_3="objects"
 
 [physics]
 

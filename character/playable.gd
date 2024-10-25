@@ -25,6 +25,9 @@ var is_sprinting = false
 var target_speed = 0.0  #The speed we're moving towards
 
 
+func _ready():
+	pass
+
 func _physics_process(delta: float) -> void:
 	
 

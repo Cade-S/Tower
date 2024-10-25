@@ -56,9 +56,6 @@
 [ext_resource type="Texture2D" uid="uid://dlplos4n6o3lv" path="res://character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-004.png" id="54_5ocx6"]
 [ext_resource type="Texture2D" uid="uid://53er0w44h2wi" path="res://character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-005.png" id="55_rlnuh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cvma"]
-size = Vector2(20, 15)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_hv2ri"]
 animations = [{
 "frames": [{
@@ -78,7 +75,7 @@ animations = [{
 "texture": ExtResource("6_ltclu")
 }],
 "loop": true,
-"name": &"Bark",
+"name": &"BARK",
 "speed": 5.0
 }, {
 "frames": [{
@@ -98,7 +95,7 @@ animations = [{
 "texture": ExtResource("11_xxo3i")
 }],
 "loop": true,
-"name": &"Bite",
+"name": &"BITE",
 "speed": 5.0
 }, {
 "frames": [{
@@ -118,7 +115,7 @@ animations = [{
 "texture": ExtResource("16_2gt0t")
 }],
 "loop": true,
-"name": &"Blink",
+"name": &"BLINK",
 "speed": 5.0
 }, {
 "frames": [{
@@ -150,7 +147,7 @@ animations = [{
 "texture": ExtResource("25_n4ojj")
 }],
 "loop": true,
-"name": &"Death",
+"name": &"DEATH",
 "speed": 5.0
 }, {
 "frames": [{
@@ -173,7 +170,7 @@ animations = [{
 "texture": ExtResource("31_qteh6")
 }],
 "loop": true,
-"name": &"Idle blink",
+"name": &"IDLE_BLINK",
 "speed": 5.0
 }, {
 "frames": [{
@@ -190,7 +187,7 @@ animations = [{
 "texture": ExtResource("35_4c6q8")
 }],
 "loop": true,
-"name": &"Run",
+"name": &"RUN",
 "speed": 5.0
 }, {
 "frames": [{
@@ -219,7 +216,7 @@ animations = [{
 "texture": ExtResource("43_5iiw8")
 }],
 "loop": true,
-"name": &"Sniff",
+"name": &"SNIFF",
 "speed": 5.0
 }, {
 "frames": [{
@@ -245,7 +242,7 @@ animations = [{
 "texture": ExtResource("50_76caj")
 }],
 "loop": true,
-"name": &"Tracking",
+"name": &"TRACKING",
 "speed": 5.0
 }, {
 "frames": [{
@@ -265,20 +262,25 @@ animations = [{
 "texture": ExtResource("55_rlnuh")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"WALK",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pdbs"]
+size = Vector2(60.0453, 48.0136)
+
 [node name="Dog" type="RigidBody2D"]
-scale = Vector2(0.6, 0.6)
+collision_layer = 2
+collision_mask = 6
 script = ExtResource("1_uhbnc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 7.5)
-shape = SubResource("RectangleShape2D_7cvma")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_hv2ri")
-animation = &"Idle blink"
-autoplay = "Idle blink"
+animation = &"RUN"
+autoplay = "IDLE_BLINK"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0102877, 4.80655)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_1pdbs")
