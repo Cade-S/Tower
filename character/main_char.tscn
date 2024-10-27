@@ -280,7 +280,8 @@ size = Vector2(16, 4)
 [node name="player_char" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-0.0936432, -0.0936441)
 collision_mask = 5
-platform_floor_layers = 4294967294
+platform_on_leave = 2
+platform_floor_layers = 4294967288
 script = ExtResource("1_q25qh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -323,6 +324,9 @@ target_position = Vector2(0, 0)
 collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.7, 2.7)
+limit_smoothed = true
+drag_vertical_offset = -1.0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300

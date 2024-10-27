@@ -5,7 +5,7 @@ size = Vector2(16, 16)
 
 [node name="square" type="RigidBody2D"]
 position = Vector2(0, 8)
-collision_layer = 7
+collision_layer = 4
 collision_mask = 7
 
 [node name="Polygon2D" type="Polygon2D" parent="."]

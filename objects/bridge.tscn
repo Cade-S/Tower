@@ -9,6 +9,8 @@ size = Vector2(12, 4)
 
 [node name="Plank" type="RigidBody2D" parent="."]
 position = Vector2(10, 17)
+collision_layer = 4
+collision_mask = 3
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true
@@ -30,6 +32,8 @@ softness = 3.0
 
 [node name="Plank2" type="RigidBody2D" parent="."]
 position = Vector2(22, 17)
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plank2"]
 position = Vector2(8, 32)
@@ -48,6 +52,8 @@ softness = 3.0
 
 [node name="Plank3" type="RigidBody2D" parent="."]
 position = Vector2(34, 17)
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plank3"]
 position = Vector2(8, 32)
@@ -66,6 +72,8 @@ softness = 3.0
 
 [node name="Plank4" type="RigidBody2D" parent="."]
 position = Vector2(46, 17)
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plank4"]
 position = Vector2(8, 32)
@@ -84,6 +92,8 @@ softness = 3.0
 
 [node name="Plank5" type="RigidBody2D" parent="."]
 position = Vector2(58, 17)
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plank5"]
 position = Vector2(8, 32)
@@ -104,6 +114,8 @@ angular_limit_lower = -0.539307
 
 [node name="Plank6" type="RigidBody2D" parent="."]
 position = Vector2(70, 17)
+collision_layer = 4
+collision_mask = 3
 lock_rotation = true
 freeze = true
 

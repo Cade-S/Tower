@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tower"
-run/main_scene="res://levels/area_2.tscn"
+run/main_scene="res://levels/test_area.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/show_image=false
 
@@ -75,6 +75,7 @@ crouch={
 [physics]
 
 2d/physics_engine="Rapier2D"
+common/physics_interpolation=true
 
 [rendering]
 
