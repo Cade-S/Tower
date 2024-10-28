@@ -1,0 +1,295 @@
+[gd_scene load_steps=58 format=3 uid="uid://cldsdra4amy41"]
+
+[ext_resource type="Texture2D" uid="uid://bnaa5esd342jh" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-001.png" id="1_46abs"]
+[ext_resource type="Script" path="res://character/sam.gd" id="1_lqubh"]
+[ext_resource type="Texture2D" uid="uid://oqrg4nml5hbo" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-002.png" id="2_ckb87"]
+[ext_resource type="Texture2D" uid="uid://dq2ysb82yshmv" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-003.png" id="3_7ml82"]
+[ext_resource type="Texture2D" uid="uid://bjmpjps83hhav" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-004.png" id="4_q4ro2"]
+[ext_resource type="Texture2D" uid="uid://cykrdjudx2cxe" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-005.png" id="5_jmvrg"]
+[ext_resource type="Texture2D" uid="uid://d3rmdva1s3pc5" path="res://character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-001.png" id="6_bxua5"]
+[ext_resource type="Texture2D" uid="uid://cejc3x425dxjl" path="res://character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-002.png" id="7_2jnv2"]
+[ext_resource type="Texture2D" uid="uid://bl06jn2g3r8ii" path="res://character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-003.png" id="8_opv8n"]
+[ext_resource type="Texture2D" uid="uid://hpqg26c2xflm" path="res://character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-004.png" id="9_umkhr"]
+[ext_resource type="Texture2D" uid="uid://fvudylvv3frb" path="res://character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-005.png" id="10_0ohtm"]
+[ext_resource type="Texture2D" uid="uid://ukfm2ftdh1up" path="res://character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-001.png" id="11_a4pqd"]
+[ext_resource type="Texture2D" uid="uid://g3wva3hlkeyr" path="res://character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-002.png" id="12_wp5c5"]
+[ext_resource type="Texture2D" uid="uid://beefkpiawm5v5" path="res://character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-003.png" id="13_i55ab"]
+[ext_resource type="Texture2D" uid="uid://xrjxa05w8afl" path="res://character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-004.png" id="14_mnil5"]
+[ext_resource type="Texture2D" uid="uid://bewp42qk6rjiw" path="res://character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-005.png" id="15_fowmk"]
+[ext_resource type="Texture2D" uid="uid://ccp5u4i2s4wkb" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-001.png" id="16_cljgv"]
+[ext_resource type="Texture2D" uid="uid://xdeh5umapklr" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-002.png" id="17_tga62"]
+[ext_resource type="Texture2D" uid="uid://dffvouhtrtes2" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-003.png" id="18_me81c"]
+[ext_resource type="Texture2D" uid="uid://bqks6epcljn5y" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-004.png" id="19_chaba"]
+[ext_resource type="Texture2D" uid="uid://u66bctqwdkl4" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-005.png" id="20_7th4c"]
+[ext_resource type="Texture2D" uid="uid://0l51charupl8" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-006.png" id="21_37k2u"]
+[ext_resource type="Texture2D" uid="uid://bf5pg63do8u1u" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-007.png" id="22_j3bix"]
+[ext_resource type="Texture2D" uid="uid://4tggfxe1sf5c" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-008.png" id="23_2lhrq"]
+[ext_resource type="Texture2D" uid="uid://mpss6rsh0hj3" path="res://character/German Shephard/PNG/x300 size/Death/german-shephard-death-009.png" id="24_jna1m"]
+[ext_resource type="Texture2D" uid="uid://b5khglwt3d71d" path="res://character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-001.png" id="25_klpw6"]
+[ext_resource type="Texture2D" uid="uid://dkcvdtrjyp585" path="res://character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-002.png" id="26_4xub3"]
+[ext_resource type="Texture2D" uid="uid://clybesh6nax5q" path="res://character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-003.png" id="27_3mhbl"]
+[ext_resource type="Texture2D" uid="uid://cp37elrpbkxsg" path="res://character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-004.png" id="28_n0uhe"]
+[ext_resource type="Texture2D" uid="uid://bxvreoqrvtmre" path="res://character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-005.png" id="29_jkkc7"]
+[ext_resource type="Texture2D" uid="uid://bvlsl6i2qo2mw" path="res://character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-006.png" id="30_f0y1x"]
+[ext_resource type="Texture2D" uid="uid://bynot58lddugq" path="res://character/German Shephard/PNG/x300 size/Run/german-shephard-run-001.png" id="31_okm8u"]
+[ext_resource type="Texture2D" uid="uid://y6xnbwm6mwas" path="res://character/German Shephard/PNG/x300 size/Run/german-shephard-run-002.png" id="32_n66nb"]
+[ext_resource type="Texture2D" uid="uid://d08a46ofstfxo" path="res://character/German Shephard/PNG/x300 size/Run/german-shephard-run-003.png" id="33_xo6ox"]
+[ext_resource type="Texture2D" uid="uid://w2k5v2w5mq7u" path="res://character/German Shephard/PNG/x300 size/Run/german-shephard-run-004.png" id="34_wkl8e"]
+[ext_resource type="Texture2D" uid="uid://dg1kny2jx7f32" path="res://character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-001.png" id="35_0p6ms"]
+[ext_resource type="Texture2D" uid="uid://cisxewe70te12" path="res://character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-002.png" id="36_o7ix2"]
+[ext_resource type="Texture2D" uid="uid://7dmqv35ww315" path="res://character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-003.png" id="37_sat3b"]
+[ext_resource type="Texture2D" uid="uid://dvu3whhknffex" path="res://character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-004.png" id="38_mojq0"]
+[ext_resource type="Texture2D" uid="uid://b4yl8mv7r54va" path="res://character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-005.png" id="39_jekab"]
+[ext_resource type="Texture2D" uid="uid://1o7iswj7hpaq" path="res://character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-006.png" id="40_6gpvg"]
+[ext_resource type="Texture2D" uid="uid://c4wjdb833sjyd" path="res://character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-007.png" id="41_7tufn"]
+[ext_resource type="Texture2D" uid="uid://cml86telfuvif" path="res://character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-008.png" id="42_najsa"]
+[ext_resource type="Texture2D" uid="uid://c3y1cfx513hfm" path="res://character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-001.png" id="43_qein5"]
+[ext_resource type="Texture2D" uid="uid://bma5nbnx7fq1i" path="res://character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-002.png" id="44_kuv0a"]
+[ext_resource type="Texture2D" uid="uid://ha3ald3givlh" path="res://character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-003.png" id="45_0lcyd"]
+[ext_resource type="Texture2D" uid="uid://cs37imdabpyu6" path="res://character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-004.png" id="46_vgofu"]
+[ext_resource type="Texture2D" uid="uid://b2ja8hj3v4f1h" path="res://character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-005.png" id="47_dc1h7"]
+[ext_resource type="Texture2D" uid="uid://dqgqs4v48wdpm" path="res://character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-006.png" id="48_y4smu"]
+[ext_resource type="Texture2D" uid="uid://bvti0uwkngk7e" path="res://character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-007.png" id="49_hq17t"]
+[ext_resource type="Texture2D" uid="uid://qnobk3ujw4aa" path="res://character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-001.png" id="50_kf0ij"]
+[ext_resource type="Texture2D" uid="uid://ditjoj6fjuoh8" path="res://character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-002.png" id="51_frdta"]
+[ext_resource type="Texture2D" uid="uid://vsmupx18vnq0" path="res://character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-003.png" id="52_ia60r"]
+[ext_resource type="Texture2D" uid="uid://dlplos4n6o3lv" path="res://character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-004.png" id="53_dpr20"]
+[ext_resource type="Texture2D" uid="uid://53er0w44h2wi" path="res://character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-005.png" id="54_w0c5n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tpwxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_46abs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ckb87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7ml82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q4ro2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jmvrg")
+}],
+"loop": true,
+"name": &"BARK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bxua5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2jnv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_opv8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_umkhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0ohtm")
+}],
+"loop": true,
+"name": &"BITE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_a4pqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wp5c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i55ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mnil5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fowmk")
+}],
+"loop": true,
+"name": &"BLINK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_cljgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tga62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_me81c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_chaba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7th4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_37k2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_j3bix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_2lhrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jna1m")
+}],
+"loop": false,
+"name": &"DEATH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_klpw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4xub3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3mhbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_n0uhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_jkkc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_f0y1x")
+}],
+"loop": true,
+"name": &"IDLE_BLINK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_okm8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_n66nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xo6ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wkl8e")
+}],
+"loop": true,
+"name": &"RUN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_0p6ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_o7ix2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_sat3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_mojq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jekab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_6gpvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_7tufn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_najsa")
+}],
+"loop": false,
+"name": &"SNIFF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_qein5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_kuv0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_0lcyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_vgofu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_dc1h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_y4smu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_hq17t")
+}],
+"loop": true,
+"name": &"TRACKING",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_kf0ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_frdta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_ia60r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_dpr20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_w0c5n")
+}],
+"loop": true,
+"name": &"WALK",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ay5cu"]
+radius = 21.0
+height = 68.0
+
+[node name="Sam" type="CharacterBody2D"]
+position = Vector2(0, -10)
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_lqubh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tpwxe")
+animation = &"WALK"
+autoplay = "IDLE_BLINK"
+frame_progress = 0.667283
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(2.7, 2.7)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 27)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ay5cu")

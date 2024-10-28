@@ -6,7 +6,9 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -250.0
 @export var ACCELERATION = 350.0  # Adjust this to control how fast you pick up speed
 @export var DECELERATION = 950.0  # Adjust this for how fast you slow down
-
+var current_state = State.IDLE
+var is_sprinting = false
+var target_speed = 0.0
 
 
 #Character states
@@ -20,9 +22,6 @@ enum State {
 	LEDGE
 }
 
-var current_state = State.IDLE
-var is_sprinting = false
-var target_speed = 0.0  #The speed we're moving towards
 
 
 func _ready():

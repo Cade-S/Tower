@@ -44,6 +44,12 @@ position = Vector2(238, 425)
 z_index = 1
 position = Vector2(213, 434)
 platform_on_leave = 2
+WALK_SPEED = null
+RUN_SPEED = null
+JUMP_VELOCITY = null
+ACCELERATION = null
+DECELERATION = null
+GRAVITY = null
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4

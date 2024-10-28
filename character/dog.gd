@@ -2,12 +2,12 @@ extends RigidBody2D
 
 var target
 var speed = 110  # Movement speed in pixels per second
-
+var acceleration = 200
+var deceleration = 200
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Find the target (e.g., player)
-	if get_tree().has_group("player"):
-		target = get_tree().get_nodes_in_group("player")[0]
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,11 +28,7 @@ func move_toward_target(delta: float) -> void:
 		var direction = (target.global_position - global_position).normalized()
 
 		# Only move horizontally (along the X-axis), leave Y-axis unaffected by movement
-		var new_velocity = linear_velocity
-		new_velocity.x = direction.x * speed
-
-		# Set the velocity to move horizontally while gravity affects the Y-axis
-		linear_velocity = new_velocity
+		move_toward(velocity.x, direction, acceleration * delta)
 
 		# Flip the sprite based on horizontal direction
 		if direction.x < 0:

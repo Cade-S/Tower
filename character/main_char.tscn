@@ -264,8 +264,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tq77f"]
-size = Vector2(8.5, 20.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogvc3"]
+radius = 4.46534
+height = 19.5442
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_ucoag"]
 
@@ -293,7 +294,7 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0625, 4.75)
-shape = SubResource("RectangleShape2D_tq77f")
+shape = SubResource("CapsuleShape2D_ogvc3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamWAV_ucoag")

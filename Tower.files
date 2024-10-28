@@ -1,0 +1,1516 @@
+.gitattributes
+.gitignore
+.godot/.gdignore
+.godot/editor/Audio 1.wav-06ba7f8e0c426f494fc337b19ec405d6.sample-folding-da7e6043f7e0b42a985652ff3bc8dc95.cfg
+.godot/editor/Audio 2.wav-c540392a70e325f0d5c1855e111f6c53.sample-folding-120df88e8387f39e3d83e4f98ebc857f.cfg
+.godot/editor/Audio 3.wav-411a1876382ee29a500d5a0e935daddd.sample-folding-070d5f542d3ebdde432ff8e6ff2b124e.cfg
+.godot/editor/Audio 4.wav-4932dd4d0ffbcc6f7e9f4e196d103ba4.sample-folding-b5b565642b5fe06fedf6358ac90f8b71.cfg
+.godot/editor/Audio 5.wav-78092eb365488d41e9ba5b5963fb5b6c.sample-folding-1d0594fe41f8a48e27bd34580b72ef9f.cfg
+.godot/editor/Audio 6.wav-444bd2560fa43a62f4fbfcd80b03f422.sample-folding-cb002521e102588a452b538ce1dfb7c4.cfg
+.godot/editor/Audio 7.wav-1ddf1eff76c93668c80a330bddd9153d.sample-folding-c040fc51b72d8c0e7d70f2be820532c8.cfg
+.godot/editor/Audio 8.wav-a34396fdef2433d0066706f53ffa2f05.sample-folding-afcc28a5e4e9c1f759d4b806ddfbd2ff.cfg
+.godot/editor/Audio 9.wav-da28eb2300edacb76b4df15c2121e954.sample-folding-3a242687322c43bd68515074f649f30f.cfg
+.godot/editor/Nunito-Black.ttf-2a374efbc207a97a99b8c70bdc4b7cbb.fontdata-folding-662749b80c5c044d2b8064c915abfc7a.cfg
+.godot/editor/Nunito-Regular.ttf-b6054d499efa1a10921004862b1e217a.fontdata-folding-b3a527ad226f38b174687fb8e4af5b0f.cfg
+.godot/editor/RESET.gd-folding-2e83415ac9a3a833c124945bc3d609b6.cfg
+.godot/editor/Rope.gd-folding-79253833f77b985bf65977e9db21edbe.cfg
+.godot/editor/area_2.tscn-editstate-6119fc96332960457bcb4f6933b0a2ee.cfg
+.godot/editor/area_2.tscn-editstate-c15d08f2484f446b3184a5568f8ec52e.cfg
+.godot/editor/area_2.tscn-folding-6119fc96332960457bcb4f6933b0a2ee.cfg
+.godot/editor/area_2.tscn-folding-c15d08f2484f446b3184a5568f8ec52e.cfg
+.godot/editor/attach.tscn-editstate-85c8cc1f2a1438288bf8b33d0380456e.cfg
+.godot/editor/attach.tscn-folding-85c8cc1f2a1438288bf8b33d0380456e.cfg
+.godot/editor/audio_stream_player.gd-folding-6d87103670577fb4c54ab4c354fd58e6.cfg
+.godot/editor/box_16x_48.tscn-editstate-c5711ced74ac0687c152a6032223eca4.cfg
+.godot/editor/box_16x_48.tscn-folding-c5711ced74ac0687c152a6032223eca4.cfg
+.godot/editor/box_32x_48.tscn-editstate-5105030028a17eaad59bbaeca502f5fd.cfg
+.godot/editor/box_32x_48.tscn-editstate-c0e5d50d390d89770837c6f2581520ac.cfg
+.godot/editor/box_32x_48.tscn-folding-5105030028a17eaad59bbaeca502f5fd.cfg
+.godot/editor/box_32x_48.tscn-folding-c0e5d50d390d89770837c6f2581520ac.cfg
+.godot/editor/bridge.tscn-editstate-8d65156200f179ae61ce5e98594947f2.cfg
+.godot/editor/bridge.tscn-editstate-b974cda87d87616f78079d284a61cd83.cfg
+.godot/editor/bridge.tscn-folding-8d65156200f179ae61ce5e98594947f2.cfg
+.godot/editor/bridge.tscn-folding-b974cda87d87616f78079d284a61cd83.cfg
+.godot/editor/camera_manager.gd-folding-9bebd207c6c3102a5e56bdf6ef70336f.cfg
+.godot/editor/camera_manager.tscn-folding-2c7da38a0048530699f42b03629b7739.cfg
+.godot/editor/character_body_2d.tscn-editstate-25eb6ab7203e76730ffb59dd2891996c.cfg
+.godot/editor/character_body_2d.tscn-folding-25eb6ab7203e76730ffb59dd2891996c.cfg
+.godot/editor/create.tscn-editstate-92bf1d9cc423ab48c5b88cdcaf350213.cfg
+.godot/editor/create.tscn-folding-92bf1d9cc423ab48c5b88cdcaf350213.cfg
+.godot/editor/create_recent.Node
+.godot/editor/dark_forest.tscn-editstate-c853fee302dd5588f01f62d83e326b58.cfg
+.godot/editor/dark_forest.tscn-editstate-cb72c5fe247aad225a45691ac7a0d6bb.cfg
+.godot/editor/dark_forest.tscn-folding-c853fee302dd5588f01f62d83e326b58.cfg
+.godot/editor/dark_forest.tscn-folding-cb72c5fe247aad225a45691ac7a0d6bb.cfg
+.godot/editor/dog.gd-folding-2fed6722cee447454824da59608b72b0.cfg
+.godot/editor/dog.tscn-editstate-092ecdad00b20c349c97f5013b4c6ca6.cfg
+.godot/editor/dog.tscn-folding-092ecdad00b20c349c97f5013b4c6ca6.cfg
+.godot/editor/editor_layout.cfg
+.godot/editor/favorites
+.godot/editor/favorites.Node
+.godot/editor/filesystem_cache8
+.godot/editor/filesystem_update4
+.godot/editor/grab_64.gd-folding-9dc7bba6de1b9ecf7382da59d613789d.cfg
+.godot/editor/level_house.tscn-editstate-613fd430dbb6ab11baaf9ddb1fc849b1.cfg
+.godot/editor/level_house.tscn-folding-613fd430dbb6ab11baaf9ddb1fc849b1.cfg
+.godot/editor/lightpole.tscn-editstate-4621c25e8f54d3c58308df7af7ef522d.cfg
+.godot/editor/lightpole.tscn-editstate-67b465afed7fcf60a82a9f54afcaf08b.cfg
+.godot/editor/lightpole.tscn-folding-4621c25e8f54d3c58308df7af7ef522d.cfg
+.godot/editor/lightpole.tscn-folding-67b465afed7fcf60a82a9f54afcaf08b.cfg
+.godot/editor/main_char.tscn-editstate-5914fca64b8707ffcdc596f12b2693d4.cfg
+.godot/editor/main_char.tscn-editstate-856492df6f759c86f75d4e4c718257b6.cfg
+.godot/editor/main_char.tscn-folding-5914fca64b8707ffcdc596f12b2693d4.cfg
+.godot/editor/main_char.tscn-folding-856492df6f759c86f75d4e4c718257b6.cfg
+.godot/editor/playable.gd-folding-57994613e8aca78373a09f34beecc875.cfg
+.godot/editor/playable.gd-folding-63a960dd511a6807c67b63ce9626ca56.cfg
+.godot/editor/project_metadata.cfg
+.godot/editor/pusher.gd-folding-ac925da395624f1327363aed0ef8bb19.cfg
+.godot/editor/recent_dirs
+.godot/editor/sam.gd-folding-9305e58ccb286e087db5726c9810c7f1.cfg
+.godot/editor/sam.tscn-editstate-ad0b0464c94062a1c5fef974d9480f4c.cfg
+.godot/editor/sam.tscn-folding-ad0b0464c94062a1c5fef974d9480f4c.cfg
+.godot/editor/script_editor_cache.cfg
+.godot/editor/square.tscn-editstate-b27abbfff0a53c471db9ac7d0bee6558.cfg
+.godot/editor/square.tscn-folding-b27abbfff0a53c471db9ac7d0bee6558.cfg
+.godot/editor/test_area.tscn-editstate-077d798c30d7c7aa94f1e3fc7eed9f6f.cfg
+.godot/editor/test_area.tscn-editstate-cd8b6546c30455a0e510653ad78a5347.cfg
+.godot/editor/test_area.tscn-folding-077d798c30d7c7aa94f1e3fc7eed9f6f.cfg
+.godot/editor/test_area.tscn-folding-cd8b6546c30455a0e510653ad78a5347.cfg
+.godot/editor/test_area_2.tscn-editstate-a40ad0b9eb262f8fc770b934a53f10b9.cfg
+.godot/editor/timer.gd-folding-a51868e2bfe539fe58eddaeed31e302b.cfg
+.godot/editor/triangle.tscn-editstate-5b01ef7bbb9599817fb8427d67cb0f89.cfg
+.godot/editor/triangle.tscn-folding-5b01ef7bbb9599817fb8427d67cb0f89.cfg
+.godot/editor/tutorial.tscn-editstate-2628788171ecb435ff9cbf0eee333ed9.cfg
+.godot/editor/tutorial.tscn-folding-2628788171ecb435ff9cbf0eee333ed9.cfg
+.godot/editor/water.tscn-folding-6ce44afa67237c9158dfb47e41d074ad.cfg
+.godot/extension_list.cfg
+.godot/global_script_class_cache.cfg
+.godot/imported/16x32 trees.png-79129164b448b3587745d5ed4032bd93.ctex
+.godot/imported/16x32 trees.png-79129164b448b3587745d5ed4032bd93.md5
+.godot/imported/16x48.png-8d2219e634aab6eba7a41897a8ea3f78.ctex
+.godot/imported/16x48.png-8d2219e634aab6eba7a41897a8ea3f78.md5
+.godot/imported/32x48.png-b516b0196a5e51cde319df560e1c8912.ctex
+.godot/imported/32x48.png-b516b0196a5e51cde319df560e1c8912.md5
+.godot/imported/48x48 trees.png-1bb209b99678b1423c8388d470c9f2e6.ctex
+.godot/imported/48x48 trees.png-1bb209b99678b1423c8388d470c9f2e6.md5
+.godot/imported/Asparagus.png-78e237ef3752f2aa66bc31f389f3c86f.ctex
+.godot/imported/Asparagus.png-78e237ef3752f2aa66bc31f389f3c86f.md5
+.godot/imported/Audio 1.wav-06ba7f8e0c426f494fc337b19ec405d6.md5
+.godot/imported/Audio 1.wav-06ba7f8e0c426f494fc337b19ec405d6.sample
+.godot/imported/Audio 2.wav-c540392a70e325f0d5c1855e111f6c53.md5
+.godot/imported/Audio 2.wav-c540392a70e325f0d5c1855e111f6c53.sample
+.godot/imported/Audio 3.wav-411a1876382ee29a500d5a0e935daddd.md5
+.godot/imported/Audio 3.wav-411a1876382ee29a500d5a0e935daddd.sample
+.godot/imported/Audio 4.wav-4932dd4d0ffbcc6f7e9f4e196d103ba4.md5
+.godot/imported/Audio 4.wav-4932dd4d0ffbcc6f7e9f4e196d103ba4.sample
+.godot/imported/Audio 5.wav-78092eb365488d41e9ba5b5963fb5b6c.md5
+.godot/imported/Audio 5.wav-78092eb365488d41e9ba5b5963fb5b6c.sample
+.godot/imported/Audio 6.wav-444bd2560fa43a62f4fbfcd80b03f422.md5
+.godot/imported/Audio 6.wav-444bd2560fa43a62f4fbfcd80b03f422.sample
+.godot/imported/Audio 7.wav-1ddf1eff76c93668c80a330bddd9153d.md5
+.godot/imported/Audio 7.wav-1ddf1eff76c93668c80a330bddd9153d.sample
+.godot/imported/Audio 8.wav-a34396fdef2433d0066706f53ffa2f05.md5
+.godot/imported/Audio 8.wav-a34396fdef2433d0066706f53ffa2f05.sample
+.godot/imported/Audio 9.wav-da28eb2300edacb76b4df15c2121e954.md5
+.godot/imported/Audio 9.wav-da28eb2300edacb76b4df15c2121e954.sample
+.godot/imported/Boiled_Egg_Half.png-b78e4b9de0db8181db954491fe911786.ctex
+.godot/imported/Boiled_Egg_Half.png-b78e4b9de0db8181db954491fe911786.md5
+.godot/imported/Butter.png-31f4c4d77954f70575e36c3f1e4119a7.ctex
+.godot/imported/Butter.png-31f4c4d77954f70575e36c3f1e4119a7.md5
+.godot/imported/Camera2DIcon.svg-300e6f57281180711c5ecf391104d4ba.ctex
+.godot/imported/Camera2DIcon.svg-300e6f57281180711c5ecf391104d4ba.md5
+.godot/imported/Camera3DIcon.svg-4805c46004db1c89cc9443dd740693f5.ctex
+.godot/imported/Camera3DIcon.svg-4805c46004db1c89cc9443dd740693f5.md5
+.godot/imported/Fluid2D.svg-947567c51a8b586a0e695be7cba2d975.ctex
+.godot/imported/Fluid2D.svg-947567c51a8b586a0e695be7cba2d975.editor.ctex
+.godot/imported/Fluid2D.svg-947567c51a8b586a0e695be7cba2d975.editor.meta
+.godot/imported/Fluid2D.svg-947567c51a8b586a0e695be7cba2d975.md5
+.godot/imported/HMM Death Bare.png-d5022af9a05fb313074e29fd3c9eb08b.ctex
+.godot/imported/HMM Death Bare.png-d5022af9a05fb313074e29fd3c9eb08b.md5
+.godot/imported/HMM Hurt Bare.png-f19a126652131df9d794661d022bb5e2.ctex
+.godot/imported/HMM Hurt Bare.png-f19a126652131df9d794661d022bb5e2.md5
+.godot/imported/HMM Idle Bare.png-40cd7a8844e68d886e6c9570fba08a1b.ctex
+.godot/imported/HMM Idle Bare.png-40cd7a8844e68d886e6c9570fba08a1b.md5
+.godot/imported/HMM Jump Bare.png-8e8f094c0ddeb9d88ecff58c261e7ba9.ctex
+.godot/imported/HMM Jump Bare.png-8e8f094c0ddeb9d88ecff58c261e7ba9.md5
+.godot/imported/HMM Run Bare.png-20610e994c6f00a0b57d5add09cf19ce.ctex
+.godot/imported/HMM Run Bare.png-20610e994c6f00a0b57d5add09cf19ce.md5
+.godot/imported/HMM Walk Bare.png-5795499d7aa6b2544e01d2058c51955b.ctex
+.godot/imported/HMM Walk Bare.png-5795499d7aa6b2544e01d2058c51955b.md5
+.godot/imported/L1.png-4a34841893c03c48d9dd529bcc935870.ctex
+.godot/imported/L1.png-4a34841893c03c48d9dd529bcc935870.md5
+.godot/imported/L2.png-eae788642036dc740bb4d71392518ed2.ctex
+.godot/imported/L2.png-eae788642036dc740bb4d71392518ed2.md5
+.godot/imported/L3.png-bb70b9f76110cf49664ef6ca67cb4b10.ctex
+.godot/imported/L3.png-bb70b9f76110cf49664ef6ca67cb4b10.md5
+.godot/imported/L4.png-0364a97693351df4d646fada1a76a750.ctex
+.godot/imported/L4.png-0364a97693351df4d646fada1a76a750.md5
+.godot/imported/L5.png-f24d61a2d82a2ae7d1faf1722797bf64.ctex
+.godot/imported/L5.png-f24d61a2d82a2ae7d1faf1722797bf64.md5
+.godot/imported/LEDGE.png-29419f24740ea943267ecf0d90acbdb1.ctex
+.godot/imported/LEDGE.png-29419f24740ea943267ecf0d90acbdb1.md5
+.godot/imported/Layer_0000_9.png-4f9c77ad4863ad92b208f530dad4d83d.ctex
+.godot/imported/Layer_0000_9.png-4f9c77ad4863ad92b208f530dad4d83d.md5
+.godot/imported/Layer_0000_9.png-d7768a10d0e0f406eb205944d8f15bf6.ctex
+.godot/imported/Layer_0000_9.png-d7768a10d0e0f406eb205944d8f15bf6.md5
+.godot/imported/Layer_0001_8.png-2c366b73d7cb25b1a00fa8ef85190e67.ctex
+.godot/imported/Layer_0001_8.png-2c366b73d7cb25b1a00fa8ef85190e67.md5
+.godot/imported/Layer_0001_8.png-33924cd31e22b475a572e74578808fd8.ctex
+.godot/imported/Layer_0001_8.png-33924cd31e22b475a572e74578808fd8.md5
+.godot/imported/Layer_0002_7.png-77fe7ef64b55c386e48190ed78577f30.ctex
+.godot/imported/Layer_0002_7.png-77fe7ef64b55c386e48190ed78577f30.md5
+.godot/imported/Layer_0002_7.png-cbf4e6658f08bdc4e68a864ab9caf647.ctex
+.godot/imported/Layer_0002_7.png-cbf4e6658f08bdc4e68a864ab9caf647.md5
+.godot/imported/Layer_0003_6.png-a3a7cf5a431613c2fd6a8dd62b0dfee4.ctex
+.godot/imported/Layer_0003_6.png-a3a7cf5a431613c2fd6a8dd62b0dfee4.md5
+.godot/imported/Layer_0003_6.png-fed6dca49af3d54093317ab799dd1693.ctex
+.godot/imported/Layer_0003_6.png-fed6dca49af3d54093317ab799dd1693.md5
+.godot/imported/Layer_0004_Lights.png-49fdfc5cf17c765aca434bc74a83b747.ctex
+.godot/imported/Layer_0004_Lights.png-49fdfc5cf17c765aca434bc74a83b747.md5
+.godot/imported/Layer_0004_Lights.png-94243cf74ce88565e1a49a57831be6ec.ctex
+.godot/imported/Layer_0004_Lights.png-94243cf74ce88565e1a49a57831be6ec.md5
+.godot/imported/Layer_0005_5.png-b80ffa9e4796bf025a2dd9be3c1e4053.ctex
+.godot/imported/Layer_0005_5.png-b80ffa9e4796bf025a2dd9be3c1e4053.md5
+.godot/imported/Layer_0005_5.png-e5bda0d7114e76ba160cbc0b4d092f16.ctex
+.godot/imported/Layer_0005_5.png-e5bda0d7114e76ba160cbc0b4d092f16.md5
+.godot/imported/Layer_0006_4.png-11ea642964a3dcae31782b1104000502.ctex
+.godot/imported/Layer_0006_4.png-11ea642964a3dcae31782b1104000502.md5
+.godot/imported/Layer_0006_4.png-96c99541c94fdc9f51b34457ee1227c8.ctex
+.godot/imported/Layer_0006_4.png-96c99541c94fdc9f51b34457ee1227c8.md5
+.godot/imported/Layer_0007_Lights.png-3ee5ec9e85f058bdd8efabb3cdaee9be.ctex
+.godot/imported/Layer_0007_Lights.png-3ee5ec9e85f058bdd8efabb3cdaee9be.md5
+.godot/imported/Layer_0007_Lights.png-6fcea88f1613a81f0e3c402a21885205.ctex
+.godot/imported/Layer_0007_Lights.png-6fcea88f1613a81f0e3c402a21885205.md5
+.godot/imported/Layer_0008_3.png-173a0dde53e6f465acc1c1e666e44e4d.ctex
+.godot/imported/Layer_0008_3.png-173a0dde53e6f465acc1c1e666e44e4d.md5
+.godot/imported/Layer_0008_3.png-c3f065906ef1a2b95bfea9f59d3dfb54.ctex
+.godot/imported/Layer_0008_3.png-c3f065906ef1a2b95bfea9f59d3dfb54.md5
+.godot/imported/Layer_0009_2.png-082922d7ee11c279bc42c9386f28dd8c.ctex
+.godot/imported/Layer_0009_2.png-082922d7ee11c279bc42c9386f28dd8c.md5
+.godot/imported/Layer_0009_2.png-f83e7fe4bc80641cf3f0740a9a161d1f.ctex
+.godot/imported/Layer_0009_2.png-f83e7fe4bc80641cf3f0740a9a161d1f.md5
+.godot/imported/Layer_0010_1.png-7a769390f321358f2766a6b8a6d1453f.ctex
+.godot/imported/Layer_0010_1.png-7a769390f321358f2766a6b8a6d1453f.md5
+.godot/imported/Layer_0010_1.png-b0470444fb05607779f66d9b2b75a337.ctex
+.godot/imported/Layer_0010_1.png-b0470444fb05607779f66d9b2b75a337.md5
+.godot/imported/Layer_0011_0.png-177a6ab83529fa743a3cd09959b2f659.ctex
+.godot/imported/Layer_0011_0.png-177a6ab83529fa743a3cd09959b2f659.md5
+.godot/imported/Layer_0011_0.png-a1cae1614d73738a7c227312e47c35c9.ctex
+.godot/imported/Layer_0011_0.png-a1cae1614d73738a7c227312e47c35c9.md5
+.godot/imported/Light.png-259d4e2ea75417ea2c37cc330439cca6.ctex
+.godot/imported/Light.png-259d4e2ea75417ea2c37cc330439cca6.md5
+.godot/imported/Nunito-Black.ttf-2a374efbc207a97a99b8c70bdc4b7cbb.fontdata
+.godot/imported/Nunito-Black.ttf-2a374efbc207a97a99b8c70bdc4b7cbb.md5
+.godot/imported/Nunito-Regular.ttf-b6054d499efa1a10921004862b1e217a.fontdata
+.godot/imported/Nunito-Regular.ttf-b6054d499efa1a10921004862b1e217a.md5
+.godot/imported/PhantomCameraBtnPrimaryDefault.png-fcf3696b583a82b1078609a5bfd648f5.ctex
+.godot/imported/PhantomCameraBtnPrimaryDefault.png-fcf3696b583a82b1078609a5bfd648f5.md5
+.godot/imported/PhantomCameraBtnPrimaryHover.png-3d2e4d225f6a86ce8a9c981ee7926a16.ctex
+.godot/imported/PhantomCameraBtnPrimaryHover.png-3d2e4d225f6a86ce8a9c981ee7926a16.md5
+.godot/imported/PriorityOverride.svg-e76e07f4bbd98169f119e17fe5f2f03f.ctex
+.godot/imported/PriorityOverride.svg-e76e07f4bbd98169f119e17fe5f2f03f.md5
+.godot/imported/Radial2D.svg-4380d9841bddc115105cff2016be7c6a.ctex
+.godot/imported/Radial2D.svg-4380d9841bddc115105cff2016be7c6a.editor.ctex
+.godot/imported/Radial2D.svg-4380d9841bddc115105cff2016be7c6a.editor.meta
+.godot/imported/Radial2D.svg-4380d9841bddc115105cff2016be7c6a.md5
+.godot/imported/SceneTypesIcon.svg-66e2255bd3398007bec03a5cbfa4d0aa.ctex
+.godot/imported/SceneTypesIcon.svg-66e2255bd3398007bec03a5cbfa4d0aa.md5
+.godot/imported/ToolIcon.svg-70ad73abc45e13fa3044b68113c3b2ea.ctex
+.godot/imported/ToolIcon.svg-70ad73abc45e13fa3044b68113c3b2ea.md5
+.godot/imported/checker_pattern_dark.png-70cedad2d3abf4ad6166d6614eefa7fb.bptc.ctex
+.godot/imported/checker_pattern_dark.png-70cedad2d3abf4ad6166d6614eefa7fb.md5
+.godot/imported/circle_01.png-9bd5821faa9f6be7ab25beb08e8a7dfb.ctex
+.godot/imported/circle_01.png-9bd5821faa9f6be7ab25beb08e8a7dfb.md5
+.godot/imported/circle_02.png-c0c083e18b573988b6ceffe74d6ed4bf.ctex
+.godot/imported/circle_02.png-c0c083e18b573988b6ceffe74d6ed4bf.md5
+.godot/imported/circle_03.png-d542af885205cd962478f03f6f78ecff.ctex
+.godot/imported/circle_03.png-d542af885205cd962478f03f6f78ecff.md5
+.godot/imported/circle_04.png-12d514f48d237d9e79dd4fad9a955638.ctex
+.godot/imported/circle_04.png-12d514f48d237d9e79dd4fad9a955638.md5
+.godot/imported/circle_05.png-2d6c777c446ba2a583b61d30e52bc466.ctex
+.godot/imported/circle_05.png-2d6c777c446ba2a583b61d30e52bc466.md5
+.godot/imported/dirt_01.png-2636e40bb863aa639e8315ccd3f5d259.ctex
+.godot/imported/dirt_01.png-2636e40bb863aa639e8315ccd3f5d259.md5
+.godot/imported/dirt_02.png-a9eb45487bc447ad74cc4761331e9d85.ctex
+.godot/imported/dirt_02.png-a9eb45487bc447ad74cc4761331e9d85.md5
+.godot/imported/dirt_03.png-aaa9d7654b319885150f03e513f37a44.ctex
+.godot/imported/dirt_03.png-aaa9d7654b319885150f03e513f37a44.md5
+.godot/imported/fire_01.png-8a53ffd605ec294e003c80b2eeeb794c.ctex
+.godot/imported/fire_01.png-8a53ffd605ec294e003c80b2eeeb794c.md5
+.godot/imported/fire_02.png-5e47ec94d86450bd36a9fe791b0abff6.ctex
+.godot/imported/fire_02.png-5e47ec94d86450bd36a9fe791b0abff6.md5
+.godot/imported/flame_01.png-578039d34a9ea6c8d8af8e6077b372a7.ctex
+.godot/imported/flame_01.png-578039d34a9ea6c8d8af8e6077b372a7.md5
+.godot/imported/flame_02.png-13f314bbf868fa240cf692eff6560a3b.ctex
+.godot/imported/flame_02.png-13f314bbf868fa240cf692eff6560a3b.md5
+.godot/imported/flame_03.png-aa573b91da2c8daf70550680d9f23b7b.ctex
+.godot/imported/flame_03.png-aa573b91da2c8daf70550680d9f23b7b.md5
+.godot/imported/flame_04.png-5507bcc2902252793582e15c0c54dd79.ctex
+.godot/imported/flame_04.png-5507bcc2902252793582e15c0c54dd79.md5
+.godot/imported/flame_05.png-b3fd8232ef40e549e555927093849354.ctex
+.godot/imported/flame_05.png-b3fd8232ef40e549e555927093849354.md5
+.godot/imported/flame_05_rotated.png-4f7db43db56a63ea24f41df7b1265024.ctex
+.godot/imported/flame_05_rotated.png-4f7db43db56a63ea24f41df7b1265024.md5
+.godot/imported/flame_06.png-c8cccb4524fa3ff51c3ed8b9505ad525.ctex
+.godot/imported/flame_06.png-c8cccb4524fa3ff51c3ed8b9505ad525.md5
+.godot/imported/flame_06_rotated.png-39fcdba7b5b0eff881bb1c28a9b75713.ctex
+.godot/imported/flame_06_rotated.png-39fcdba7b5b0eff881bb1c28a9b75713.md5
+.godot/imported/flare_01.png-a9946f2fcc298f4448a52e5029b074bc.ctex
+.godot/imported/flare_01.png-a9946f2fcc298f4448a52e5029b074bc.md5
+.godot/imported/german-shephard-bark-001.png-dbad3c39056de40666cfca37c2493e87.ctex
+.godot/imported/german-shephard-bark-001.png-dbad3c39056de40666cfca37c2493e87.md5
+.godot/imported/german-shephard-bark-002.png-9f88bb4be3015cb7d76e0b3a77843c5d.ctex
+.godot/imported/german-shephard-bark-002.png-9f88bb4be3015cb7d76e0b3a77843c5d.md5
+.godot/imported/german-shephard-bark-003.png-91b544867f8c517df9801422e29889e8.ctex
+.godot/imported/german-shephard-bark-003.png-91b544867f8c517df9801422e29889e8.md5
+.godot/imported/german-shephard-bark-004.png-a040ab89d9cc226d51220ae9cce1223e.ctex
+.godot/imported/german-shephard-bark-004.png-a040ab89d9cc226d51220ae9cce1223e.md5
+.godot/imported/german-shephard-bark-005.png-6bd15b3df93184b997c4cd659ef40b52.ctex
+.godot/imported/german-shephard-bark-005.png-6bd15b3df93184b997c4cd659ef40b52.md5
+.godot/imported/german-shephard-bite-001.png-706529e3f3d02e89d613a2d303aed795.ctex
+.godot/imported/german-shephard-bite-001.png-706529e3f3d02e89d613a2d303aed795.md5
+.godot/imported/german-shephard-bite-002.png-d2b1b685540b9cf7d8b5d9a3619f3eb8.ctex
+.godot/imported/german-shephard-bite-002.png-d2b1b685540b9cf7d8b5d9a3619f3eb8.md5
+.godot/imported/german-shephard-bite-003.png-6a9b0ceaf6ec223a018428e4cd746864.ctex
+.godot/imported/german-shephard-bite-003.png-6a9b0ceaf6ec223a018428e4cd746864.md5
+.godot/imported/german-shephard-bite-004.png-487c2a6a5b1cac2e3adb1874e57d8f93.ctex
+.godot/imported/german-shephard-bite-004.png-487c2a6a5b1cac2e3adb1874e57d8f93.md5
+.godot/imported/german-shephard-bite-005.png-418b44c8daed78e9ccbf7d7693c1248c.ctex
+.godot/imported/german-shephard-bite-005.png-418b44c8daed78e9ccbf7d7693c1248c.md5
+.godot/imported/german-shephard-death-001.png-05458df2220008d30f510ba49aee14cf.ctex
+.godot/imported/german-shephard-death-001.png-05458df2220008d30f510ba49aee14cf.md5
+.godot/imported/german-shephard-death-002.png-18f17702de3a5c33c0760ddefcf50c39.ctex
+.godot/imported/german-shephard-death-002.png-18f17702de3a5c33c0760ddefcf50c39.md5
+.godot/imported/german-shephard-death-003.png-f9f44331e69660b7ea93e73783446f9d.ctex
+.godot/imported/german-shephard-death-003.png-f9f44331e69660b7ea93e73783446f9d.md5
+.godot/imported/german-shephard-death-004.png-de23c21b551c01cfa9a96cf68479f9c4.ctex
+.godot/imported/german-shephard-death-004.png-de23c21b551c01cfa9a96cf68479f9c4.md5
+.godot/imported/german-shephard-death-005.png-9c74aa59c26788167f854ee0a7aacb75.ctex
+.godot/imported/german-shephard-death-005.png-9c74aa59c26788167f854ee0a7aacb75.md5
+.godot/imported/german-shephard-death-006.png-7d3d8b41f2c1af1fc21c7a559212046e.ctex
+.godot/imported/german-shephard-death-006.png-7d3d8b41f2c1af1fc21c7a559212046e.md5
+.godot/imported/german-shephard-death-007.png-a3b8627e099f88503585130f082cc389.ctex
+.godot/imported/german-shephard-death-007.png-a3b8627e099f88503585130f082cc389.md5
+.godot/imported/german-shephard-death-008.png-9bc8d9e5c997f2737ac31e7c0ef5fda1.ctex
+.godot/imported/german-shephard-death-008.png-9bc8d9e5c997f2737ac31e7c0ef5fda1.md5
+.godot/imported/german-shephard-death-009.png-790badb9c62ee8842707ae64a0cab3e6.ctex
+.godot/imported/german-shephard-death-009.png-790badb9c62ee8842707ae64a0cab3e6.md5
+.godot/imported/german-shephard-full-sprite-sheet-x300.png-1221930f24afd09712499315ad52d218.ctex
+.godot/imported/german-shephard-full-sprite-sheet-x300.png-1221930f24afd09712499315ad52d218.md5
+.godot/imported/german-shephard-full-sprite-sheet.png-44f9ac5366fe4a0565a4691f3a28c262.ctex
+.godot/imported/german-shephard-full-sprite-sheet.png-44f9ac5366fe4a0565a4691f3a28c262.md5
+.godot/imported/german-shephard-idle-001.png-70eab4c2a97c2e46a3ac9f6e33c74e4a.ctex
+.godot/imported/german-shephard-idle-001.png-70eab4c2a97c2e46a3ac9f6e33c74e4a.md5
+.godot/imported/german-shephard-idle-002.png-2698ca79df5c651bafb97369c4f4abe3.ctex
+.godot/imported/german-shephard-idle-002.png-2698ca79df5c651bafb97369c4f4abe3.md5
+.godot/imported/german-shephard-idle-003.png-77b14b0802366983ae3748091fdd33da.ctex
+.godot/imported/german-shephard-idle-003.png-77b14b0802366983ae3748091fdd33da.md5
+.godot/imported/german-shephard-idle-004.png-226c554a8f9d62b637887d2883056fff.ctex
+.godot/imported/german-shephard-idle-004.png-226c554a8f9d62b637887d2883056fff.md5
+.godot/imported/german-shephard-idle-005.png-e5a9b07bcd9121f4f10708e03f3f7835.ctex
+.godot/imported/german-shephard-idle-005.png-e5a9b07bcd9121f4f10708e03f3f7835.md5
+.godot/imported/german-shephard-idle-blink-001.png-3318d8ae59fbdeee7cce7bce26abe90a.ctex
+.godot/imported/german-shephard-idle-blink-001.png-3318d8ae59fbdeee7cce7bce26abe90a.md5
+.godot/imported/german-shephard-idle-blink-002.png-d9c8226afc4032d2aa81fd9b865a990f.ctex
+.godot/imported/german-shephard-idle-blink-002.png-d9c8226afc4032d2aa81fd9b865a990f.md5
+.godot/imported/german-shephard-idle-blink-003.png-98daa4b01921180b17993a87b65bf127.ctex
+.godot/imported/german-shephard-idle-blink-003.png-98daa4b01921180b17993a87b65bf127.md5
+.godot/imported/german-shephard-idle-blink-004.png-c85244a9e3c7872fa3d51eb4a0290afb.ctex
+.godot/imported/german-shephard-idle-blink-004.png-c85244a9e3c7872fa3d51eb4a0290afb.md5
+.godot/imported/german-shephard-idle-blink-005.png-35cd5af808b9631c778227c98ed593d5.ctex
+.godot/imported/german-shephard-idle-blink-005.png-35cd5af808b9631c778227c98ed593d5.md5
+.godot/imported/german-shephard-idle-blink-006.png-e35a1d19f6f73dd31dff1ededcc6d114.ctex
+.godot/imported/german-shephard-idle-blink-006.png-e35a1d19f6f73dd31dff1ededcc6d114.md5
+.godot/imported/german-shephard-run-001.png-429e94e0e8bc44d0f439c0081a9579a5.ctex
+.godot/imported/german-shephard-run-001.png-429e94e0e8bc44d0f439c0081a9579a5.md5
+.godot/imported/german-shephard-run-002.png-f2f152a177d4c75aa74faca6f222344f.ctex
+.godot/imported/german-shephard-run-002.png-f2f152a177d4c75aa74faca6f222344f.md5
+.godot/imported/german-shephard-run-003.png-2d040c15294bb760c99115125c120b82.ctex
+.godot/imported/german-shephard-run-003.png-2d040c15294bb760c99115125c120b82.md5
+.godot/imported/german-shephard-run-004.png-5d07be5456a4d5e660a33b7fadbad2a1.ctex
+.godot/imported/german-shephard-run-004.png-5d07be5456a4d5e660a33b7fadbad2a1.md5
+.godot/imported/german-shephard-sniff-001.png-9d7c128c2cfc839ebe7e9ee605a31590.ctex
+.godot/imported/german-shephard-sniff-001.png-9d7c128c2cfc839ebe7e9ee605a31590.md5
+.godot/imported/german-shephard-sniff-002.png-d974e7e4afaa471c0af2219f9c6498d4.ctex
+.godot/imported/german-shephard-sniff-002.png-d974e7e4afaa471c0af2219f9c6498d4.md5
+.godot/imported/german-shephard-sniff-003.png-87c8dda9063af7fa8dbb2cbd6b2ecd66.ctex
+.godot/imported/german-shephard-sniff-003.png-87c8dda9063af7fa8dbb2cbd6b2ecd66.md5
+.godot/imported/german-shephard-sniff-004.png-35051795a548fed2c9ba63b54fe49b77.ctex
+.godot/imported/german-shephard-sniff-004.png-35051795a548fed2c9ba63b54fe49b77.md5
+.godot/imported/german-shephard-sniff-005.png-e2defeaa489ec1c500719d7233548498.ctex
+.godot/imported/german-shephard-sniff-005.png-e2defeaa489ec1c500719d7233548498.md5
+.godot/imported/german-shephard-sniff-006.png-5632cec0f73c2951f05bef64c0ff59b0.ctex
+.godot/imported/german-shephard-sniff-006.png-5632cec0f73c2951f05bef64c0ff59b0.md5
+.godot/imported/german-shephard-sniff-007.png-9a49fd050440c51783145a1ab5f61fd1.ctex
+.godot/imported/german-shephard-sniff-007.png-9a49fd050440c51783145a1ab5f61fd1.md5
+.godot/imported/german-shephard-sniff-008.png-0c3f8f4f86f7754bc8ea9d84149830a6.ctex
+.godot/imported/german-shephard-sniff-008.png-0c3f8f4f86f7754bc8ea9d84149830a6.md5
+.godot/imported/german-shephard-tracking-001.png-0b9dbf4a98879bc9b6f121e13d5a44de.ctex
+.godot/imported/german-shephard-tracking-001.png-0b9dbf4a98879bc9b6f121e13d5a44de.md5
+.godot/imported/german-shephard-tracking-002.png-2a82a427dd885db94033ca64ac1f6bd3.ctex
+.godot/imported/german-shephard-tracking-002.png-2a82a427dd885db94033ca64ac1f6bd3.md5
+.godot/imported/german-shephard-tracking-003.png-421c1fe3a480c530ee030f61cf0d845b.ctex
+.godot/imported/german-shephard-tracking-003.png-421c1fe3a480c530ee030f61cf0d845b.md5
+.godot/imported/german-shephard-tracking-004.png-a7370f8fa723fd1398ac38913c94a601.ctex
+.godot/imported/german-shephard-tracking-004.png-a7370f8fa723fd1398ac38913c94a601.md5
+.godot/imported/german-shephard-tracking-005.png-4666cdbd6194691a4b7fb17f650798c2.ctex
+.godot/imported/german-shephard-tracking-005.png-4666cdbd6194691a4b7fb17f650798c2.md5
+.godot/imported/german-shephard-tracking-006.png-7d6b86744b3b78b99b3b96b695cc0c65.ctex
+.godot/imported/german-shephard-tracking-006.png-7d6b86744b3b78b99b3b96b695cc0c65.md5
+.godot/imported/german-shephard-tracking-007.png-1af270b4c28992e97765ddc3c3932354.ctex
+.godot/imported/german-shephard-tracking-007.png-1af270b4c28992e97765ddc3c3932354.md5
+.godot/imported/german-shephard-walk-001.png-ddc252b28fddf3a8c829be8e7a58a6f3.ctex
+.godot/imported/german-shephard-walk-001.png-ddc252b28fddf3a8c829be8e7a58a6f3.md5
+.godot/imported/german-shephard-walk-002.png-2d2999f19be55117a1509f9b37cd031a.ctex
+.godot/imported/german-shephard-walk-002.png-2d2999f19be55117a1509f9b37cd031a.md5
+.godot/imported/german-shephard-walk-003.png-fee6054d2316fffa4f53627bdd3869d3.ctex
+.godot/imported/german-shephard-walk-003.png-fee6054d2316fffa4f53627bdd3869d3.md5
+.godot/imported/german-shephard-walk-004.png-a2f62850494caadc583fb6c153440333.ctex
+.godot/imported/german-shephard-walk-004.png-a2f62850494caadc583fb6c153440333.md5
+.godot/imported/german-shephard-walk-005.png-31bf6144d0e42dcda9350771ab145cd4.ctex
+.godot/imported/german-shephard-walk-005.png-31bf6144d0e42dcda9350771ab145cd4.md5
+.godot/imported/icon.svg-4a363dd8a0910a06d0eee7b7bad8c85b.ctex
+.godot/imported/icon.svg-4a363dd8a0910a06d0eee7b7bad8c85b.md5
+.godot/imported/image_2024-10-21_005014875.png-22f299cd5dfc7c2dbd54b95b885f365f.ctex
+.godot/imported/image_2024-10-21_005014875.png-22f299cd5dfc7c2dbd54b95b885f365f.md5
+.godot/imported/inventory_container.png-12241277f279bfc4bf7d5dad6b3e8ff2.ctex
+.godot/imported/inventory_container.png-12241277f279bfc4bf7d5dad6b3e8ff2.md5
+.godot/imported/level_spritesheet.png-26a44dd21a040a5480d5ccba54377d99.ctex
+.godot/imported/level_spritesheet.png-26a44dd21a040a5480d5ccba54377d99.md5
+.godot/imported/light_01.png-7be74028366de437e7b0c8f542b7c268.ctex
+.godot/imported/light_01.png-7be74028366de437e7b0c8f542b7c268.md5
+.godot/imported/light_02.png-b6549820c060c2cbcd6b1e0d46c32f1c.ctex
+.godot/imported/light_02.png-b6549820c060c2cbcd6b1e0d46c32f1c.md5
+.godot/imported/light_03.png-739840e55874b5c5542be49a1b7f1f01.ctex
+.godot/imported/light_03.png-739840e55874b5c5542be49a1b7f1f01.md5
+.godot/imported/light_ball_512.png-b9a2ebd008f51d899b5f898a002aa0ce.ctex
+.godot/imported/light_ball_512.png-b9a2ebd008f51d899b5f898a002aa0ce.md5
+.godot/imported/lightpole.png-ca27ef9a3cb8005e437b86a117b64c2c.ctex
+.godot/imported/lightpole.png-ca27ef9a3cb8005e437b86a117b64c2c.md5
+.godot/imported/lightpole.png-e64cad6d0bfb3d58a2ad0bdb5fc3d1cc.ctex
+.godot/imported/lightpole.png-e64cad6d0bfb3d58a2ad0bdb5fc3d1cc.md5
+.godot/imported/logo_square_2d.png-ee7cb55fd9c4d1815ce7e83cd5401198.ctex
+.godot/imported/logo_square_2d.png-ee7cb55fd9c4d1815ce7e83cd5401198.md5
+.godot/imported/magic_01.png-a69c8d058708f3d13cf8f3da47f94f9d.ctex
+.godot/imported/magic_01.png-a69c8d058708f3d13cf8f3da47f94f9d.md5
+.godot/imported/magic_02.png-51877ebbba815e8906a81974ec3f6964.ctex
+.godot/imported/magic_02.png-51877ebbba815e8906a81974ec3f6964.md5
+.godot/imported/magic_03.png-80512eff8444e33d0c62809d33371a2d.ctex
+.godot/imported/magic_03.png-80512eff8444e33d0c62809d33371a2d.md5
+.godot/imported/magic_04.png-81bc6840055e90e7219c7623b90b678c.ctex
+.godot/imported/magic_04.png-81bc6840055e90e7219c7623b90b678c.md5
+.godot/imported/magic_05.png-4c96dbe20df81862e7b812d14bc1fdd1.ctex
+.godot/imported/magic_05.png-4c96dbe20df81862e7b812d14bc1fdd1.md5
+.godot/imported/muzzle_01.png-6b5b53ab7ff581d37d9574d2b01cae58.ctex
+.godot/imported/muzzle_01.png-6b5b53ab7ff581d37d9574d2b01cae58.md5
+.godot/imported/muzzle_01_rotated.png-948adf368ba3b82f278931b78ac34c91.ctex
+.godot/imported/muzzle_01_rotated.png-948adf368ba3b82f278931b78ac34c91.md5
+.godot/imported/muzzle_02.png-5f7494331d894d23b8317af11bf7cc4a.ctex
+.godot/imported/muzzle_02.png-5f7494331d894d23b8317af11bf7cc4a.md5
+.godot/imported/muzzle_02_rotated.png-ffde80259e0b86d5ffbce475be4b4177.ctex
+.godot/imported/muzzle_02_rotated.png-ffde80259e0b86d5ffbce475be4b4177.md5
+.godot/imported/muzzle_03.png-1239ba890c93338bc21f3f74f77b786f.ctex
+.godot/imported/muzzle_03.png-1239ba890c93338bc21f3f74f77b786f.md5
+.godot/imported/muzzle_03_rotated.png-4ddb28a128748e069bfe7c72a2359311.ctex
+.godot/imported/muzzle_03_rotated.png-4ddb28a128748e069bfe7c72a2359311.md5
+.godot/imported/muzzle_04.png-5687910aa2f9d3ca2c89f51b2e3d2c14.ctex
+.godot/imported/muzzle_04.png-5687910aa2f9d3ca2c89f51b2e3d2c14.md5
+.godot/imported/muzzle_04_rotated.png-4bc2aa93ceeb4695f2701b6dbd1e1fe9.ctex
+.godot/imported/muzzle_04_rotated.png-4bc2aa93ceeb4695f2701b6dbd1e1fe9.md5
+.godot/imported/muzzle_05.png-4495385d4c2765cb6d5ce751f8e0b962.ctex
+.godot/imported/muzzle_05.png-4495385d4c2765cb6d5ce751f8e0b962.md5
+.godot/imported/muzzle_05_rotated.png-e1cbfde5943e4e01c81ca7fcdfe40ff9.ctex
+.godot/imported/muzzle_05_rotated.png-e1cbfde5943e4e01c81ca7fcdfe40ff9.md5
+.godot/imported/pcam.png-b47f2162711872d393e41cd87a0c6a0c.ctex
+.godot/imported/pcam.png-b47f2162711872d393e41cd87a0c6a0c.md5
+.godot/imported/pcam_cinematic.png-5afc90ed91c84a11149ff61bdbf4e656.ctex
+.godot/imported/pcam_cinematic.png-5afc90ed91c84a11149ff61bdbf4e656.md5
+.godot/imported/pcam_magnet.png-6afcdb9fb0a02b8d344a12ecef24e5e2.ctex
+.godot/imported/pcam_magnet.png-6afcdb9fb0a02b8d344a12ecef24e5e2.md5
+.godot/imported/pcam_path.png-8599e99631006e957d514da3a231c3a8.ctex
+.godot/imported/pcam_path.png-8599e99631006e957d514da3a231c3a8.md5
+.godot/imported/pcam_room.png-67f9a66d74bb835fa525247cfccd66e4.ctex
+.godot/imported/pcam_room.png-67f9a66d74bb835fa525247cfccd66e4.md5
+.godot/imported/pcam_target.png-74f658309b0ca8b48bf428006da9853d.ctex
+.godot/imported/pcam_target.png-74f658309b0ca8b48bf428006da9853d.md5
+.godot/imported/pcam_zoom.png-abbafcdec3ab4c946acbc0781cdd3153.ctex
+.godot/imported/pcam_zoom.png-abbafcdec3ab4c946acbc0781cdd3153.md5
+.godot/imported/phantom_camera_2d.svg-e5483cbc858fc5f95f7210b1649dff0d.ctex
+.godot/imported/phantom_camera_2d.svg-e5483cbc858fc5f95f7210b1649dff0d.md5
+.godot/imported/phantom_camera_2d_sprite.png-deab230b83ae03aeb308a08ff66b8dbc.ctex
+.godot/imported/phantom_camera_2d_sprite.png-deab230b83ae03aeb308a08ff66b8dbc.md5
+.godot/imported/phantom_camera_3d.svg-41ed612e834470377fb56eebffa083fe.ctex
+.godot/imported/phantom_camera_3d.svg-41ed612e834470377fb56eebffa083fe.md5
+.godot/imported/phantom_camera_camera_3d_resource.svg-f8bf8d1a5b7442fd6933bfbed999d57d.ctex
+.godot/imported/phantom_camera_camera_3d_resource.svg-f8bf8d1a5b7442fd6933bfbed999d57d.md5
+.godot/imported/phantom_camera_gizmo.svg-ba1aacb9b1c5f4ef401d3bd3697a542b.md5
+.godot/imported/phantom_camera_gizmo.svg-ba1aacb9b1c5f4ef401d3bd3697a542b.s3tc.ctex
+.godot/imported/phantom_camera_glow_logo.png-078f944973b55b32029ba02980211fe0.ctex
+.godot/imported/phantom_camera_glow_logo.png-078f944973b55b32029ba02980211fe0.md5
+.godot/imported/phantom_camera_host.svg-3150f8f2d82ca9ecab9a3a415da21c5b.ctex
+.godot/imported/phantom_camera_host.svg-3150f8f2d82ca9ecab9a3a415da21c5b.editor.ctex
+.godot/imported/phantom_camera_host.svg-3150f8f2d82ca9ecab9a3a415da21c5b.editor.meta
+.godot/imported/phantom_camera_host.svg-3150f8f2d82ca9ecab9a3a415da21c5b.md5
+.godot/imported/phantom_camera_logo.png-8b8d347b5e4800c86cd8095d030a3e5a.ctex
+.godot/imported/phantom_camera_logo.png-8b8d347b5e4800c86cd8095d030a3e5a.md5
+.godot/imported/phantom_camera_noise_emitter_2d.svg-1b3d37fe36964dc86a6ea6681d0772bb.ctex
+.godot/imported/phantom_camera_noise_emitter_2d.svg-1b3d37fe36964dc86a6ea6681d0772bb.md5
+.godot/imported/phantom_camera_noise_emitter_3d.svg-9b90fe54aa618f65d52ac94515d41ea4.md5
+.godot/imported/phantom_camera_noise_emitter_3d.svg-9b90fe54aa618f65d52ac94515d41ea4.s3tc.ctex
+.godot/imported/phantom_camera_noise_emitter_gizmo.svg-9a593802655a8d5038c7f55deab3882d.md5
+.godot/imported/phantom_camera_noise_emitter_gizmo.svg-9a593802655a8d5038c7f55deab3882d.s3tc.ctex
+.godot/imported/phantom_camera_noise_resource.svg-a81ed223714edd2c0d9cfa00be0c3f58.ctex
+.godot/imported/phantom_camera_noise_resource.svg-a81ed223714edd2c0d9cfa00be0c3f58.md5
+.godot/imported/phantom_camera_tween.svg-16faced08ef4a5f3458264d894230dbd.ctex
+.godot/imported/phantom_camera_tween.svg-16faced08ef4a5f3458264d894230dbd.editor.ctex
+.godot/imported/phantom_camera_tween.svg-16faced08ef4a5f3458264d894230dbd.editor.meta
+.godot/imported/phantom_camera_tween.svg-16faced08ef4a5f3458264d894230dbd.md5
+.godot/imported/phantom_camera_updater_panel_icon.svg-19823e6cbee8115f8b2554d0ee6e79db.ctex
+.godot/imported/phantom_camera_updater_panel_icon.svg-19823e6cbee8115f8b2554d0ee6e79db.md5
+.godot/imported/player_sprite.svg-8862ecb19e12152eb892607676f3831f.ctex
+.godot/imported/player_sprite.svg-8862ecb19e12152eb892607676f3831f.md5
+.godot/imported/scorch_01.png-d4548cbfbb7cf4e7101ff79a5d5b5ea3.ctex
+.godot/imported/scorch_01.png-d4548cbfbb7cf4e7101ff79a5d5b5ea3.md5
+.godot/imported/scorch_02.png-1b67a29a90278d7ebcbedc355a783969.ctex
+.godot/imported/scorch_02.png-1b67a29a90278d7ebcbedc355a783969.md5
+.godot/imported/scorch_03.png-44e72463b931759356bc18eeb22da879.ctex
+.godot/imported/scorch_03.png-44e72463b931759356bc18eeb22da879.md5
+.godot/imported/scratch_01.png-1291aab6b34bb80847cb4eb62a74be13.ctex
+.godot/imported/scratch_01.png-1291aab6b34bb80847cb4eb62a74be13.md5
+.godot/imported/sign_prompt.png-18d451127e1cd1a16367acd23cec47e5.ctex
+.godot/imported/sign_prompt.png-18d451127e1cd1a16367acd23cec47e5.md5
+.godot/imported/slash_01.png-098bfddda61a4d34c5ea683c970e6b5b.ctex
+.godot/imported/slash_01.png-098bfddda61a4d34c5ea683c970e6b5b.md5
+.godot/imported/slash_02.png-9e4b04958d7eb859bc50979f0096f8fb.ctex
+.godot/imported/slash_02.png-9e4b04958d7eb859bc50979f0096f8fb.md5
+.godot/imported/slash_03.png-5959d060c2fedede512f4722f832cfd2.ctex
+.godot/imported/slash_03.png-5959d060c2fedede512f4722f832cfd2.md5
+.godot/imported/slash_04.png-e65ab4bfdc32d5937df93e7f81116d39.ctex
+.godot/imported/slash_04.png-e65ab4bfdc32d5937df93e7f81116d39.md5
+.godot/imported/smoke_01.png-f3378a523cc5b37aa0d0818eab7923e2.ctex
+.godot/imported/smoke_01.png-f3378a523cc5b37aa0d0818eab7923e2.md5
+.godot/imported/smoke_02.png-342637ac1f576012e5f69daefc0dde85.ctex
+.godot/imported/smoke_02.png-342637ac1f576012e5f69daefc0dde85.md5
+.godot/imported/smoke_03.png-315f692d7b8c54025d32e99ad16c84a1.ctex
+.godot/imported/smoke_03.png-315f692d7b8c54025d32e99ad16c84a1.md5
+.godot/imported/smoke_04.png-5ef826fbb55e52a15a33374d64078595.ctex
+.godot/imported/smoke_04.png-5ef826fbb55e52a15a33374d64078595.md5
+.godot/imported/smoke_05.png-be920c24bfdf5dac9edfdac2c8a06fac.ctex
+.godot/imported/smoke_05.png-be920c24bfdf5dac9edfdac2c8a06fac.md5
+.godot/imported/smoke_06.png-64729bfce5735a4ed901411640367330.ctex
+.godot/imported/smoke_06.png-64729bfce5735a4ed901411640367330.md5
+.godot/imported/smoke_07.png-83e8d317e539377942ddc86d76ac5df1.ctex
+.godot/imported/smoke_07.png-83e8d317e539377942ddc86d76ac5df1.md5
+.godot/imported/smoke_08.png-268d0c9a454a70abd5cbf5e8d1a581d9.ctex
+.godot/imported/smoke_08.png-268d0c9a454a70abd5cbf5e8d1a581d9.md5
+.godot/imported/smoke_09.png-37da119eaa3f8ece92a4bb9df7057528.ctex
+.godot/imported/smoke_09.png-37da119eaa3f8ece92a4bb9df7057528.md5
+.godot/imported/smoke_10.png-9cdab4a302dad92b72b23c4add8d8f5c.ctex
+.godot/imported/smoke_10.png-9cdab4a302dad92b72b23c4add8d8f5c.md5
+.godot/imported/softbody2d.png-34eebb6b593155f3cca6d915a9549869.ctex
+.godot/imported/softbody2d.png-34eebb6b593155f3cca6d915a9549869.md5
+.godot/imported/softbody2d.svg-10ab834be780722c00cf50ffddb981c8.ctex
+.godot/imported/softbody2d.svg-10ab834be780722c00cf50ffddb981c8.editor.ctex
+.godot/imported/softbody2d.svg-10ab834be780722c00cf50ffddb981c8.editor.meta
+.godot/imported/softbody2d.svg-10ab834be780722c00cf50ffddb981c8.md5
+.godot/imported/softbody2d_banner.jpg-bc7627573dd9123baa6a5b33136e178b.ctex
+.godot/imported/softbody2d_banner.jpg-bc7627573dd9123baa6a5b33136e178b.md5
+.godot/imported/softbody2d_full.png-053fb32b8795a9aefcb864c4f6f9543d.ctex
+.godot/imported/softbody2d_full.png-053fb32b8795a9aefcb864c4f6f9543d.md5
+.godot/imported/softbody2d_inner.png-e2625d89145bfeb0ae2fe91c33efc8ce.ctex
+.godot/imported/softbody2d_inner.png-e2625d89145bfeb0ae2fe91c33efc8ce.md5
+.godot/imported/spark_01.png-5d3cd8844c4c7bf36ab5c15bbdf2212f.ctex
+.godot/imported/spark_01.png-5d3cd8844c4c7bf36ab5c15bbdf2212f.md5
+.godot/imported/spark_02.png-5e50dbc434260af2153ca5a43e08726b.ctex
+.godot/imported/spark_02.png-5e50dbc434260af2153ca5a43e08726b.md5
+.godot/imported/spark_03.png-5b4ca9b4022ebca888e09309cbd4a81b.ctex
+.godot/imported/spark_03.png-5b4ca9b4022ebca888e09309cbd4a81b.md5
+.godot/imported/spark_04.png-08436cfd8d8b364232b4851b8c322296.ctex
+.godot/imported/spark_04.png-08436cfd8d8b364232b4851b8c322296.md5
+.godot/imported/spark_05.png-b79596ab24169d29e58c4e40317a2373.ctex
+.godot/imported/spark_05.png-b79596ab24169d29e58c4e40317a2373.md5
+.godot/imported/spark_05_rotated.png-2acaf481dce757294474cd65fc143431.ctex
+.godot/imported/spark_05_rotated.png-2acaf481dce757294474cd65fc143431.md5
+.godot/imported/spark_06.png-2149877f56d761f9fef62e5b224acc12.ctex
+.godot/imported/spark_06.png-2149877f56d761f9fef62e5b224acc12.md5
+.godot/imported/spark_06_rotated.png-a13828006144443ae6058582986a928a.ctex
+.godot/imported/spark_06_rotated.png-a13828006144443ae6058582986a928a.md5
+.godot/imported/spark_07.png-bb4af08be8c2fa7113b6f1bb60fb4de6.ctex
+.godot/imported/spark_07.png-bb4af08be8c2fa7113b6f1bb60fb4de6.md5
+.godot/imported/star_01.png-2dd44d962bf03e0b028a090023fd1976.ctex
+.godot/imported/star_01.png-2dd44d962bf03e0b028a090023fd1976.md5
+.godot/imported/star_02.png-019ee31c4232c6f06a5ad75c333b69a1.ctex
+.godot/imported/star_02.png-019ee31c4232c6f06a5ad75c333b69a1.md5
+.godot/imported/star_03.png-46ac3635bd4ae8d05320f54e861da976.ctex
+.godot/imported/star_03.png-46ac3635bd4ae8d05320f54e861da976.md5
+.godot/imported/star_04.png-9f1018fb6e102b8505c238c58ed1695a.ctex
+.godot/imported/star_04.png-9f1018fb6e102b8505c238c58ed1695a.md5
+.godot/imported/star_05.png-c10380b2bdf1ff0843313c7d6605fa18.ctex
+.godot/imported/star_05.png-c10380b2bdf1ff0843313c7d6605fa18.md5
+.godot/imported/star_06.png-456b8e6515e1faabdf86b6fd2556a544.ctex
+.godot/imported/star_06.png-456b8e6515e1faabdf86b6fd2556a544.md5
+.godot/imported/star_07.png-270a23685f71e687b5f82d6e0794ffda.ctex
+.godot/imported/star_07.png-270a23685f71e687b5f82d6e0794ffda.md5
+.godot/imported/star_08.png-9c3bbbba4f9292dd851707612d0cc814.ctex
+.godot/imported/star_08.png-9c3bbbba4f9292dd851707612d0cc814.md5
+.godot/imported/star_09.png-287477eeac6e9af1dbdc968755b97432.ctex
+.godot/imported/star_09.png-287477eeac6e9af1dbdc968755b97432.md5
+.godot/imported/symbol_01.png-5b9ea60a310faaff2c3403de92c36885.ctex
+.godot/imported/symbol_01.png-5b9ea60a310faaff2c3403de92c36885.md5
+.godot/imported/symbol_02.png-0442f22573016e9a11996f6923840860.ctex
+.godot/imported/symbol_02.png-0442f22573016e9a11996f6923840860.md5
+.godot/imported/target.png-878c5e8d057c8a9a4c2322d4ab88e9ef.md5
+.godot/imported/target.png-878c5e8d057c8a9a4c2322d4ab88e9ef.s3tc.ctex
+.godot/imported/trace_01.png-534a36da64722acb1573600948127b58.ctex
+.godot/imported/trace_01.png-534a36da64722acb1573600948127b58.md5
+.godot/imported/trace_01_rotated.png-14f31320f062688d1d469a841893dc5e.ctex
+.godot/imported/trace_01_rotated.png-14f31320f062688d1d469a841893dc5e.md5
+.godot/imported/trace_02.png-d020d082e8e6e5cc5e3ea0f58347650d.ctex
+.godot/imported/trace_02.png-d020d082e8e6e5cc5e3ea0f58347650d.md5
+.godot/imported/trace_02_rotated.png-9fb4c5fb8c1943b6f36990fe234ace67.ctex
+.godot/imported/trace_02_rotated.png-9fb4c5fb8c1943b6f36990fe234ace67.md5
+.godot/imported/trace_03.png-f61022e19bfd538693ca402b1aa17c1c.ctex
+.godot/imported/trace_03.png-f61022e19bfd538693ca402b1aa17c1c.md5
+.godot/imported/trace_03_rotated.png-66dbd30284c657630f371826a1153cc8.ctex
+.godot/imported/trace_03_rotated.png-66dbd30284c657630f371826a1153cc8.md5
+.godot/imported/trace_04.png-11dd0ac0edc787aae21f58a82b2e74d6.ctex
+.godot/imported/trace_04.png-11dd0ac0edc787aae21f58a82b2e74d6.md5
+.godot/imported/trace_04_rotated.png-ef1d75e02a3dcc4d865d117a9b5739ab.ctex
+.godot/imported/trace_04_rotated.png-ef1d75e02a3dcc4d865d117a9b5739ab.md5
+.godot/imported/trace_05.png-f00edcf7857c63d3c778ab8db8d823a9.ctex
+.godot/imported/trace_05.png-f00edcf7857c63d3c778ab8db8d823a9.md5
+.godot/imported/trace_05_rotated.png-28f5290c7aab05116cb7671b32a925c6.ctex
+.godot/imported/trace_05_rotated.png-28f5290c7aab05116cb7671b32a925c6.md5
+.godot/imported/trace_06.png-ddd4eaa2162b1bcb2dac07f3752bfe36.ctex
+.godot/imported/trace_06.png-ddd4eaa2162b1bcb2dac07f3752bfe36.md5
+.godot/imported/trace_06_rotated.png-a4b1b4239151dd7bbc3b3700453af6ed.ctex
+.godot/imported/trace_06_rotated.png-a4b1b4239151dd7bbc3b3700453af6ed.md5
+.godot/imported/trace_07.png-3664f7498346329138449834deef482f.ctex
+.godot/imported/trace_07.png-3664f7498346329138449834deef482f.md5
+.godot/imported/trace_07_rotated.png-0ba9418741caa436bcc8c0ef79f66d37.ctex
+.godot/imported/trace_07_rotated.png-0ba9418741caa436bcc8c0ef79f66d37.md5
+.godot/imported/twirl_01.png-4eec85b07d3088871ddf2901f4fc61a1.ctex
+.godot/imported/twirl_01.png-4eec85b07d3088871ddf2901f4fc61a1.md5
+.godot/imported/twirl_02.png-8a207734234698b1193ac6a5b3833f15.ctex
+.godot/imported/twirl_02.png-8a207734234698b1193ac6a5b3833f15.md5
+.godot/imported/twirl_03.png-c58325fee0c93702c3429e69a1cfe62b.ctex
+.godot/imported/twirl_03.png-c58325fee0c93702c3429e69a1cfe62b.md5
+.godot/imported/voronoi_icon.png-2535410cd471b1c819b10e29f605ac2f.ctex
+.godot/imported/voronoi_icon.png-2535410cd471b1c819b10e29f605ac2f.md5
+.godot/imported/window_01.png-959d92318ac3db16ebfe2a940f303862.ctex
+.godot/imported/window_01.png-959d92318ac3db16ebfe2a940f303862.md5
+.godot/imported/window_02.png-809ff2971e76cfdd56278cce523ebe02.ctex
+.godot/imported/window_02.png-809ff2971e76cfdd56278cce523ebe02.md5
+.godot/imported/window_03.png-ebb4a592c3660d87aec9a3287e6657ed.ctex
+.godot/imported/window_03.png-ebb4a592c3660d87aec9a3287e6657ed.md5
+.godot/imported/window_04.png-ad94302d1d5a11ea5eb3f2022389b79b.ctex
+.godot/imported/window_04.png-ad94302d1d5a11ea5eb3f2022389b79b.md5
+.godot/scene_groups_cache.cfg
+.godot/shader_cache/BestFitNormalShaderRD/39f2ea23816487c10d360b9864d47ee2f442f63ee4e927cf6d305a4943116eb8/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/BlitShaderRD/35cc051453b0b6c508ba9cf2c4c708c150540129c35ab78d0b3e75cb082ff617/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/BokehDofShaderRD/8e1f1a770e3e21818d4ede9fae2e50fcdcd535ebb7b3f0cd7e6d4fcbe8ba1e4b/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CanvasOcclusionShaderRD/35582d62f2d6ae0bb50bf731b5eb675530010184adcee7ceb05abe3086f47beb/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CanvasSdfShaderRD/44c7474702251857170b8af143b065873ad2ec3dccb71150b8e18975658d6cae/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/45fb1ddc6499e56682916a355ce2839e61f42dfe.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/69f45d4af6ba607ae69aa562463f2571dddf50db.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/6b3b870743b828dcd054fdf31e0034e036dad94f.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/7d18bd726a158f1a35b723c8e73e7de5ebb3d37c.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/8a7277c8d3ac029b087c3fa9c55de85560be5119.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/c0a681ae42aa3e0b5abba232ccae0b036be455e4.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/c58570947be7f76937b1582424c0fd3d81be0352.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/ddbe30d4d1be5d69b00075293fd27da8decd4af2.vulkan.cache
+.godot/shader_cache/CanvasShaderRD/e1d6a23447a7117e583232516937f93031932abd27821abd2ef0d33ec25dd189/f3e258e8f7ec2e7e740b62f3bc48ecf5c99fb0db.vulkan.cache
+.godot/shader_cache/ClusterDebugShaderRD/97eba1ffd80b496f2f17b402281f66c152df9eb8ada5b22548d47497578ae4e2/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/ClusterRenderShaderRD/b2fe0a8f132a2e6fa4faa2397c620db08d6a2c805966da1518fb291b67f310c4/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/ClusterStoreShaderRD/2e1ef0919395817650d1c5fe9a80baf1d7016941fedaf673b192f92d6e69a6f3/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CopyShaderRD/d235581164a332f65ce10ffffbb3f985dfeaa6529c1a63a31dd4fa9445f8409c/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CopyToFbShaderRD/bdf8d0efcbd6ef08bd41ec5327d14ab99f3e36ad6a45a019ddf16da825f0d3fc/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CubeToDpShaderRD/31a71a91d5b71b452213a11e926655ae63dbf295a42bc64db18729459eb82293/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CubemapDownsamplerShaderRD/1cab170e74436022b49c3395b59b1dd21970882e819ce24c8c632e7dc4e20732/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CubemapFilterShaderRD/ca5df91e73a61f2ab033ad93bfd53bc446766756fa1c925196166e141ce4a9d4/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/CubemapRoughnessShaderRD/f980d36001c9383087026141ad354cd8b724f581876fb099e1659f6018330a45/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/FsrUpscaleShaderRD/7e836f2037e94a2b5d61e71d2a76149f39f5eae39f3b3c3d3fae0377822b9926/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/GiShaderRD/e934d613e0405d1fb471250f2bbe120e2164992376e531566b056d6eb8a2ac65/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/LuminanceReduceShaderRD/68281ae1dcc55faba1f0afea9b72c1163a4ad27d17de27372513314e6460278b/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/MotionVectorsShaderRD/6e7804d87276d05ceaa7ecd13accb9e2d62027e5d3d316855bbce8d5f3582e0a/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/ParticlesCopyShaderRD/fcf6f307ddf3a8776841b3db0a420e7b7f26a06b89a3f5d62ed6e01a3fac60f3/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/ParticlesShaderRD/06599ea92c260d0d855963c19732352faff69a3f1cc44e52dd4063bef77a4013/f128cab0b22fb7e0d9f023d6cdb81309be392d95.vulkan.cache
+.godot/shader_cache/ResolveShaderRD/f70e45ed40e1cb681a08f9b30684a483a459295f6ddc8fda718832feea2fc939/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/048236defb6bf03aff4593ae5e1ee179e6446005.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/0f1bcf11b9f7757773a7866f1cd2e297cb2acf5f.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/1d94d7653c04fb7febbe6df8d6c0f471ee8df8ed.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/2b83ada958e476cf26531ce107fe1c0d75fac7be.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/3ee92779f31d8b7471ea1440cef676bd33f29c3b.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/484574d6966da5fa625415ab5c4d35d8a9fde9f7.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/7fb66440f65dac23b75016fc52fb82ae26e9393f.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/8c4a6577a4ef29bb59d10356dbe5e400d812d8bb.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/8eb7aeac3861680a0202f049c0bfdcf05b99b274.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/a6d99b637dfee75712ae57f13dc63ae39e299a45.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/a8d4cef55e3ab1332d431b88da8465c79f0e608a.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/aa0086cc160e9e167e95546ad5eb0423d596c5b3.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/ab60f8b228c0dad11d9d882c2ab4f61eb6ca2f20.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/afe1c0449d843047874ee4b0dda3f797decb0436.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/b7b2f398c116e26c751517dd8d44535f700f825f.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/c4c828897f8a3fe72e3713d35b4ba452d7ed9acf.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/c911b2eb203b7525047b1fc26929407fb3d4191d.vulkan.cache
+.godot/shader_cache/SceneForwardClusteredShaderRD/7cca8ea1f84855bbf6a0d11643fb66d7dba369d79c71d31e486e6ac264a1f4bc/fe8dec228868b5370e5ab7c53602014f601705fc.vulkan.cache
+.godot/shader_cache/ScreenSpaceReflectionFilterShaderRD/3d7153108e3e685a2bfc3d9ebce50c32246a24e292d56f501ec234fbcc5c4bc5/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/ScreenSpaceReflectionScaleShaderRD/6ed2e19e80111fc276a09f9c11d1ce530a32d6323f23e21b2b04ae366df5ef0e/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/ScreenSpaceReflectionShaderRD/5dd363b7f687642965ca6e33422dc457724810d9112ffb00cf431b73e2d8111b/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SdfgiDebugProbesShaderRD/a973fd315fded4dd909d90a907f017f3c79a0a62dfb6ff1f6d881898da1fcb00/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SdfgiDebugShaderRD/9ae54d384681deaf8dd9d7bac102e3d34d987a6f28ccb484a9bd2c8107bcfc03/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SdfgiDirectLightShaderRD/c15a03edb6fec79d13b2c3a05d3e0bc8b61298daf7002a03b7d5c999cd9f6557/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SdfgiIntegrateShaderRD/a6d02afd9a703304fcdd999dfb9e1507cc138f4cc69c09a86a3e8e8173abb98a/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SdfgiPreprocessShaderRD/12f4269610de2c46e533ff6c9fde01ff7789ed44e6319a2a9e0ce4d05b8f861e/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/ShadowFrustumShaderRD/d70e2bd2a8a2a27df0de22ef0fbcce9b515ab697cb9e015782e3966fc380a36f/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SkeletonShaderRD/f66bef306c6d69c5a96f805c8d7ca92659b71cd713a6c0e6860ae1db1b753eac/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SkyShaderRD/0f7482a4dbb9eeecbc60563d2042aefedf79a75b4a1e1ecdf300852c0421e3b4/03e3b11c69e24394b2d955a8c0ba85587bb70839.vulkan.cache
+.godot/shader_cache/SkyShaderRD/0f7482a4dbb9eeecbc60563d2042aefedf79a75b4a1e1ecdf300852c0421e3b4/0a0fb987bd6ede673a5edeb59834f887758ae2a6.vulkan.cache
+.godot/shader_cache/SkyShaderRD/0f7482a4dbb9eeecbc60563d2042aefedf79a75b4a1e1ecdf300852c0421e3b4/301c34f080b0d9fb9ff1c17636ea175173a43e1c.vulkan.cache
+.godot/shader_cache/SkyShaderRD/0f7482a4dbb9eeecbc60563d2042aefedf79a75b4a1e1ecdf300852c0421e3b4/de678811d1bad3cad4892a8db7b6ea0be197d51d.vulkan.cache
+.godot/shader_cache/SortShaderRD/7dfdbb385a040fcf151a08b4dbc152d24e2fa409d4ccce73622d9814f12d982e/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SpecularMergeShaderRD/2f10b02a020c9fc4627973a87178533d8c6113d1d4f5e630f9aefde5c0cbae39/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsEffectsDownsampleShaderRD/eb4edac6785fd494ccbb5a0937ce486957e936c5cd79dba4f21fa30393d27a3e/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsaoBlurShaderRD/3da2fb6fb709e8bc9702ef0713dc6e3a8eb69b7da4a1a0a2faa01c58d77c5ee5/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsaoImportanceMapShaderRD/ba9253abd4bc63c8b3a18bddf70ccb4205b9cbf03deb25c0ab24e79f65e02cde/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsaoInterleaveShaderRD/a44aac12342e5fff9e34377da6350cae2e287e166de5bc42d1c79966551c6c0a/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsaoShaderRD/0aed7c2abba0bb383fdc2d247d6fee11eb0f57b608dc8eef8dcbd2f248443a25/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsilBlurShaderRD/3ded71ffe9107989164c7d3df778c1e736a702e24a39946f1cadbb0fcab96e58/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsilImportanceMapShaderRD/cb88e814391086489d5bf2f4213a2611b599aadae03ed81e64b65badf6381986/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsilInterleaveShaderRD/ab9a7b124fb5f7910761bd65ea755d9a836730d9de4c6cbb96680e0cfff6e39d/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SsilShaderRD/feb08f2f2a7d3df4414d3af9e32a0b79204dcc93ab8d1edc51d9a37f685dbef4/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/SubsurfaceScatteringShaderRD/143bafcc22bfc9ae99627c35a1c9441d9939df15e6cab7e8b562695a9a565ad7/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/TaaResolveShaderRD/3facb4ea2e006facc7b9f047bb5040c74bca2c9249a05668931fd1160b6272f4/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/TonemapShaderRD/49a8090a2f7e0892dbf1fd0a1bd8c292fb0a754a7fbf9bb28c05a737ae20bd01/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/VolumetricFogProcessShaderRD/b938b63b36e53e41f5549678998ba4a0131707089637cda6664956e2447cf302/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/VolumetricFogShaderRD/e7ecac2080396d9738b7b3f7be04fc7d3bda2499e18071ce212e093c520b62ef/9a227745af2d65830f930370a9fbba551fbd6f60.vulkan.cache
+.godot/shader_cache/VoxelGiDebugShaderRD/8791d67254c344b4c7373db3355d3a8e2a8afa723b1255d63899a8e80f34ba0f/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/shader_cache/VoxelGiShaderRD/32d75d830dbe256be00685864178a372f0f167f74f1acc7bfa766e61c628f2fa/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
+.godot/uid_cache.bin
+.qtc_clangd/compile_commands.json
+LICENSE.md
+Lighting Textures/light_ball_512.png
+Lighting Textures/light_ball_512.png.import
+README.md
+RESET.gd
+SoundFX/footsteps/grass/Audio 1.wav
+SoundFX/footsteps/grass/Audio 1.wav.import
+SoundFX/footsteps/grass/Audio 2.wav
+SoundFX/footsteps/grass/Audio 2.wav.import
+SoundFX/footsteps/grass/Audio 3.wav
+SoundFX/footsteps/grass/Audio 3.wav.import
+SoundFX/footsteps/grass/Audio 4.wav
+SoundFX/footsteps/grass/Audio 4.wav.import
+SoundFX/footsteps/grass/Audio 5.wav
+SoundFX/footsteps/grass/Audio 5.wav.import
+SoundFX/footsteps/grass/Audio 6.wav
+SoundFX/footsteps/grass/Audio 6.wav.import
+SoundFX/footsteps/grass/Audio 7.wav
+SoundFX/footsteps/grass/Audio 7.wav.import
+SoundFX/footsteps/grass/Audio 8.wav
+SoundFX/footsteps/grass/Audio 8.wav.import
+SoundFX/footsteps/grass/Audio 9.wav
+SoundFX/footsteps/grass/Audio 9.wav.import
+Tower.cflags
+Tower.cxxflags
+addons/AsepriteWizard/aseprite/aseprite.gd
+addons/AsepriteWizard/aseprite/file_exporter.gd
+addons/AsepriteWizard/config/config.gd
+addons/AsepriteWizard/config/config_dialog.gd
+addons/AsepriteWizard/config/config_dialog.tscn
+addons/AsepriteWizard/config/result_codes.gd
+addons/AsepriteWizard/config/wizard_config.gd
+addons/AsepriteWizard/creators/animation_player/animation_creator.gd
+addons/AsepriteWizard/creators/animation_player/sprite_animation_creator.gd
+addons/AsepriteWizard/creators/animation_player/texture_rect_animation_creator.gd
+addons/AsepriteWizard/creators/base_sprite_resource_creator.gd
+addons/AsepriteWizard/creators/sprite_frames/sprite_frames_creator.gd
+addons/AsepriteWizard/creators/static_texture/texture_creator.gd
+addons/AsepriteWizard/export/metadata_export_plugin.gd
+addons/AsepriteWizard/importers/file_system_helper.gd
+addons/AsepriteWizard/importers/noop_import_plugin.gd
+addons/AsepriteWizard/importers/sprite_frames_import_plugin.gd
+addons/AsepriteWizard/importers/static_texture_import_plugin.gd
+addons/AsepriteWizard/importers/tileset_texture_import_plugin.gd
+addons/AsepriteWizard/interface/docks/animated_sprite/animated_sprite_inspector_dock.gd
+addons/AsepriteWizard/interface/docks/animated_sprite/animated_sprite_inspector_dock.tscn
+addons/AsepriteWizard/interface/docks/animated_sprite/inspector_plugin.gd
+addons/AsepriteWizard/interface/docks/base_inspector_dock.gd
+addons/AsepriteWizard/interface/docks/dock_fields.gd
+addons/AsepriteWizard/interface/docks/dock_fields.tscn
+addons/AsepriteWizard/interface/docks/sprite/inspector_plugin.gd
+addons/AsepriteWizard/interface/docks/sprite/sprite_inspector_dock.gd
+addons/AsepriteWizard/interface/docks/sprite/sprite_inspector_dock.tscn
+addons/AsepriteWizard/interface/docks/wizard/as_wizard_dock_container.gd
+addons/AsepriteWizard/interface/docks/wizard/as_wizard_dock_container.tscn
+addons/AsepriteWizard/interface/docks/wizard/as_wizard_window.gd
+addons/AsepriteWizard/interface/docks/wizard/as_wizard_window.tscn
+addons/AsepriteWizard/interface/docks/wizard/imported_sprite_frames.gd
+addons/AsepriteWizard/interface/docks/wizard/imported_sprite_frames.tscn
+addons/AsepriteWizard/interface/docks/wizard/resource_tree_multiple_items.gd
+addons/AsepriteWizard/interface/docks/wizard/resource_tree_multiple_items.tscn
+addons/AsepriteWizard/interface/docks/wizard/resource_tree_single_item.gd
+addons/AsepriteWizard/interface/docks/wizard/resource_tree_single_item.tscn
+addons/AsepriteWizard/interface/docks/wizard/sprite_frames_import_history.gd
+addons/AsepriteWizard/interface/docks/wizard/sprite_frames_import_history.tscn
+addons/AsepriteWizard/interface/docks/wizard/wizard_import_helper.gd
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/details.gd
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/details.tscn
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/import_date.gd
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/import_date.tscn
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/list_actions.gd
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/list_actions.tscn
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/output_path.tscn
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/source_path.gd
+addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/source_path.tscn
+addons/AsepriteWizard/interface/imports_manager/aseprite_imports_manager.gd
+addons/AsepriteWizard/interface/imports_manager/aseprite_imports_manager.tscn
+addons/AsepriteWizard/interface/imports_manager/dock_imports_panel.gd
+addons/AsepriteWizard/interface/imports_manager/dock_imports_panel.tscn
+addons/AsepriteWizard/interface/imports_manager/import_helper.gd
+addons/AsepriteWizard/interface/imports_manager/import_panels.gd
+addons/AsepriteWizard/interface/imports_manager/import_panels.tscn
+addons/AsepriteWizard/interface/imports_manager/tree_filter_field.gd
+addons/AsepriteWizard/interface/imports_manager/tree_selection_multiple_items.gd
+addons/AsepriteWizard/interface/imports_manager/tree_selection_multiple_items.tscn
+addons/AsepriteWizard/interface/imports_manager/tree_selection_single_item.gd
+addons/AsepriteWizard/interface/imports_manager/tree_selection_single_item.tscn
+addons/AsepriteWizard/interface/shared/animation_player_drop_button.gd
+addons/AsepriteWizard/interface/shared/animation_player_drop_button.tscn
+addons/AsepriteWizard/interface/shared/dir_drop_button.gd
+addons/AsepriteWizard/interface/shared/dir_drop_button.tscn
+addons/AsepriteWizard/interface/shared/source_drop_button.gd
+addons/AsepriteWizard/interface/shared/source_drop_button.tscn
+addons/AsepriteWizard/interface/shared/tree/inline_warning_panel.gd
+addons/AsepriteWizard/interface/shared/tree/inline_warning_panel.tscn
+addons/AsepriteWizard/interface/shared/tree/resource_tree.gd
+addons/AsepriteWizard/interface/shared/tree/resource_tree.tscn
+addons/AsepriteWizard/interface/shared/tree/tree_selection_confirmation_warning.gd
+addons/AsepriteWizard/interface/shared/tree/tree_selection_confirmation_warning.tscn
+addons/AsepriteWizard/plugin.cfg
+addons/AsepriteWizard/plugin.gd
+addons/HaSa1002.light-tools/LICENSE
+addons/HaSa1002.light-tools/Light.png
+addons/HaSa1002.light-tools/Light.png.import
+addons/HaSa1002.light-tools/LightColor.gd
+addons/HaSa1002.light-tools/LightColorEditor.gd
+addons/HaSa1002.light-tools/LightTools.gd
+addons/HaSa1002.light-tools/ToolIcon.svg
+addons/HaSa1002.light-tools/ToolIcon.svg.import
+addons/HaSa1002.light-tools/plugin.cfg
+addons/ProCam2D/assets/icons/pcam.png
+addons/ProCam2D/assets/icons/pcam.png.import
+addons/ProCam2D/assets/icons/pcam_cinematic.png
+addons/ProCam2D/assets/icons/pcam_cinematic.png.import
+addons/ProCam2D/assets/icons/pcam_magnet.png
+addons/ProCam2D/assets/icons/pcam_magnet.png.import
+addons/ProCam2D/assets/icons/pcam_path.png
+addons/ProCam2D/assets/icons/pcam_path.png.import
+addons/ProCam2D/assets/icons/pcam_room.png
+addons/ProCam2D/assets/icons/pcam_room.png.import
+addons/ProCam2D/assets/icons/pcam_target.png
+addons/ProCam2D/assets/icons/pcam_target.png.import
+addons/ProCam2D/assets/icons/pcam_zoom.png
+addons/ProCam2D/assets/icons/pcam_zoom.png.import
+addons/ProCam2D/plugin.cfg
+addons/ProCam2D/plugin.gd
+addons/ProCam2D/scripts/autoload.gd
+addons/ProCam2D/scripts/core/addns/pcam_grids.gd
+addons/ProCam2D/scripts/core/addns/pcam_mouse_influence.gd
+addons/ProCam2D/scripts/core/addns/pcam_pan.gd
+addons/ProCam2D/scripts/core/addns/pcam_shake.gd
+addons/ProCam2D/scripts/core/addns/pcam_speedzoom.gd
+addons/ProCam2D/scripts/core/nds/a.gd
+addons/ProCam2D/scripts/core/nds/b.gd
+addons/ProCam2D/scripts/core/nds/c.gd
+addons/ProCam2D/scripts/core/nds/cam.gd
+addons/ProCam2D/scripts/core/nds/m.gd
+addons/ProCam2D/scripts/core/nds/p.gd
+addons/ProCam2D/scripts/core/nds/r.gd
+addons/ProCam2D/scripts/core/nds/t.gd
+addons/ProCam2D/scripts/core/nds/u.gd
+addons/ProCam2D/scripts/core/nds/z.gd
+addons/ProCam2D/scripts/pcam_cinematicpoint.gd
+addons/ProCam2D/scripts/pcam_magnet.gd
+addons/ProCam2D/scripts/pcam_path.gd
+addons/ProCam2D/scripts/pcam_room.gd
+addons/ProCam2D/scripts/pcam_target.gd
+addons/ProCam2D/scripts/procam2d.gd
+addons/ProCam2D/scripts/procam_zoom.gd
+addons/godot-rapier2d/Fluid2D.svg
+addons/godot-rapier2d/Fluid2D.svg.import
+addons/godot-rapier2d/LICENSE
+addons/godot-rapier2d/Radial2D.svg
+addons/godot-rapier2d/Radial2D.svg.import
+addons/godot-rapier2d/THIRDPARTY.txt
+addons/godot-rapier2d/bin/godot_rapier.wasm
+addons/godot-rapier2d/bin/libgodot_rapier.android.aarch64-linux-android.so
+addons/godot-rapier2d/bin/libgodot_rapier.android.i686-linux-android.so
+addons/godot-rapier2d/bin/libgodot_rapier.android.x86_64-linux-android.so
+addons/godot-rapier2d/bin/libgodot_rapier.ios.framework/Info.plist
+addons/godot-rapier2d/bin/libgodot_rapier.ios.framework/libgodot_rapier.ios
+addons/godot-rapier2d/bin/libgodot_rapier.linux.x86_64-unknown-linux-gnu.so
+addons/godot-rapier2d/bin/libgodot_rapier.macos.framework/Resources/Info.plist
+addons/godot-rapier2d/bin/libgodot_rapier.macos.framework/_CodeSignature/CodeResources
+addons/godot-rapier2d/bin/libgodot_rapier.macos.framework/libgodot_rapier.macos.dylib
+addons/godot-rapier2d/bin/libgodot_rapier.windows.aarch64-pc-windows-msvc.dll
+addons/godot-rapier2d/bin/libgodot_rapier.windows.i686-pc-windows-msvc.dll
+addons/godot-rapier2d/bin/libgodot_rapier.windows.x86_64-pc-windows-msvc.dll
+addons/godot-rapier2d/bin/wasm-nothreads/godot_rapier.wasm
+addons/godot-rapier2d/circle_mesh.tres
+addons/godot-rapier2d/faucet_2d.gd
+addons/godot-rapier2d/fluid_2d_circle.gd
+addons/godot-rapier2d/fluid_2d_rectangle.gd
+addons/godot-rapier2d/fluid_2d_renderer.gd
+addons/godot-rapier2d/fluid_2d_shader_renderer.gd
+addons/godot-rapier2d/godot-rapier2d.gdextension
+addons/godot-rapier2d/logo_square_2d.png
+addons/godot-rapier2d/logo_square_2d.png.import
+addons/godot-rapier2d/plugin.info.cfg
+addons/godot-rapier2d/rapier_state_2d.gd
+addons/godot-rapier2d/water_shader.gdshader
+addons/godot-rapier2d/water_shader.tres
+addons/kenney_particle_pack/LICENSE.txt
+addons/kenney_particle_pack/circle_01.png
+addons/kenney_particle_pack/circle_01.png.import
+addons/kenney_particle_pack/circle_02.png
+addons/kenney_particle_pack/circle_02.png.import
+addons/kenney_particle_pack/circle_03.png
+addons/kenney_particle_pack/circle_03.png.import
+addons/kenney_particle_pack/circle_04.png
+addons/kenney_particle_pack/circle_04.png.import
+addons/kenney_particle_pack/circle_05.png
+addons/kenney_particle_pack/circle_05.png.import
+addons/kenney_particle_pack/dirt_01.png
+addons/kenney_particle_pack/dirt_01.png.import
+addons/kenney_particle_pack/dirt_02.png
+addons/kenney_particle_pack/dirt_02.png.import
+addons/kenney_particle_pack/dirt_03.png
+addons/kenney_particle_pack/dirt_03.png.import
+addons/kenney_particle_pack/fire_01.png
+addons/kenney_particle_pack/fire_01.png.import
+addons/kenney_particle_pack/fire_02.png
+addons/kenney_particle_pack/fire_02.png.import
+addons/kenney_particle_pack/flame_01.png
+addons/kenney_particle_pack/flame_01.png.import
+addons/kenney_particle_pack/flame_02.png
+addons/kenney_particle_pack/flame_02.png.import
+addons/kenney_particle_pack/flame_03.png
+addons/kenney_particle_pack/flame_03.png.import
+addons/kenney_particle_pack/flame_04.png
+addons/kenney_particle_pack/flame_04.png.import
+addons/kenney_particle_pack/flame_05.png
+addons/kenney_particle_pack/flame_05.png.import
+addons/kenney_particle_pack/flame_06.png
+addons/kenney_particle_pack/flame_06.png.import
+addons/kenney_particle_pack/flare_01.png
+addons/kenney_particle_pack/flare_01.png.import
+addons/kenney_particle_pack/light_01.png
+addons/kenney_particle_pack/light_01.png.import
+addons/kenney_particle_pack/light_02.png
+addons/kenney_particle_pack/light_02.png.import
+addons/kenney_particle_pack/light_03.png
+addons/kenney_particle_pack/light_03.png.import
+addons/kenney_particle_pack/magic_01.png
+addons/kenney_particle_pack/magic_01.png.import
+addons/kenney_particle_pack/magic_02.png
+addons/kenney_particle_pack/magic_02.png.import
+addons/kenney_particle_pack/magic_03.png
+addons/kenney_particle_pack/magic_03.png.import
+addons/kenney_particle_pack/magic_04.png
+addons/kenney_particle_pack/magic_04.png.import
+addons/kenney_particle_pack/magic_05.png
+addons/kenney_particle_pack/magic_05.png.import
+addons/kenney_particle_pack/muzzle_01.png
+addons/kenney_particle_pack/muzzle_01.png.import
+addons/kenney_particle_pack/muzzle_02.png
+addons/kenney_particle_pack/muzzle_02.png.import
+addons/kenney_particle_pack/muzzle_03.png
+addons/kenney_particle_pack/muzzle_03.png.import
+addons/kenney_particle_pack/muzzle_04.png
+addons/kenney_particle_pack/muzzle_04.png.import
+addons/kenney_particle_pack/muzzle_05.png
+addons/kenney_particle_pack/muzzle_05.png.import
+addons/kenney_particle_pack/rotated/flame_05_rotated.png
+addons/kenney_particle_pack/rotated/flame_05_rotated.png.import
+addons/kenney_particle_pack/rotated/flame_06_rotated.png
+addons/kenney_particle_pack/rotated/flame_06_rotated.png.import
+addons/kenney_particle_pack/rotated/muzzle_01_rotated.png
+addons/kenney_particle_pack/rotated/muzzle_01_rotated.png.import
+addons/kenney_particle_pack/rotated/muzzle_02_rotated.png
+addons/kenney_particle_pack/rotated/muzzle_02_rotated.png.import
+addons/kenney_particle_pack/rotated/muzzle_03_rotated.png
+addons/kenney_particle_pack/rotated/muzzle_03_rotated.png.import
+addons/kenney_particle_pack/rotated/muzzle_04_rotated.png
+addons/kenney_particle_pack/rotated/muzzle_04_rotated.png.import
+addons/kenney_particle_pack/rotated/muzzle_05_rotated.png
+addons/kenney_particle_pack/rotated/muzzle_05_rotated.png.import
+addons/kenney_particle_pack/rotated/spark_05_rotated.png
+addons/kenney_particle_pack/rotated/spark_05_rotated.png.import
+addons/kenney_particle_pack/rotated/spark_06_rotated.png
+addons/kenney_particle_pack/rotated/spark_06_rotated.png.import
+addons/kenney_particle_pack/rotated/trace_01_rotated.png
+addons/kenney_particle_pack/rotated/trace_01_rotated.png.import
+addons/kenney_particle_pack/rotated/trace_02_rotated.png
+addons/kenney_particle_pack/rotated/trace_02_rotated.png.import
+addons/kenney_particle_pack/rotated/trace_03_rotated.png
+addons/kenney_particle_pack/rotated/trace_03_rotated.png.import
+addons/kenney_particle_pack/rotated/trace_04_rotated.png
+addons/kenney_particle_pack/rotated/trace_04_rotated.png.import
+addons/kenney_particle_pack/rotated/trace_05_rotated.png
+addons/kenney_particle_pack/rotated/trace_05_rotated.png.import
+addons/kenney_particle_pack/rotated/trace_06_rotated.png
+addons/kenney_particle_pack/rotated/trace_06_rotated.png.import
+addons/kenney_particle_pack/rotated/trace_07_rotated.png
+addons/kenney_particle_pack/rotated/trace_07_rotated.png.import
+addons/kenney_particle_pack/scorch_01.png
+addons/kenney_particle_pack/scorch_01.png.import
+addons/kenney_particle_pack/scorch_02.png
+addons/kenney_particle_pack/scorch_02.png.import
+addons/kenney_particle_pack/scorch_03.png
+addons/kenney_particle_pack/scorch_03.png.import
+addons/kenney_particle_pack/scratch_01.png
+addons/kenney_particle_pack/scratch_01.png.import
+addons/kenney_particle_pack/slash_01.png
+addons/kenney_particle_pack/slash_01.png.import
+addons/kenney_particle_pack/slash_02.png
+addons/kenney_particle_pack/slash_02.png.import
+addons/kenney_particle_pack/slash_03.png
+addons/kenney_particle_pack/slash_03.png.import
+addons/kenney_particle_pack/slash_04.png
+addons/kenney_particle_pack/slash_04.png.import
+addons/kenney_particle_pack/smoke_01.png
+addons/kenney_particle_pack/smoke_01.png.import
+addons/kenney_particle_pack/smoke_02.png
+addons/kenney_particle_pack/smoke_02.png.import
+addons/kenney_particle_pack/smoke_03.png
+addons/kenney_particle_pack/smoke_03.png.import
+addons/kenney_particle_pack/smoke_04.png
+addons/kenney_particle_pack/smoke_04.png.import
+addons/kenney_particle_pack/smoke_05.png
+addons/kenney_particle_pack/smoke_05.png.import
+addons/kenney_particle_pack/smoke_06.png
+addons/kenney_particle_pack/smoke_06.png.import
+addons/kenney_particle_pack/smoke_07.png
+addons/kenney_particle_pack/smoke_07.png.import
+addons/kenney_particle_pack/smoke_08.png
+addons/kenney_particle_pack/smoke_08.png.import
+addons/kenney_particle_pack/smoke_09.png
+addons/kenney_particle_pack/smoke_09.png.import
+addons/kenney_particle_pack/smoke_10.png
+addons/kenney_particle_pack/smoke_10.png.import
+addons/kenney_particle_pack/spark_01.png
+addons/kenney_particle_pack/spark_01.png.import
+addons/kenney_particle_pack/spark_02.png
+addons/kenney_particle_pack/spark_02.png.import
+addons/kenney_particle_pack/spark_03.png
+addons/kenney_particle_pack/spark_03.png.import
+addons/kenney_particle_pack/spark_04.png
+addons/kenney_particle_pack/spark_04.png.import
+addons/kenney_particle_pack/spark_05.png
+addons/kenney_particle_pack/spark_05.png.import
+addons/kenney_particle_pack/spark_06.png
+addons/kenney_particle_pack/spark_06.png.import
+addons/kenney_particle_pack/spark_07.png
+addons/kenney_particle_pack/spark_07.png.import
+addons/kenney_particle_pack/star_01.png
+addons/kenney_particle_pack/star_01.png.import
+addons/kenney_particle_pack/star_02.png
+addons/kenney_particle_pack/star_02.png.import
+addons/kenney_particle_pack/star_03.png
+addons/kenney_particle_pack/star_03.png.import
+addons/kenney_particle_pack/star_04.png
+addons/kenney_particle_pack/star_04.png.import
+addons/kenney_particle_pack/star_05.png
+addons/kenney_particle_pack/star_05.png.import
+addons/kenney_particle_pack/star_06.png
+addons/kenney_particle_pack/star_06.png.import
+addons/kenney_particle_pack/star_07.png
+addons/kenney_particle_pack/star_07.png.import
+addons/kenney_particle_pack/star_08.png
+addons/kenney_particle_pack/star_08.png.import
+addons/kenney_particle_pack/star_09.png
+addons/kenney_particle_pack/star_09.png.import
+addons/kenney_particle_pack/symbol_01.png
+addons/kenney_particle_pack/symbol_01.png.import
+addons/kenney_particle_pack/symbol_02.png
+addons/kenney_particle_pack/symbol_02.png.import
+addons/kenney_particle_pack/trace_01.png
+addons/kenney_particle_pack/trace_01.png.import
+addons/kenney_particle_pack/trace_02.png
+addons/kenney_particle_pack/trace_02.png.import
+addons/kenney_particle_pack/trace_03.png
+addons/kenney_particle_pack/trace_03.png.import
+addons/kenney_particle_pack/trace_04.png
+addons/kenney_particle_pack/trace_04.png.import
+addons/kenney_particle_pack/trace_05.png
+addons/kenney_particle_pack/trace_05.png.import
+addons/kenney_particle_pack/trace_06.png
+addons/kenney_particle_pack/trace_06.png.import
+addons/kenney_particle_pack/trace_07.png
+addons/kenney_particle_pack/trace_07.png.import
+addons/kenney_particle_pack/twirl_01.png
+addons/kenney_particle_pack/twirl_01.png.import
+addons/kenney_particle_pack/twirl_02.png
+addons/kenney_particle_pack/twirl_02.png.import
+addons/kenney_particle_pack/twirl_03.png
+addons/kenney_particle_pack/twirl_03.png.import
+addons/kenney_particle_pack/window_01.png
+addons/kenney_particle_pack/window_01.png.import
+addons/kenney_particle_pack/window_02.png
+addons/kenney_particle_pack/window_02.png.import
+addons/kenney_particle_pack/window_03.png
+addons/kenney_particle_pack/window_03.png.import
+addons/kenney_particle_pack/window_04.png
+addons/kenney_particle_pack/window_04.png.import
+addons/phantom_camera/assets/PhantomCameraBtnPrimaryDefault.png
+addons/phantom_camera/assets/PhantomCameraBtnPrimaryDefault.png.import
+addons/phantom_camera/assets/PhantomCameraBtnPrimaryHover.png
+addons/phantom_camera/assets/PhantomCameraBtnPrimaryHover.png.import
+addons/phantom_camera/examples/credits.txt
+addons/phantom_camera/examples/example_scenes/2D-4.3/2d_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D-4.3/2d_follow_framed_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D-4.3/2d_follow_group_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D-4.3/2d_follow_path_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D-4.3/2d_limit_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D-4.3/2d_noise_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D-4.3/2d_tweening_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D/2d_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D/2d_follow_framed_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D/2d_follow_group_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D/2d_follow_path_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D/2d_limit_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D/2d_tweening_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_follow_framed_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_follow_glued_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_follow_group_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_follow_path_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_follow_simple_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_follow_third_person_attribtues_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_follow_third_person_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_look_at_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_noise_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/3d_tweening_example_scene.tscn
+addons/phantom_camera/examples/example_scenes/3D/sub_scenes/playable_character_3d.tscn
+addons/phantom_camera/examples/example_scenes/3D/sub_scenes/playable_character_third_person_3d.tscn
+addons/phantom_camera/examples/models/3d_cube_dark.tscn
+addons/phantom_camera/examples/resources/tween/fixed_camera_tween.tres
+addons/phantom_camera/examples/resources/tween/inventory_phantom_camera_2d_tween.tres
+addons/phantom_camera/examples/resources/tween/item_focus_phantom_camera_2d_tween.tres
+addons/phantom_camera/examples/resources/tween/player_phantom_camera_2d_tween.tres
+addons/phantom_camera/examples/resources/tween/player_phantom_camera_3d_tween.tres
+addons/phantom_camera/examples/scripts/2D/2d_room_limit_tween.gd
+addons/phantom_camera/examples/scripts/2D/2d_room_limit_tween_4.3.gd
+addons/phantom_camera/examples/scripts/2D/2d_trigger_area.gd
+addons/phantom_camera/examples/scripts/2D/player_character_body_2d.gd
+addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd
+addons/phantom_camera/examples/scripts/3D/3d_trigger_area.gd
+addons/phantom_camera/examples/scripts/3D/npc.gd
+addons/phantom_camera/examples/scripts/3D/path_follow.gd
+addons/phantom_camera/examples/scripts/3D/player_controller.gd
+addons/phantom_camera/examples/scripts/3D/player_controller_first_person.gd
+addons/phantom_camera/examples/scripts/3D/player_controller_third_person.gd
+addons/phantom_camera/examples/textures/2D/inventory_container.png
+addons/phantom_camera/examples/textures/2D/inventory_container.png.import
+addons/phantom_camera/examples/textures/2D/level_spritesheet.png
+addons/phantom_camera/examples/textures/2D/level_spritesheet.png.import
+addons/phantom_camera/examples/textures/2D/phantom_camera_2d_sprite.png
+addons/phantom_camera/examples/textures/2D/phantom_camera_2d_sprite.png.import
+addons/phantom_camera/examples/textures/2D/player_sprite.svg
+addons/phantom_camera/examples/textures/2D/player_sprite.svg.import
+addons/phantom_camera/examples/textures/2D/sign_prompt.png
+addons/phantom_camera/examples/textures/2D/sign_prompt.png.import
+addons/phantom_camera/examples/textures/3D/checker_pattern_dark.png
+addons/phantom_camera/examples/textures/3D/checker_pattern_dark.png.import
+addons/phantom_camera/examples/textures/3D/target.png
+addons/phantom_camera/examples/textures/3D/target.png.import
+addons/phantom_camera/examples/ui/ui_inventory.tscn
+addons/phantom_camera/examples/ui/ui_sign.tscn
+addons/phantom_camera/fonts/Nunito-Black.ttf
+addons/phantom_camera/fonts/Nunito-Black.ttf.import
+addons/phantom_camera/fonts/Nunito-Regular.ttf
+addons/phantom_camera/fonts/Nunito-Regular.ttf.import
+addons/phantom_camera/gizmos/custom_gizmo.gd
+addons/phantom_camera/gizmos/phantom_camera_gizmo_plugin_3d.gd
+addons/phantom_camera/gizmos/phantom_camera_noise_emitter_gizmo_plugin_3d.gd
+addons/phantom_camera/icons/misc/PriorityOverride.svg
+addons/phantom_camera/icons/misc/PriorityOverride.svg.import
+addons/phantom_camera/icons/phantom_camera_2d.svg
+addons/phantom_camera/icons/phantom_camera_2d.svg.import
+addons/phantom_camera/icons/phantom_camera_3d.svg
+addons/phantom_camera/icons/phantom_camera_3d.svg.import
+addons/phantom_camera/icons/phantom_camera_camera_3d_resource.svg
+addons/phantom_camera/icons/phantom_camera_camera_3d_resource.svg.import
+addons/phantom_camera/icons/phantom_camera_gizmo.svg
+addons/phantom_camera/icons/phantom_camera_gizmo.svg.import
+addons/phantom_camera/icons/phantom_camera_glow_logo.png
+addons/phantom_camera/icons/phantom_camera_glow_logo.png.import
+addons/phantom_camera/icons/phantom_camera_host.svg
+addons/phantom_camera/icons/phantom_camera_host.svg.import
+addons/phantom_camera/icons/phantom_camera_logo.png
+addons/phantom_camera/icons/phantom_camera_logo.png.import
+addons/phantom_camera/icons/phantom_camera_noise_emitter_2d.svg
+addons/phantom_camera/icons/phantom_camera_noise_emitter_2d.svg.import
+addons/phantom_camera/icons/phantom_camera_noise_emitter_3d.svg
+addons/phantom_camera/icons/phantom_camera_noise_emitter_3d.svg.import
+addons/phantom_camera/icons/phantom_camera_noise_emitter_gizmo.svg
+addons/phantom_camera/icons/phantom_camera_noise_emitter_gizmo.svg.import
+addons/phantom_camera/icons/phantom_camera_noise_resource.svg
+addons/phantom_camera/icons/phantom_camera_noise_resource.svg.import
+addons/phantom_camera/icons/phantom_camera_tween.svg
+addons/phantom_camera/icons/phantom_camera_tween.svg.import
+addons/phantom_camera/icons/phantom_camera_updater_panel_icon.svg
+addons/phantom_camera/icons/phantom_camera_updater_panel_icon.svg.import
+addons/phantom_camera/icons/viewfinder/Camera2DIcon.svg
+addons/phantom_camera/icons/viewfinder/Camera2DIcon.svg.import
+addons/phantom_camera/icons/viewfinder/Camera3DIcon.svg
+addons/phantom_camera/icons/viewfinder/Camera3DIcon.svg.import
+addons/phantom_camera/icons/viewfinder/SceneTypesIcon.svg
+addons/phantom_camera/icons/viewfinder/SceneTypesIcon.svg.import
+addons/phantom_camera/inspector/phantom_camera_inspector_plugin.gd
+addons/phantom_camera/panel/editor.gd
+addons/phantom_camera/panel/editor.tscn
+addons/phantom_camera/panel/updater/download_update_panel.tscn
+addons/phantom_camera/panel/updater/update_button.tscn
+addons/phantom_camera/panel/viewfinder/deadzone_style_box.tres
+addons/phantom_camera/panel/viewfinder/viewfinder_panel.tscn
+addons/phantom_camera/plugin.cfg
+addons/phantom_camera/plugin.gd
+addons/phantom_camera/scripts/managers/phantom_camera_manager.gd
+addons/phantom_camera/scripts/panel/updater/download_update_panel.gd
+addons/phantom_camera/scripts/panel/updater/update_button.gd
+addons/phantom_camera/scripts/panel/updater/updater_constants.gd
+addons/phantom_camera/scripts/panel/viewfinder/viewfinder.gd
+addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd
+addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd
+addons/phantom_camera/scripts/phantom_camera/phantom_camera_constants.gd
+addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_2d.gd
+addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_3d.gd
+addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd
+addons/phantom_camera/scripts/resources/camera_3d_resource.gd
+addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd
+addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd
+addons/phantom_camera/scripts/resources/tween_resource.gd
+addons/phantom_camera/scripts/singletons/phantom_camera_manager.gd
+addons/ropesim/BaseRopeTool2D.gd
+addons/ropesim/LICENSE
+addons/ropesim/README.md
+addons/ropesim/Rope.gd
+addons/ropesim/RopeAnchor.gd
+addons/ropesim/RopeCollisionShapeGenerator.gd
+addons/ropesim/RopeHandle.gd
+addons/ropesim/RopeInteraction.gd
+addons/ropesim/RopeRendererLine2D.gd
+addons/ropesim/RopeToolHelper.gd
+addons/ropesim/bin/.gitignore
+addons/ropesim/bin/libropesim.android.template_debug.arm64.so
+addons/ropesim/bin/libropesim.android.template_debug.x86_64.so
+addons/ropesim/bin/libropesim.android.template_release.arm64.so
+addons/ropesim/bin/libropesim.android.template_release.x86_64.so
+addons/ropesim/bin/libropesim.linux.template_debug.x86_64.so
+addons/ropesim/bin/libropesim.linux.template_release.x86_64.so
+addons/ropesim/bin/libropesim.macos.template_debug.framework/libropesim.macos.template_debug
+addons/ropesim/bin/libropesim.macos.template_release.framework/libropesim.macos.template_release
+addons/ropesim/bin/libropesim.windows.template_debug.x86_64.dll
+addons/ropesim/bin/libropesim.windows.template_release.x86_64.dll
+addons/ropesim/libropesim.gdextension
+addons/ropesim/plugin.cfg
+addons/ropesim/plugin.gd
+addons/softbody2d/LICENSE
+addons/softbody2d/plugin.cfg
+addons/softbody2d/plugin.gd
+addons/softbody2d/softbody2d.gd
+addons/softbody2d/softbody2d.svg
+addons/softbody2d/softbody2d.svg.import
+addons/softbody2d/softbody2d_rigidbody.gd
+addons/softbody2d/voronoi2d.gd
+addons/softbody2d/voronoi_icon.png
+addons/softbody2d/voronoi_icon.png.import
+audio_stream_player.gd
+backgrounds/Dark Forest/Background layers/Layer_0000_9.png
+backgrounds/Dark Forest/Background layers/Layer_0000_9.png.import
+backgrounds/Dark Forest/Background layers/Layer_0001_8.png
+backgrounds/Dark Forest/Background layers/Layer_0001_8.png.import
+backgrounds/Dark Forest/Background layers/Layer_0002_7.png
+backgrounds/Dark Forest/Background layers/Layer_0002_7.png.import
+backgrounds/Dark Forest/Background layers/Layer_0003_6.png
+backgrounds/Dark Forest/Background layers/Layer_0003_6.png.import
+backgrounds/Dark Forest/Background layers/Layer_0004_Lights.png
+backgrounds/Dark Forest/Background layers/Layer_0004_Lights.png.import
+backgrounds/Dark Forest/Background layers/Layer_0005_5.png
+backgrounds/Dark Forest/Background layers/Layer_0005_5.png.import
+backgrounds/Dark Forest/Background layers/Layer_0006_4.png
+backgrounds/Dark Forest/Background layers/Layer_0006_4.png.import
+backgrounds/Dark Forest/Background layers/Layer_0007_Lights.png
+backgrounds/Dark Forest/Background layers/Layer_0007_Lights.png.import
+backgrounds/Dark Forest/Background layers/Layer_0008_3.png
+backgrounds/Dark Forest/Background layers/Layer_0008_3.png.import
+backgrounds/Dark Forest/Background layers/Layer_0009_2.png
+backgrounds/Dark Forest/Background layers/Layer_0009_2.png.import
+backgrounds/Dark Forest/Background layers/Layer_0010_1.png
+backgrounds/Dark Forest/Background layers/Layer_0010_1.png.import
+backgrounds/Dark Forest/Background layers/Layer_0011_0.png
+backgrounds/Dark Forest/Background layers/Layer_0011_0.png.import
+backgrounds/Dark Forest/dark_forest.tscn
+backgrounds/Dark Forest/lightpole.png
+backgrounds/Dark Forest/lightpole.png.import
+backgrounds/Island/Layers/L1.png
+backgrounds/Island/Layers/L1.png.import
+backgrounds/Island/Layers/L2.png
+backgrounds/Island/Layers/L2.png.import
+backgrounds/Island/Layers/L3.png
+backgrounds/Island/Layers/L3.png.import
+backgrounds/Island/Layers/L4.png
+backgrounds/Island/Layers/L4.png.import
+backgrounds/Island/Layers/L5.png
+backgrounds/Island/Layers/L5.png.import
+backgrounds/Island/island_background.tscn
+camera_manager.tscn
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-001.png
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-001.png.import
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-002.png
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-002.png.import
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-003.png
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-003.png.import
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-004.png
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-004.png.import
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-005.png
+character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-005.png.import
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-001.png
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-001.png.import
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-002.png
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-002.png.import
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-003.png
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-003.png.import
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-004.png
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-004.png.import
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-005.png
+character/German Shephard/PNG/x300 size/Bite/german-shephard-bite-005.png.import
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-001.png
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-001.png.import
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-002.png
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-002.png.import
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-003.png
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-003.png.import
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-004.png
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-004.png.import
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-005.png
+character/German Shephard/PNG/x300 size/Blink/german-shephard-idle-005.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-001.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-001.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-002.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-002.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-003.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-003.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-004.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-004.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-005.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-005.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-006.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-006.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-007.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-007.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-008.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-008.png.import
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-009.png
+character/German Shephard/PNG/x300 size/Death/german-shephard-death-009.png.import
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-001.png
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-001.png.import
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-002.png
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-002.png.import
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-003.png
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-003.png.import
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-004.png
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-004.png.import
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-005.png
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-005.png.import
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-006.png
+character/German Shephard/PNG/x300 size/IdleBlink/german-shephard-idle-blink-006.png.import
+character/German Shephard/PNG/x300 size/Run/german-shephard-run-001.png
+character/German Shephard/PNG/x300 size/Run/german-shephard-run-001.png.import
+character/German Shephard/PNG/x300 size/Run/german-shephard-run-002.png
+character/German Shephard/PNG/x300 size/Run/german-shephard-run-002.png.import
+character/German Shephard/PNG/x300 size/Run/german-shephard-run-003.png
+character/German Shephard/PNG/x300 size/Run/german-shephard-run-003.png.import
+character/German Shephard/PNG/x300 size/Run/german-shephard-run-004.png
+character/German Shephard/PNG/x300 size/Run/german-shephard-run-004.png.import
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-001.png
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-001.png.import
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-002.png
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-002.png.import
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-003.png
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-003.png.import
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-004.png
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-004.png.import
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-005.png
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-005.png.import
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-006.png
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-006.png.import
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-007.png
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-007.png.import
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-008.png
+character/German Shephard/PNG/x300 size/Sniff/german-shephard-sniff-008.png.import
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-001.png
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-001.png.import
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-002.png
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-002.png.import
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-003.png
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-003.png.import
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-004.png
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-004.png.import
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-005.png
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-005.png.import
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-006.png
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-006.png.import
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-007.png
+character/German Shephard/PNG/x300 size/Tracking/german-shephard-tracking-007.png.import
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-001.png
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-001.png.import
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-002.png
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-002.png.import
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-003.png
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-003.png.import
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-004.png
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-004.png.import
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-005.png
+character/German Shephard/PNG/x300 size/Walk/german-shephard-walk-005.png.import
+character/German Shephard/Sprite Sheet/german-shephard-full-sprite-sheet-x300.png
+character/German Shephard/Sprite Sheet/german-shephard-full-sprite-sheet-x300.png.import
+character/German Shephard/Sprite Sheet/german-shephard-full-sprite-sheet.png
+character/German Shephard/Sprite Sheet/german-shephard-full-sprite-sheet.png.import
+character/German Shephard/Sprite Sheet/readme.txt.txt
+character/Human Male Model/Human Male Model.aseprite
+character/Human Male Model/Sections/HMM Bow Shot.aseprite
+character/Human Male Model/Sections/HMM Death Bare.aseprite
+character/Human Male Model/Sections/HMM Death Bare.png
+character/Human Male Model/Sections/HMM Death Bare.png.import
+character/Human Male Model/Sections/HMM Death Bow.aseprite
+character/Human Male Model/Sections/HMM Death Staff.aseprite
+character/Human Male Model/Sections/HMM Death Sword.aseprite
+character/Human Male Model/Sections/HMM Hurt Bare.aseprite
+character/Human Male Model/Sections/HMM Hurt Bare.png
+character/Human Male Model/Sections/HMM Hurt Bare.png.import
+character/Human Male Model/Sections/HMM Hurt Bow.aseprite
+character/Human Male Model/Sections/HMM Hurt Staff.aseprite
+character/Human Male Model/Sections/HMM Hurt Sword.aseprite
+character/Human Male Model/Sections/HMM Idle Bare.aseprite
+character/Human Male Model/Sections/HMM Idle Bare.png
+character/Human Male Model/Sections/HMM Idle Bare.png.import
+character/Human Male Model/Sections/HMM Idle Bow.aseprite
+character/Human Male Model/Sections/HMM Idle Staff.aseprite
+character/Human Male Model/Sections/HMM Idle Sword.aseprite
+character/Human Male Model/Sections/HMM Jump Bare.aseprite
+character/Human Male Model/Sections/HMM Jump Bare.png
+character/Human Male Model/Sections/HMM Jump Bare.png.import
+character/Human Male Model/Sections/HMM Jump Bow.aseprite
+character/Human Male Model/Sections/HMM Jump Staff.aseprite
+character/Human Male Model/Sections/HMM Jump Sword.aseprite
+character/Human Male Model/Sections/HMM Run Bare.aseprite
+character/Human Male Model/Sections/HMM Run Bare.png
+character/Human Male Model/Sections/HMM Run Bare.png.import
+character/Human Male Model/Sections/HMM Run Bow.aseprite
+character/Human Male Model/Sections/HMM Run Staff.aseprite
+character/Human Male Model/Sections/HMM Run Sword.aseprite
+character/Human Male Model/Sections/HMM Shieldwalk w Sword.aseprite
+character/Human Male Model/Sections/HMM Shieldwalk.aseprite
+character/Human Male Model/Sections/HMM Stab.aseprite
+character/Human Male Model/Sections/HMM Staff Cast.aseprite
+character/Human Male Model/Sections/HMM Swipe 2.aseprite
+character/Human Male Model/Sections/HMM Swipe.aseprite
+character/Human Male Model/Sections/HMM Walk Bare.aseprite
+character/Human Male Model/Sections/HMM Walk Bare.png
+character/Human Male Model/Sections/HMM Walk Bare.png.import
+character/Human Male Model/Sections/HMM Walk Bow.aseprite
+character/Human Male Model/Sections/HMM Walk Staff.aseprite
+character/Human Male Model/Sections/HMM Walk Sword.aseprite
+character/Human Male Model/Sections/LEDGE.aseprite
+character/Human Male Model/Sections/LEDGE.png
+character/Human Male Model/Sections/LEDGE.png.import
+character/dog.gd
+character/main_char.tscn
+character/playable.gd
+character/sam.gd
+character/sam.tscn
+colorpallete.ase
+cryptic-ocean.ase
+export_presets.cfg
+grab_64.gd
+image_2024-10-21_005014875.png
+image_2024-10-21_005014875.png.import
+level_house.tscn
+levels/area_2.tscn
+levels/camera_manager.gd
+levels/test_area.tscn
+objects/16x32 trees.png
+objects/16x32 trees.png.import
+objects/16x48.png
+objects/16x48.png.import
+objects/32x48.png
+objects/32x48.png.import
+objects/48x48 trees.png
+objects/48x48 trees.png.import
+objects/box_16x_48.tscn
+objects/box_32x_48.tscn
+objects/bridge.tscn
+objects/lightpole.png
+objects/lightpole.png.import
+objects/lightpole.tscn
+objects/square.tscn
+objects/triangle.tscn
+project.godot
+pusher.gd
+rope_examples/anchors.tscn
+rope_examples/benchmark.tscn
+rope_examples/collision_detection.tscn
+rope_examples/hair.tscn
+rope_examples/handles.tscn
+rope_examples/icon.svg
+rope_examples/icon.svg.import
+rope_examples/line_renderer.tscn
+rope_examples/rigidbody_rope_attachment.tscn
+rope_examples/rope_properties.tscn
+rope_examples/rope_pulling.tscn
+rope_examples/rope_swinging.tscn
+rope_examples/scripts/PerformanceLabel.gd
+rope_examples/scripts/animation_player.gd
+rope_examples/scripts/character_body_2d.gd
+rope_examples/scripts/character_body_2d_platformer.gd
+rope_examples/scripts/character_body_2d_platformer_walk_on_rope.gd
+rope_examples/scripts/collision_detector.gd
+rope_examples/scripts/hair.tscn
+rope_examples/scripts/rope_with_rigidbody.tscn
+rope_examples/stiffness.tscn
+rope_examples/walk_on_rope.tscn
+samples/softbody2d/ApplyForceToSoftbody.gd
+samples/softbody2d/Asparagus.png
+samples/softbody2d/Asparagus.png.import
+samples/softbody2d/Boiled_Egg_Half.png
+samples/softbody2d/Boiled_Egg_Half.png.import
+samples/softbody2d/Butter.png
+samples/softbody2d/Butter.png.import
+samples/softbody2d/HSlider.gd
+samples/softbody2d/attach-to-character-controller/attach.tscn
+samples/softbody2d/attach-to-character-controller/character_body_2d.gd
+samples/softbody2d/car-demo/car.gd
+samples/softbody2d/car-demo/car.tscn
+samples/softbody2d/car-demo/rigid_body_2d.gd
+samples/softbody2d/create-a-softbody/create.tscn
+samples/softbody2d/demo.tscn
+samples/softbody2d/pickable_rigidbody.gd
+samples/softbody2d/pickable_rigidbody.tscn
+samples/softbody2d/softbody2d.png
+samples/softbody2d/softbody2d.png.import
+samples/softbody2d/softbody2d_banner.jpg
+samples/softbody2d/softbody2d_banner.jpg.import
+samples/softbody2d/softbody2d_full.png
+samples/softbody2d/softbody2d_full.png.import
+samples/softbody2d/softbody2d_inner.png
+samples/softbody2d/softbody2d_inner.png.import
+samples/softbody2d/softbody2d_phys_bouncy.tres
+samples/softbody2d/softbody2d_phys_slippery.tres
+samples/softbody2d/tutorial.tscn
+timer.gd
+water.tscn

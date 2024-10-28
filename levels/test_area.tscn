@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://e7yscap23s86"]
 
+[ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="1_15vh7"]
 [ext_resource type="Texture2D" uid="uid://eouq7ps5mpx7" path="res://objects/32x48.png" id="1_eyoas"]
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="2_4lyoy"]
 [ext_resource type="Script" path="res://RESET.gd" id="3_pt76o"]
@@ -7,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ckwkg4ji4v0g6" path="res://objects/lightpole.tscn" id="5_llsw2"]
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="6_8gqim"]
 [ext_resource type="PackedScene" uid="uid://da1cocq3rvbon" path="res://backgrounds/Dark Forest/dark_forest.tscn" id="7_usi64"]
-[ext_resource type="PackedScene" uid="uid://7ql051xrmu81" path="res://character/dog.tscn" id="8_xrn0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h2p"]
 size = Vector2(48, 32)
@@ -20,6 +20,12 @@ size = Vector2(1691, 20)
 
 [node name="TestArea" type="Node2D"]
 position = Vector2(30, 29)
+
+[node name="player_char" parent="." instance=ExtResource("2_4lyoy")]
+position = Vector2(109, 441)
+
+[node name="Sam" parent="." instance=ExtResource("1_15vh7")]
+position = Vector2(127, 435)
 
 [node name="box1" type="StaticBody2D" parent="."]
 
@@ -61,15 +67,14 @@ position = Vector2(384, 400)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box1/box2_grab_test/grab_me"]
 shape = SubResource("CircleShape2D_r03f1")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_4lyoy")]
-position = Vector2(297, 415)
-
 [node name="RESET_Raycast" type="RayCast2D" parent="."]
 position = Vector2(-472, 632)
 target_position = Vector2(1024, 0)
 script = ExtResource("3_pt76o")
 
 [node name="Ground" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(154.5, 474)
@@ -127,6 +132,3 @@ metadata/color_temperature = 6500
 metadata/color_filter = Color(0.292969, 0.292969, 0.292969, 0.580392)
 
 [node name="Dark Forest" parent="." instance=ExtResource("7_usi64")]
-
-[node name="Dog" parent="." instance=ExtResource("8_xrn0w")]
-position = Vector2(624, 419)

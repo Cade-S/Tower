@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://coa1kvsec6fk5"]
+
+[ext_resource type="Script" path="res://levels/camera_manager.gd" id="1_dv2jp"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_wc7pv"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_216hp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50awf"]
+size = Vector2(74, 52)
+
+[sub_resource type="Resource" id="Resource_5rqws"]
+script = ExtResource("3_216hp")
+duration = 1.0
+transition = 4
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6t40"]
+size = Vector2(20, 253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srcud"]
+size = Vector2(14.5, 220)
+
+[sub_resource type="Resource" id="Resource_q8dvi"]
+script = ExtResource("3_216hp")
+duration = 0.6
+transition = 8
+ease = 2
+
+[node name="CameraManager" type="Node"]
+script = ExtResource("1_dv2jp")
+
+[node name="CameraNodes" type="StaticBody2D" parent="."]
+
+[node name="spawn(why did i do this)" type="Area2D" parent="CameraNodes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraNodes/spawn(why did i do this)"]
+position = Vector2(323, 243)
+shape = SubResource("RectangleShape2D_50awf")
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraNodes/spawn(why did i do this)"]
+position = Vector2(277, 360)
+script = ExtResource("2_wc7pv")
+zoom = Vector2(1.5, 1.5)
+tween_resource = SubResource("Resource_5rqws")
+
+[node name="zone0-1" type="Area2D" parent="CameraNodes"]
+position = Vector2(0, 402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraNodes/zone0-1"]
+position = Vector2(130, -82)
+shape = SubResource("RectangleShape2D_b6t40")
+
+[node name="zone1-2" type="Area2D" parent="CameraNodes"]
+position = Vector2(154, 257)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraNodes/zone1-2"]
+position = Vector2(255.75, 15)
+shape = SubResource("RectangleShape2D_srcud")
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraNodes/zone1-2"]
+position = Vector2(402, 132)
+script = ExtResource("2_wc7pv")
+zoom = Vector2(2, 2)
+tween_resource = SubResource("Resource_q8dvi")
+
+[connection signal="body_entered" from="CameraNodes/zone0-1" to="." method="_on_zone_01_body_entered"]
+[connection signal="body_entered" from="CameraNodes/zone1-2" to="." method="_on_zone_12_body_entered"]

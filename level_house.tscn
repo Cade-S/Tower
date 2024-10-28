@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://c6fc38naw5gpa"]
+
+[ext_resource type="PackedScene" uid="uid://da1cocq3rvbon" path="res://backgrounds/Dark Forest/dark_forest.tscn" id="1_qdqi3"]
+[ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="2_1d8fe"]
+[ext_resource type="Script" path="res://levels/camera_manager.gd" id="3_s0arg"]
+[ext_resource type="Texture2D" uid="uid://c80pmsdtcb6iw" path="res://Lighting Textures/light_ball_512.png" id="3_y5p5a"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_228ef"]
+[ext_resource type="Texture2D" uid="uid://lfd6qxupisqj" path="res://backgrounds/Dark Forest/Background layers/Layer_0000_9.png" id="4_h2rdb"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_u51od"]
+[ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="8_slsag"]
+
+[sub_resource type="Resource" id="Resource_jg7kj"]
+script = ExtResource("5_u51od")
+duration = 0.2
+transition = 8
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bbrk"]
+size = Vector2(1019, 20)
+
+[node name="level_house" type="Node2D"]
+
+[node name="Sam" parent="." instance=ExtResource("8_slsag")]
+position = Vector2(60, 394)
+WALK_SPEED = null
+RUN_SPEED = null
+JUMP_VELOCITY = null
+ACCELERATION = null
+DECELERATION = null
+GRAVITY = null
+
+[node name="Dark Forest" parent="." instance=ExtResource("1_qdqi3")]
+
+[node name="player_char" parent="." instance=ExtResource("2_1d8fe")]
+position = Vector2(29, 392)
+
+[node name="PointLight2D" type="PointLight2D" parent="player_char"]
+texture = ExtResource("3_y5p5a")
+texture_scale = 0.1
+metadata/use_color_temperature = true
+metadata/color_temperature = 6500
+metadata/color_filter = Color(1, 1, 1, 0)
+
+[node name="CameraManager" type="Node" parent="."]
+script = ExtResource("3_s0arg")
+
+[node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes" node_paths=PackedStringArray("follow_target")]
+position = Vector2(29, 392)
+script = ExtResource("4_228ef")
+follow_mode = 1
+follow_target = NodePath("../../../player_char")
+zoom = Vector2(3, 3)
+tween_resource = SubResource("Resource_jg7kj")
+tween_on_load = false
+follow_damping = true
+follow_damping_value = Vector2(0.2, 0.2)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+collision_layer = 6
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(414, 428)
+shape = SubResource("RectangleShape2D_8bbrk")
+
+[node name="Grass" type="Sprite2D" parent="Floor"]
+position = Vector2(229, 244)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_h2rdb")
+
+[node name="Grass2" type="Sprite2D" parent="Floor"]
+position = Vector2(693, 243)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_h2rdb")
