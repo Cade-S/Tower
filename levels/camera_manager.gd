@@ -1,7 +1,7 @@
 extends Node
 
 
-var current_camera_zone: int = 1
+var current_camera_zone: int = 0
 var player
 @export var Camera_Zone0: PhantomCamera2D
 @export var Camera_Zone1: PhantomCamera2D
@@ -21,7 +21,7 @@ func update_current_zone(body, zone_a, zone_b):
 		update_camera()
 			
 func update_camera():
-	var cameras = [Camera_Zone0, Camera_Zone1, Camera_Zone2]
+	var cameras = [Camera_Zone0, Camera_Zone1]
 	
 	for camera in cameras:
 		if camera != null:
@@ -31,8 +31,7 @@ func update_camera():
 				Camera_Zone0.priority = 1
 			1:
 				Camera_Zone1.priority = 1
-			2:
-				Camera_Zone2.priority = 1
+
 
 	print("Camera Zone:", current_camera_zone)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,8 +40,17 @@ func _process(delta: float) -> void:
 	
 	
 
-func _on_zone_01_body_entered(body):
-	update_current_zone(body, 0, 1)
 
-func _on_zone_12_body_entered(body):
-	update_current_zone(body, 1, 2)
+
+
+
+
+
+
+	
+
+
+
+
+func _on_zone_01_body_entered(body: Node2D) -> void:
+	update_current_zone(player,0,1)

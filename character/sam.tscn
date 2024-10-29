@@ -188,7 +188,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"RUN",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -281,7 +281,7 @@ script = ExtResource("1_lqubh")
 sprite_frames = SubResource("SpriteFrames_tpwxe")
 animation = &"WALK"
 autoplay = "IDLE_BLINK"
-frame_progress = 0.667283
+frame_progress = 0.0855543
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false

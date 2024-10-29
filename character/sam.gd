@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var WALK_SPEED = 69.5
+@export var WALK_SPEED = 45
 @export var RUN_SPEED = 130.0
 @export var JUMP_VELOCITY = -400.0
 @export var ACCELERATION = 200
@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var player_state = target.current_state
-	print(player_state)
+	#print(player_state)
 	#0 = idle
 	#1 = Walking
 	#2 = Running
@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = (target.global_position - global_position).normalized()
-	print(distance)
+	#print(distance)
 	
 	#Flip sprite based on player position
 	if direction.x < 0:
@@ -48,25 +48,32 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false  # Facing right
 
 
-	if current_state == State.IDLE and player_state == 0:
-		print("Both idle??")
+
 		
-		
+	if current_state == State.RUN:
+		velocity.x = move_toward(velocity.x, direction.x * RUN_SPEED, ACCELERATION * delta)
+		$AnimatedSprite2D.play("RUN")
+	#	if player_state == 0:
+				
 	if distance >= 50 and current_state != State.RUN:
 		velocity.x = move_toward(velocity.x, direction.x * WALK_SPEED, ACCELERATION * delta)
 		current_state = State.WALK
 		$AnimatedSprite2D.play("WALK")
+		#print("WALK")
+		if distance >= 90:
+			#print("Going RUN")
+			current_state = State.RUN
 
-	if distance >= 80 and current_state != State.WALK:
-		velocity.x = move_toward(velocity.x, direction.x * RUN_SPEED, ACCELERATION * delta)
-		current_state = State.RUN
-		$AnimatedSprite2D.play("RUN")
+
+		
+	 
 	
 
 		
-	else:
+	if distance <= 30:
 		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
 		current_state = State.IDLE
 		$AnimatedSprite2D.play("IDLE_BLINK")
+		#print("Going IDLE")
 
 	move_and_slide()

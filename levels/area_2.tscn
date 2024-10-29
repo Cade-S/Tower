@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ct0kak7yufm38"]
+[gd_scene load_steps=16 format=3 uid="uid://ct0kak7yufm38"]
 
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_7n61o"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_hannj"]
@@ -20,6 +20,15 @@ script = ExtResource("3_t3pur")
 duration = 1.0
 transition = 5
 ease = 2
+
+[sub_resource type="Resource" id="Resource_vs2bl"]
+script = ExtResource("3_t3pur")
+duration = 1.0
+transition = 3
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iduc7"]
+size = Vector2(11, 203)
 
 [node name="Test_Area 2" type="Node2D"]
 
@@ -62,28 +71,6 @@ one_way_collision_margin = 128.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-449, 448, -512, 440, -576, 448, -639, 448, -704, 416, -768, 416, -832, 448, -1008, 448, -1008, 480, -451, 480, -451, 480)
 
-[node name="square" parent="." instance=ExtResource("3_af1c0")]
-position = Vector2(1272, 32)
-
-[node name="square2" parent="." instance=ExtResource("3_af1c0")]
-position = Vector2(1240, 32)
-
-[node name="square3" parent="." instance=ExtResource("3_af1c0")]
-position = Vector2(1240, 16)
-
-[node name="square4" parent="." instance=ExtResource("3_af1c0")]
-position = Vector2(1272, 16)
-
-[node name="triangle" parent="." instance=ExtResource("4_ga365")]
-position = Vector2(1011, 991)
-rotation = -4.73508
-
-[node name="triangle2" parent="." instance=ExtResource("4_ga365")]
-position = Vector2(1239, -6)
-
-[node name="triangle3" parent="." instance=ExtResource("4_ga365")]
-position = Vector2(1247, -27)
-
 [node name="box_16x48" parent="." instance=ExtResource("5_38m6v")]
 position = Vector2(616, 432)
 
@@ -117,8 +104,10 @@ position = Vector2(390, 384)
 [node name="Bridge" parent="." instance=ExtResource("7_ufyi3")]
 position = Vector2(832, 337)
 
-[node name="CameraManager" type="Node" parent="."]
+[node name="CameraManager" type="Node" parent="." node_paths=PackedStringArray("Camera_Zone0", "Camera_Zone1")]
 script = ExtResource("11_w8kwl")
+Camera_Zone0 = NodePath("CameraNodes/PhantomCamera2D")
+Camera_Zone1 = NodePath("CameraNodes/zone0-1/PhantomCamera2D")
 
 [node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
 
@@ -132,3 +121,42 @@ tween_resource = SubResource("Resource_g5e7v")
 tween_on_load = false
 follow_damping = true
 follow_damping_value = Vector2(0.15, 0.15)
+
+[node name="zone0-1" type="Area2D" parent="CameraManager/CameraNodes"]
+position = Vector2(858, 330)
+collision_mask = 0
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes/zone0-1"]
+position = Vector2(-58, 9)
+script = ExtResource("2_hannj")
+zoom = Vector2(1.8, 1.8)
+tween_resource = SubResource("Resource_vs2bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/CameraNodes/zone0-1"]
+position = Vector2(-186, 27)
+shape = SubResource("RectangleShape2D_iduc7")
+
+[node name="square" parent="." instance=ExtResource("3_af1c0")]
+position = Vector2(1272, 32)
+
+[node name="square2" parent="." instance=ExtResource("3_af1c0")]
+position = Vector2(1240, 32)
+
+[node name="square3" parent="." instance=ExtResource("3_af1c0")]
+position = Vector2(1240, 16)
+
+[node name="square4" parent="." instance=ExtResource("3_af1c0")]
+position = Vector2(1272, 16)
+
+[node name="triangle" parent="." instance=ExtResource("4_ga365")]
+position = Vector2(1011, 991)
+rotation = -4.73508
+
+[node name="triangle2" parent="." instance=ExtResource("4_ga365")]
+position = Vector2(1239, -6)
+
+[node name="triangle3" parent="." instance=ExtResource("4_ga365")]
+position = Vector2(1247, -27)
+
+[connection signal="body_entered" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_entered"]
+[connection signal="body_exited" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_exited"]
