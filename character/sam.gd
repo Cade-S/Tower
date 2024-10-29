@@ -9,10 +9,12 @@ extends CharacterBody2D
 var target
 var current_state = State.IDLE
 
+
 enum State {
 	IDLE,
 	WALK,
-	RUN
+	RUN,
+	WALK_TO_IDLE
 }
 
 func _ready() -> void:
@@ -53,27 +55,31 @@ func _physics_process(delta: float) -> void:
 	if current_state == State.RUN:
 		velocity.x = move_toward(velocity.x, direction.x * RUN_SPEED, ACCELERATION * delta)
 		$AnimatedSprite2D.play("RUN")
-	#	if player_state == 0:
+		if player_state == 0:
+			current_state = State.WALK_TO_IDLE
+			
 				
 	if distance >= 50 and current_state != State.RUN:
 		velocity.x = move_toward(velocity.x, direction.x * WALK_SPEED, ACCELERATION * delta)
 		current_state = State.WALK
 		$AnimatedSprite2D.play("WALK")
-		#print("WALK")
+		print("WALK")
 		if distance >= 90:
-			#print("Going RUN")
+			print("Going RUN")
 			current_state = State.RUN
 
 
-		
-	 
-	
-
-		
-	if distance <= 30:
+	if distance <= 30 and current_state in [State.WALK, State.RUN, State.IDLE]:
 		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
 		current_state = State.IDLE
 		$AnimatedSprite2D.play("IDLE_BLINK")
-		#print("Going IDLE")
+		print("Going IDLE")
+	
+	if current_state == State.WALK_TO_IDLE:
+		print("Walk to idle")
+		$AnimatedSprite2D.play("WALK")
+		if distance > 0:
+			velocity.x = move_toward(velocity.x, direction.x * WALK_SPEED-20, ACCELERATION * delta)
+
 
 	move_and_slide()
