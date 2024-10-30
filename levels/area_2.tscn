@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ct0kak7yufm38"]
+[gd_scene load_steps=17 format=3 uid="uid://ct0kak7yufm38"]
 
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_7n61o"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_hannj"]
@@ -11,9 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="7_ufyi3"]
 [ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="11_dyy4l"]
 [ext_resource type="Script" path="res://levels/camera_manager.gd" id="11_w8kwl"]
+[ext_resource type="PackedScene" uid="uid://bbs85ji7vcjv7" path="res://ui.tscn" id="12_wptlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5y6y"]
-size = Vector2(2232, 32)
+size = Vector2(3364, 32)
 
 [sub_resource type="Resource" id="Resource_g5e7v"]
 script = ExtResource("3_t3pur")
@@ -58,18 +59,13 @@ platform_on_leave = 2
 collision_layer = 4
 collision_mask = 0
 
-[node name="floor" type="Polygon2D" parent="StaticBody2D"]
-position = Vector2(-888, 0)
-scale = Vector2(1.5, 1)
-polygon = PackedVector2Array(-80, 448, 37.3333, 448, 80, 416, 122.667, 416, 165.821, 448, 208, 448, 250.667, 440, 293.555, 448, 1776, 448, 1776, 480, -80, 480)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(660, 464)
+position = Vector2(94, 464)
 shape = SubResource("RectangleShape2D_i5y6y")
 one_way_collision_margin = 128.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-449, 448, -512, 440, -576, 448, -639, 448, -704, 416, -768, 416, -832, 448, -1008, 448, -1008, 480, -451, 480, -451, 480)
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1588, 448, -1588, 480, 1776, 480, 1776, 449, 1776, 448)
 
 [node name="box_16x48" parent="." instance=ExtResource("5_38m6v")]
 position = Vector2(616, 432)
@@ -121,8 +117,10 @@ tween_resource = SubResource("Resource_g5e7v")
 tween_on_load = false
 follow_damping = true
 follow_damping_value = Vector2(0.15, 0.15)
+draw_limits = true
 
 [node name="zone0-1" type="Area2D" parent="CameraManager/CameraNodes"]
+visible = false
 position = Vector2(858, 330)
 collision_mask = 0
 
@@ -131,6 +129,7 @@ position = Vector2(-58, 9)
 script = ExtResource("2_hannj")
 zoom = Vector2(1.8, 1.8)
 tween_resource = SubResource("Resource_vs2bl")
+draw_limits = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/CameraNodes/zone0-1"]
 position = Vector2(-186, 27)
@@ -157,6 +156,8 @@ position = Vector2(1239, -6)
 
 [node name="triangle3" parent="." instance=ExtResource("4_ga365")]
 position = Vector2(1247, -27)
+
+[node name="UI" parent="." instance=ExtResource("12_wptlh")]
 
 [connection signal="body_entered" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_entered"]
 [connection signal="body_exited" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_exited"]

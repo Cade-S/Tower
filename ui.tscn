@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbs85ji7vcjv7"]
+
+[ext_resource type="Texture2D" uid="uid://13cjs4frw3ed" path="res://UI/follow.png" id="1_0jls1"]
+[ext_resource type="Script" path="res://ui.gd" id="1_k2cxf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tou38"]
+atlas = ExtResource("1_0jls1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jilu"]
+atlas = ExtResource("1_0jls1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ay8vj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tou38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jilu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_k2cxf")
+
+[node name="sam_follow_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(27, 454)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ay8vj")
+frame_progress = 1.0
+
+[node name="Button" type="Button" parent="sam_follow_button"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+flat = true
+
+[connection signal="pressed" from="sam_follow_button/Button" to="." method="_on_button_pressed"]

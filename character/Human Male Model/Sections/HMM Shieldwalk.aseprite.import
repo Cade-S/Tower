@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://by70ccyrsisav"
+path="res://.godot/imported/HMM Shieldwalk.aseprite-4af60f03184510284121ed5ab9fb4960.res"
+
+[deps]
+
+source_file="res://character/Human Male Model/Sections/HMM Shieldwalk.aseprite"
+dest_files=["res://.godot/imported/HMM Shieldwalk.aseprite-4af60f03184510284121ed5ab9fb4960.res"]
+
+[params]
+

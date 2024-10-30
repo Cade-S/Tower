@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cldsdra4amy41"]
+[gd_scene load_steps=59 format=3 uid="uid://cldsdra4amy41"]
 
 [ext_resource type="Texture2D" uid="uid://bnaa5esd342jh" path="res://character/German Shephard/PNG/x300 size/Bark/german-shephard-bark-001.png" id="1_46abs"]
 [ext_resource type="Script" path="res://character/sam.gd" id="1_lqubh"]
@@ -270,7 +270,9 @@ animations = [{
 radius = 21.0
 height = 68.0
 
-[node name="Sam" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojb33"]
+
+[node name="Sam" type="CharacterBody2D" groups=["sam"]]
 position = Vector2(0, -10)
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
@@ -281,7 +283,6 @@ script = ExtResource("1_lqubh")
 sprite_frames = SubResource("SpriteFrames_tpwxe")
 animation = &"WALK"
 autoplay = "IDLE_BLINK"
-frame_progress = 0.0855543
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
@@ -293,3 +294,10 @@ position_smoothing_enabled = true
 position = Vector2(0, 27)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ay5cu")
+
+[node name="wall_check" type="ShapeCast2D" parent="."]
+position = Vector2(70, -15)
+scale = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_ojb33")
+target_position = Vector2(-35, 0)
+collision_mask = 4
