@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="7_ufyi3"]
 [ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="11_dyy4l"]
 [ext_resource type="Script" path="res://levels/camera_manager.gd" id="11_w8kwl"]
-[ext_resource type="PackedScene" uid="uid://bbs85ji7vcjv7" path="res://ui.tscn" id="12_wptlh"]
+[ext_resource type="PackedScene" uid="uid://bbs85ji7vcjv7" path="res://UI/ui.tscn" id="12_wptlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5y6y"]
 size = Vector2(3364, 32)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bck56dl6iuq23"
-path="res://.godot/imported/bulle_casingt.png-09704e139c0e480e1a588811b383c3fd.ctex"
+path="res://.godot/imported/bulle_casingt.png-4047a2291851fe59411923e1f9d1d06e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/bulle_casingt.png"
-dest_files=["res://.godot/imported/bulle_casingt.png-09704e139c0e480e1a588811b383c3fd.ctex"]
+source_file="res://projectile/bulle_casingt.png"
+dest_files=["res://.godot/imported/bulle_casingt.png-4047a2291851fe59411923e1f9d1d06e.ctex"]
 
 [params]
 

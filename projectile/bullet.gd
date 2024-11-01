@@ -1,12 +1,15 @@
-extends RigidBody2D
-var shell_speed = 200
-var shell_velocity = Vector2(0,0)
+extends Node2D
+var bullet_speed = 900
+var bullet_velocity = Vector2(0,0)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+	

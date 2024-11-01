@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="1_15vh7"]
 [ext_resource type="Texture2D" uid="uid://eouq7ps5mpx7" path="res://objects/32x48.png" id="1_eyoas"]
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="2_4lyoy"]
-[ext_resource type="Script" path="res://RESET.gd" id="3_pt76o"]
+[ext_resource type="Script" path="res://levels/RESET.gd" id="3_pt76o"]
 [ext_resource type="Texture2D" uid="uid://lfd6qxupisqj" path="res://backgrounds/Dark Forest/Background layers/Layer_0000_9.png" id="4_1wn03"]
 [ext_resource type="PackedScene" uid="uid://ckwkg4ji4v0g6" path="res://objects/lightpole.tscn" id="5_llsw2"]
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="6_8gqim"]

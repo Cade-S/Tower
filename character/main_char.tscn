@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://8mjksyy2s7p0" path="res://character/Human Male Model/Sections/HMM Jump Bare.png" id="4_4183j"]
 [ext_resource type="Texture2D" uid="uid://c5lpg1rg3by6t" path="res://character/Human Male Model/Sections/LEDGE.png" id="4_r1l2b"]
 [ext_resource type="Texture2D" uid="uid://c0snitdwafb8y" path="res://character/Human Male Model/Sections/HMM Walk Bare.png" id="5_p8bdd"]
-[ext_resource type="Script" path="res://audio_stream_player.gd" id="8_4cgmy"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="9_meuls"]
-[ext_resource type="Script" path="res://pusher.gd" id="9_vicmv"]
+[ext_resource type="Script" path="res://character/pusher.gd" id="9_vicmv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vb61"]
 atlas = ExtResource("4_4183j")
@@ -270,6 +269,20 @@ height = 19.5442
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_ucoag"]
 
+[sub_resource type="GDScript" id="GDScript_eh3g6"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nswjc"]
 size = Vector2(11.91, 0)
 
@@ -298,7 +311,7 @@ shape = SubResource("CapsuleShape2D_ogvc3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamWAV_ucoag")
-script = ExtResource("8_4cgmy")
+script = SubResource("GDScript_eh3g6")
 
 [node name="CollisionPhysics" type="Node2D" parent="."]
 script = ExtResource("9_vicmv")

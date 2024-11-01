@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqrq1qit05x1q"]
+[gd_scene load_steps=5 format=3 uid="uid://bbpds72tpwcyx"]
 
 [ext_resource type="Script" path="res://addons/godot-rapier2d/fluid_2d_shader_renderer.gd" id="1_ise3g"]
 [ext_resource type="Script" path="res://addons/godot-rapier2d/fluid_2d_circle.gd" id="1_m2bxg"]
@@ -17,8 +17,7 @@ position = Vector2(21, 16)
 script = ExtResource("1_m2bxg")
 circle_radius = 1
 
-[node name="Fluid2DShaderRenderer" type="CanvasLayer" parent="Fluid2D" node_paths=PackedStringArray("fluid", "camera")]
+[node name="Fluid2DShaderRenderer" type="CanvasLayer" parent="Fluid2D" node_paths=PackedStringArray("fluid")]
 script = ExtResource("1_ise3g")
 fluid = NodePath("..")
-camera = NodePath("")
 water_material = ExtResource("2_lipip")

@@ -9,12 +9,12 @@ extends CharacterBody2D
 var current_state = State.IDLE
 var is_sprinting = false
 var target_speed = 0.0
-const bulletpath = preload('res://character/bullet.tscn')
-const shellpath = preload('res://shell.tscn')
+const bulletpath = preload('res://projectile/bullet.tscn')
+const shellpath = preload('res://projectile/shell.tscn')
 
 
 
-#Character states
+#Player states
 enum State {
 	IDLE,
 	WALK,
@@ -25,9 +25,13 @@ enum State {
 	LEDGE
 }
 
+
+#Gunplay, not currently scalable
 func shoot():
 	var shell = shellpath.instantiate()
 	var bullet = bulletpath.instantiate()
+	var shell_rotate = shell.rotation #Pick up HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	#Rotate the shell randomly, keep rotation disabled until collision and then unlock
 	get_parent().add_child(bullet)
 	get_parent().add_child(shell)
 	shell.position = $Node2D/bullet_release.global_position
@@ -36,24 +40,29 @@ func shoot():
 	bullet.bullet_velocity = get_global_mouse_position() - bullet.position
 	bullet.get_node('bullet').apply_force((bullet.bullet_velocity *  bullet.bullet_speed), bullet.position)
 	shell.apply_force(shell.shell_velocity, shell.position)
-	
-	
-	
-	
+
+
+
+
 func _ready():
 	pass
 
+
+
 func _physics_process(delta: float) -> void:
-	
-	
+
+
+
+	#Placeholder input for gunplay
 	if Input.is_action_just_pressed('left_mouse'):
 		print("POW!")
 		shoot()
+		
+	#For aiming via mouse
 	$Node2D.look_at(get_global_mouse_position())
-	
+
 
 	#Ledge Grab
-			
 	if current_state in [State.JUMP, State.FALL]:
 		check_ledge_grab()
 		if current_state == State.LEDGE:
@@ -61,7 +70,8 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("LEDGE")
 			print("Ledge animation")
 			
-			#For edge-case ledge issues
+			#For edge-case ledge issues, adds some velocity towards the ledge so
+			#that the player is 'pushed' into the wall. Also handles sprite flipping
 			velocity.x = 0
 			var collider = $WallCheck.get_collision_normal(0)
 			if collider.x == -1:
@@ -73,11 +83,11 @@ func _physics_process(delta: float) -> void:
 				if not is_on_wall():
 					velocity.x = 25
 		
-	# Apply gravity
+	#Apply gravity
 	if !is_on_floor():
 		velocity.y += GRAVITY * delta
 
-		# If falling, ensure FALL animation is played only if not already in JUMP
+		#If falling, ensure FALL animation is played only if not already in JUMP
 		if current_state != State.FALL and current_state != State.JUMP:
 			current_state = State.FALL
 			$AnimatedSprite2D.play("FALLING")
@@ -93,20 +103,27 @@ func _physics_process(delta: float) -> void:
 	# Handle movement and sprinting
 	var direction = Input.get_axis("move_left", "move_right")
 
-	if is_on_floor() and current_state != State.LEDGE:  # Only handle sprinting and walking when on the ground
+
+	# Only handle sprinting and walking when on the ground
+	if is_on_floor() and current_state != State.LEDGE:
 		is_sprinting = Input.is_action_pressed("sprint") && direction != 0  # Check if sprinting
+		
+		
+		
 		if is_sprinting:
 			target_speed = SPRINT_SPEED
 			if current_state != State.RUN and current_state != State.JUMP:
 				current_state = State.RUN
 				$AnimatedSprite2D.play("START_RUN")  # Play START_RUN animation
 				print("Transitioning to RUN state")  # Debugging
+
 		elif direction != 0:
 			target_speed = SPEED
 			if current_state != State.WALK and current_state != State.JUMP:
 				current_state = State.WALK
 				$AnimatedSprite2D.play("START_WALK")  # Play START_WALK animation
 				print("Transitioning to WALK state")  # Debugging
+
 		else:
 			target_speed = 0  # No movement, stop gradually
 			if current_state != State.IDLE:
@@ -118,6 +135,7 @@ func _physics_process(delta: float) -> void:
 	if direction != 0 and !current_state == State.LEDGE:
 		velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
 		$AnimatedSprite2D.flip_h = direction < 0
+
 	else:
 		# Gradually slow down when no input is provided
 		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
@@ -138,45 +156,63 @@ func _physics_process(delta: float) -> void:
 	# Apply movement
 	move_and_slide()
 
+	#Decides when the ledge grab collision should be disabled
 	$LedgeGrab.disabled = current_state in [State.RUN, State.IDLE] or velocity.y < 0 or ($TopCheck.is_colliding() and current_state != State.LEDGE) or Input.is_action_pressed("crouch")
 
+#Checks if in ledge grab state
 func check_ledge_grab() -> void:
 	if $WallCheck.is_colliding() and not $FloorCheck.is_colliding() and velocity.y == 0:
 		current_state = State.LEDGE
+
+
+
 
 # Function to handle animation when finished
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("Animation finished: ", $AnimatedSprite2D.animation)  # Debugging
 	match current_state:
+
+
 		State.LAND:
 			# After landing, check for horizontal movement and transition accordingly
 			if velocity.x == 0:
 				current_state = State.IDLE
 				$AnimatedSprite2D.play("IDLE")  # Play IDLE animation
 				print("Transitioning to IDLE after LAND")  # Debugging
+				
 			else:
 				current_state = State.WALK
 				$AnimatedSprite2D.play("WALK")  # Loop WALK animation
 				print("Transitioning to WALK after LAND")  # Debugging
+
+
 		State.JUMP:
 			# After jumping, transition to FALL if in the air
 			if not is_on_floor():
 				current_state = State.FALL
 				$AnimatedSprite2D.play("FALLING")  # Play FALLING animation
 				print("Transitioning to FALL from JUMP")
+
+
 		State.FALL:
 			# If falling and landing detected
 			if is_on_floor():
 				current_state = State.LAND
 				$AnimatedSprite2D.play("LANDING")  # Play LANDING animation
 				print("Transitioning to LAND from FALL")
+
+
 		State.WALK:
 			# If walking, ensure walking animation plays
 			$AnimatedSprite2D.play("WALK")  # Loop WALK animation
 			print("Continuing WALK animation")
+
+
 		State.RUN:
 			# If running, ensure running animation plays
 			$AnimatedSprite2D.play("RUN")  # Loop RUN animation
 			print("Continuing RUN animation")
+
+
 		State.LEDGE:
-			pass
+			pass#Forgot to integrate, fix this
