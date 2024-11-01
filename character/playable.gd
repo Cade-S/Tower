@@ -9,6 +9,9 @@ extends CharacterBody2D
 var current_state = State.IDLE
 var is_sprinting = false
 var target_speed = 0.0
+const bulletpath = preload('res://character/bullet.tscn')
+const shellpath = preload('res://shell.tscn')
+
 
 
 #Character states
@@ -22,12 +25,31 @@ enum State {
 	LEDGE
 }
 
-
-
+func shoot():
+	var shell = shellpath.instantiate()
+	var bullet = bulletpath.instantiate()
+	get_parent().add_child(bullet)
+	get_parent().add_child(shell)
+	shell.position = $Node2D/bullet_release.global_position
+	bullet.position = $Node2D/bullet_release.global_position
+	shell.shell_velocity = get_global_mouse_position() - shell.position
+	bullet.bullet_velocity = get_global_mouse_position() - bullet.position
+	bullet.get_node('bullet').apply_force((bullet.bullet_velocity *  bullet.bullet_speed), bullet.position)
+	shell.apply_force(shell.shell_velocity, shell.position)
+	
+	
+	
+	
 func _ready():
 	pass
 
 func _physics_process(delta: float) -> void:
+	
+	
+	if Input.is_action_just_pressed('left_mouse'):
+		print("POW!")
+		shoot()
+	$Node2D.look_at(get_global_mouse_position())
 	
 
 	#Ledge Grab

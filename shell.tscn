@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://msp3cifa777a"]
+
+[ext_resource type="Script" path="res://shell.gd" id="1_chce2"]
+[ext_resource type="Texture2D" uid="uid://bck56dl6iuq23" path="res://character/bulle_casingt.png" id="1_lke72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb82d"]
+size = Vector2(1.94405, 1.07907)
+
+[node name="shell" type="RigidBody2D"]
+position = Vector2(-6.5, -2)
+collision_layer = 0
+collision_mask = 7
+linear_damp = 1.065
+script = ExtResource("1_chce2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.18734, 6.17054)
+shape = SubResource("RectangleShape2D_hb82d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.20137, 5.66501)
+texture = ExtResource("1_lke72")

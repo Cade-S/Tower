@@ -134,6 +134,7 @@ draw_limits = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/CameraNodes/zone0-1"]
 position = Vector2(-186, 27)
 shape = SubResource("RectangleShape2D_iduc7")
+disabled = true
 
 [node name="square" parent="." instance=ExtResource("3_af1c0")]
 position = Vector2(1272, 32)

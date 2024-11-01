@@ -13,8 +13,7 @@ config_version=5
 config/name="Tower"
 run/main_scene="res://levels/area_2.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-boot_splash/show_image=false
-boot_splash/image="res://splash_screen.jpg"
+boot_splash/image="res://splash_screen.png"
 
 [autoload]
 
