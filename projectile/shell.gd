@@ -4,7 +4,7 @@ var shell_velocity = Vector2(0,0)
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready():
 	var rotate = rng.randf_range(0,360)
 
 

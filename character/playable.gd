@@ -30,10 +30,11 @@ enum State {
 func shoot():
 	var shell = shellpath.instantiate()
 	var bullet = bulletpath.instantiate()
-	var shell_rotate = shell.rotation #Pick up HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	var shell_rotate = shell.rotation
 	#Rotate the shell randomly, keep rotation disabled until collision and then unlock
 	get_parent().add_child(bullet)
 	get_parent().add_child(shell)
+	shell.rotaion = shell.rotate()
 	shell.position = $Node2D/bullet_release.global_position
 	bullet.position = $Node2D/bullet_release.global_position
 	shell.shell_velocity = get_global_mouse_position() - shell.position
