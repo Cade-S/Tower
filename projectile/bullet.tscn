@@ -1,25 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt4vn0sxyng22"]
+[gd_scene load_steps=4 format=3 uid="uid://byaw3k4t5l3fk"]
 
-[ext_resource type="Script" path="res://projectile/bullet.gd" id="1_8q3mh"]
-[ext_resource type="Texture2D" uid="uid://bipfou4sdvwcj" path="res://projectile/bullet.png" id="1_66nnl"]
+[ext_resource type="Script" path="res://projectile/bullet.gd" id="1_lato1"]
+[ext_resource type="Texture2D" uid="uid://bipfou4sdvwcj" path="res://projectile/bullet.png" id="2_at426"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nf0t"]
-size = Vector2(3.99426, 1.99713)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_db10m"]
+radius = 1.5
+height = 6.0
 
-[node name="Bullet" type="Node2D"]
-scale = Vector2(0.5, 0.5)
-script = ExtResource("1_8q3mh")
-
-[node name="bullet" type="RigidBody2D" parent="."]
-unique_name_in_owner = true
-collision_layer = 0
-collision_mask = 4
+[node name="bullet" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 15
 lock_rotation = true
+script = ExtResource("1_lato1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.0006, 0.0257227)
-shape = SubResource("RectangleShape2D_5nf0t")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_db10m")
 
-[node name="Sprite2D" type="Sprite2D" parent="bullet"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
-texture = ExtResource("1_66nnl")
+texture = ExtResource("2_at426")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -84,11 +84,12 @@ left_mouse={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Dog"
 2d_physics/layer_3="objects"
+2d_physics/layer_4="projectile"
 
 [physics]
 
+common/max_physics_steps_per_frame=16
 2d/physics_engine="Rapier2D"
-common/physics_interpolation=true
 
 [rendering]
 
