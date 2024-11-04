@@ -110,7 +110,7 @@ func _physics_process(delta: float) -> void:
 		#print("Going IDLE")
 	
 	if current_state == State.WALK_TO_IDLE_PLAYER:
-		print("Walk to idle")
+		#print("Walk to idle") #debug
 		$AnimatedSprite2D.play("WALK")
 		if distance >= 10:
 			velocity.x = move_toward(velocity.x, direction.x * WALK_SPEED - 20, ACCELERATION * delta)

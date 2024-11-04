@@ -30,25 +30,27 @@ enum State {
 func shoot():
 	var shell = shellpath.instantiate()
 	var bullet = bulletpath.instantiate()
+
 	
-	# Add the bullet and shell to the scene
 	get_parent().add_child(bullet)
 	get_parent().add_child(shell)
 	
 	# Set a random initial rotation
-	shell.rotation = randf() * TAU  # TAU is equivalent to 2 * PI for a full rotation
+	shell.rotation = randf() * TAU
 
 	# Set position for both shell and bullet
 	shell.position = $Node2D/bullet_release.global_position
 	bullet.position = $Node2D/bullet_release.global_position
 
 	# Set velocities for movement
-	var shell_velocity = (get_global_mouse_position() - shell.position).normalized() * shell.shell_speed
-	var bullet_velocity = (get_global_mouse_position() - bullet.position).normalized() * bullet.bullet_speed
+	var direction = (get_global_mouse_position() - bullet.position).normalized()
+	var bullet_velocity = direction * bullet.bullet_speed
+	var shell_velocity = direction * shell.shell_speed
 
-	# Apply the calculated velocity directly to the bullet
+	# Apply velocity
 	bullet.linear_velocity = bullet_velocity
 	shell.apply_force(shell_velocity, shell.position)
+
 
 
 

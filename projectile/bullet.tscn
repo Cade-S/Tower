@@ -21,5 +21,3 @@ shape = SubResource("CapsuleShape2D_db10m")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 texture = ExtResource("2_at426")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

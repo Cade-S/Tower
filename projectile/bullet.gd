@@ -7,20 +7,39 @@ var bullet_velocity = Vector2.ZERO
 func _ready() -> void:
 	# Set the initial velocity based on the mouse position
 	bullet_velocity = (get_global_mouse_position() - global_position).normalized() * bullet_speed
-	linear_velocity = bullet_velocity  # Directly set linear_velocity
+	linear_velocity = bullet_velocity
+	self.contact_monitor = true
+	self.max_contacts_reported = 1
+	
+	# Connect the body_entered signal
+	self.connect("body_entered", Callable(self, "_on_body_entered"))
+
 
 # Called every physics frame
 func _physics_process(delta: float) -> void:
 	if linear_velocity.length() > 0:
+		
 		# Update rotation to match current direction of linear_velocity
 		rotation = linear_velocity.angle()
-		
-
 
 func _on_body_entered(body: Node):
 	print("PING")
 	if body.is_in_group("player") or body.is_in_group("sam"):
-		pass	 
+		pass
+		
 	else:
 		queue_free()
+
+		self.visible = false
+		print("invisible")
 		
+
+		var timer = Timer.new()
+		timer.one_shot = true
+		timer.wait_time = 0.1
+		add_child(timer)
+		timer.connect("timeout", Callable(self, "_on_timeout"))
+		timer.start()
+
+func _on_timeout():
+	queue_free()
