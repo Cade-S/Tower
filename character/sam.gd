@@ -100,7 +100,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, direction.x * WALK_SPEED, ACCELERATION * delta)
 		current_state = State.WALK_TO_IDLE_PLAYER
 		$AnimatedSprite2D.play("WALK")
-		print("WALK")
+		#print("WALK")
 
 
 

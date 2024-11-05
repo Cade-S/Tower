@@ -1,43 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://byaw3k4t5l3fk"]
+[gd_scene load_steps=10 format=3 uid="uid://byaw3k4t5l3fk"]
 
 [ext_resource type="Script" path="res://projectile/bullet.gd" id="1_lato1"]
 [ext_resource type="Texture2D" uid="uid://bipfou4sdvwcj" path="res://projectile/bullet.png" id="2_at426"]
+[ext_resource type="AudioStream" uid="uid://cknxt7yyxhf22" path="res://SoundFX/pewpew/01-ricochet.wav" id="3_wsp1p"]
+[ext_resource type="AudioStream" uid="uid://ck3nlhuypipcw" path="res://SoundFX/pewpew/02-ricochet.wav" id="4_prh4s"]
+[ext_resource type="AudioStream" uid="uid://dmbwh3uvo431a" path="res://SoundFX/pewpew/03-ricochet.wav" id="5_2rkks"]
+[ext_resource type="AudioStream" uid="uid://siylcwtdkdqe" path="res://SoundFX/pewpew/04-ricochet.wav" id="6_kxbnm"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_db10m"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vp2k"]
 radius = 1.5
 height = 6.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nqdh7"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4711"]
+radius = 1.5
+height = 6.0
 
-[node name="bullet" type="RigidBody2D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sa382"]
+streams_count = 4
+stream_0/stream = ExtResource("3_wsp1p")
+stream_1/stream = ExtResource("4_prh4s")
+stream_2/stream = ExtResource("5_2rkks")
+stream_3/stream = ExtResource("6_kxbnm")
+
+[node name="Bullet" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_layer = 8
 collision_mask = 7
-lock_rotation = true
-continuous_cd = 1
-contact_monitor = true
-max_contacts_reported = 1
 script = ExtResource("1_lato1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(1.0006, 0.0257227)
 rotation = 1.5708
 scale = Vector2(0.6, 0.6)
-shape = SubResource("CapsuleShape2D_db10m")
+shape = SubResource("CapsuleShape2D_3vp2k")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 z_index = 1
 position = Vector2(0.508233, 0.0662909)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_at426")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
 position = Vector2(-1.82097, -1.22637)
 scale = Vector2(0.6, 0.6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4.65215, 15.3351)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+position = Vector2(4.71409, 2.0804)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_db10m")
+shape = SubResource("CapsuleShape2D_n4711")
 
 [node name="ricochet" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_nqdh7")
+stream = SubResource("AudioStreamRandomizer_sa382")

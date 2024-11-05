@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=60 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://kjc8xupcdd0x" path="res://character/Human Male Model/Sections/HMM Idle Bare.png" id="2_nrwnw"]
@@ -10,6 +10,17 @@
 [ext_resource type="Script" path="res://character/pusher.gd" id="9_vicmv"]
 [ext_resource type="Texture2D" uid="uid://dsib7mkqq33n0" path="res://character/Human Male Model/Sections/arm.png" id="9_xxn86"]
 [ext_resource type="AudioStream" uid="uid://fh6vsqays7nt" path="res://SoundFX/pewpew/gunshot.wav" id="10_6s7n2"]
+[ext_resource type="AudioStream" uid="uid://drrp87s1bmulw" path="res://SoundFX/footsteps/hard_sole/01-578705__aerny__shoes-01-hard-sole.wav" id="11_qbuuk"]
+[ext_resource type="AudioStream" uid="uid://8fslpm0penoj" path="res://SoundFX/footsteps/hard_sole/11-578705__aerny__shoes-01-hard-sole.wav" id="13_n5lrk"]
+[ext_resource type="AudioStream" uid="uid://du61wt00c7xct" path="res://SoundFX/footsteps/hard_sole/03-578705__aerny__shoes-01-hard-sole.wav" id="14_ihibo"]
+[ext_resource type="AudioStream" uid="uid://dvgimaf3umjam" path="res://SoundFX/footsteps/hard_sole/04-578705__aerny__shoes-01-hard-sole.wav" id="15_pm2qw"]
+[ext_resource type="AudioStream" uid="uid://bqtkuueem41mh" path="res://SoundFX/footsteps/hard_sole/05-578705__aerny__shoes-01-hard-sole.wav" id="16_tvswv"]
+[ext_resource type="AudioStream" uid="uid://3wmdx161jhmo" path="res://SoundFX/footsteps/hard_sole/06-578705__aerny__shoes-01-hard-sole.wav" id="17_xybe4"]
+[ext_resource type="AudioStream" uid="uid://5jdh3bs8a0tu" path="res://SoundFX/footsteps/hard_sole/07-578705__aerny__shoes-01-hard-sole.wav" id="18_8r377"]
+[ext_resource type="AudioStream" uid="uid://bh0w36jxyd01u" path="res://SoundFX/footsteps/hard_sole/08-578705__aerny__shoes-01-hard-sole.wav" id="19_p8lgk"]
+[ext_resource type="AudioStream" uid="uid://caxdsqxutj8lj" path="res://SoundFX/footsteps/hard_sole/09-578705__aerny__shoes-01-hard-sole.wav" id="20_tcfnx"]
+[ext_resource type="AudioStream" uid="uid://d2cx7671eacgp" path="res://SoundFX/footsteps/hard_sole/10-578705__aerny__shoes-01-hard-sole.wav" id="21_n2j13"]
+[ext_resource type="Script" path="res://character/footstep_sound.gd" id="22_6i1u1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vb61"]
 atlas = ExtResource("4_4183j")
@@ -293,6 +304,27 @@ size = Vector2(11.91, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdckq"]
 size = Vector2(16, 4)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ncfbm"]
+particle_flag_disable_z = true
+angular_velocity_min = -549.46
+angular_velocity_max = 498.49
+gravity = Vector3(0, -40, 0)
+linear_accel_min = -71.27
+linear_accel_max = -49.05
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p3bc5"]
+streams_count = 10
+stream_0/stream = ExtResource("11_qbuuk")
+stream_1/stream = ExtResource("14_ihibo")
+stream_2/stream = ExtResource("15_pm2qw")
+stream_3/stream = ExtResource("16_tvswv")
+stream_4/stream = ExtResource("17_xybe4")
+stream_5/stream = ExtResource("18_8r377")
+stream_6/stream = ExtResource("19_p8lgk")
+stream_7/stream = ExtResource("20_tcfnx")
+stream_8/stream = ExtResource("21_n2j13")
+stream_9/stream = ExtResource("13_n5lrk")
+
 [node name="player_char" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-0.0936432, -0.0936441)
 collision_mask = 5
@@ -304,8 +336,7 @@ script = ExtResource("1_q25qh")
 texture_filter = 1
 position = Vector2(0, -0.0625)
 sprite_frames = SubResource("SpriteFrames_kldte")
-animation = &"LEDGE"
-frame_progress = 1.0
+animation = &"RUN"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0625, 4.75)
@@ -360,7 +391,18 @@ gizmo_extents = 17.2
 texture = ExtResource("9_xxn86")
 offset = Vector2(-10, 0)
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Node2D"]
+visible = false
+position = Vector2(12.7279, 0.972273)
+process_material = SubResource("ParticleProcessMaterial_ncfbm")
+visibility_rect = Rect2(-1, -51.6333, 2, 52.6265)
+
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_6s7n2")
+
+[node name="footstep_sound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_p3bc5")
+volume_db = 10.0
+script = ExtResource("22_6i1u1")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

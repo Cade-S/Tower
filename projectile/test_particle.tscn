@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://drh1jalohcgir"]
+[gd_scene load_steps=4 format=3 uid="uid://drh1jalohcgir"]
+
+[sub_resource type="Curve" id="Curve_8q1i1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.273171, 0.351648), 0.0, 0.0, 0, 0, Vector2(0.668293, 0.010989), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_t6kry"]
+curve = SubResource("Curve_8q1i1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_37jv8"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+initial_velocity_min = 182.57
+initial_velocity_max = 182.57
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -47.3
+radial_accel_max = 42.32
+tangential_accel_min = -13.28
+tangential_accel_max = 48.96
+scale_curve = SubResource("CurveTexture_t6kry")
+color = Color(0.938949, 0.75508, 0.778403, 1)
+anim_speed_min = 11.89
+anim_speed_max = 15.01
+anim_offset_min = 0.7054
+anim_offset_max = 1.0
+turbulence_enabled = true
 
 [node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_37jv8")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0

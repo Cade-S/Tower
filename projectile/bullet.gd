@@ -11,6 +11,7 @@ func _ready() -> void:
 	linear_velocity = bullet_velocity
 	self.contact_monitor = true
 	self.max_contacts_reported = 1
+
 	
 	
 	
@@ -29,8 +30,11 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func _on_body_entered(body):
-	print("PING")
-	particle_instance.position = position
+	get_parent().get_node("ricochet").play()
+	
+	print("PINGALING")
+	particle_instance.position = self.global_position
+	particle_instance.get_node("GPUParticles2D").emitting = true
 	get_tree().current_scene.add_child(particle_instance)
 	if body.is_in_group("player") or body.is_in_group("sam"):
 		pass
