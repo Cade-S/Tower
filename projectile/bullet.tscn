@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://byaw3k4t5l3fk"]
+[gd_scene load_steps=5 format=3 uid="uid://byaw3k4t5l3fk"]
 
 [ext_resource type="Script" path="res://projectile/bullet.gd" id="1_lato1"]
 [ext_resource type="Texture2D" uid="uid://bipfou4sdvwcj" path="res://projectile/bullet.png" id="2_at426"]
@@ -7,17 +7,37 @@
 radius = 1.5
 height = 6.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nqdh7"]
+
 [node name="bullet" type="RigidBody2D"]
 collision_layer = 8
-collision_mask = 15
+collision_mask = 7
 lock_rotation = true
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_lato1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.0006, 0.0257227)
 rotation = 1.5708
+scale = Vector2(0.6, 0.6)
 shape = SubResource("CapsuleShape2D_db10m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
+position = Vector2(0.508233, 0.0662909)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_at426")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1.82097, -1.22637)
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4.65215, 15.3351)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_db10m")
+
+[node name="ricochet" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_nqdh7")

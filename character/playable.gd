@@ -11,7 +11,7 @@ var is_sprinting = false
 var target_speed = 0.0
 const bulletpath = preload('res://projectile/bullet.tscn')
 const shellpath = preload('res://projectile/shell.tscn')
-
+var gunshot = preload('res://SoundFX/pewpew/gunshot.wav')
 
 
 #Player states
@@ -28,6 +28,8 @@ enum State {
 
 #Gunplay, not currently scalable
 func shoot():
+	$gunshot.stream = gunshot
+	$gunshot.play()
 	var shell = shellpath.instantiate()
 	var bullet = bulletpath.instantiate()
 

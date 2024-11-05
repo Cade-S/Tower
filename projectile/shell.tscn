@@ -10,7 +10,6 @@ size = Vector2(1.94405, 1.07907)
 position = Vector2(-6.5, -2)
 collision_layer = 8
 collision_mask = 4
-linear_damp = 0.1
 script = ExtResource("1_chce2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

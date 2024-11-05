@@ -2,7 +2,8 @@ extends RigidBody2D
 
 @export var bullet_speed = 900
 var bullet_velocity = Vector2.ZERO
-
+var particle = preload("res://projectile/test_particle.tscn")
+var particle_instance = particle.instantiate()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Set the initial velocity based on the mouse position
@@ -11,8 +12,11 @@ func _ready() -> void:
 	self.contact_monitor = true
 	self.max_contacts_reported = 1
 	
+	
+	
 	# Connect the body_entered signal
 	self.connect("body_entered", Callable(self, "_on_body_entered"))
+
 
 
 # Called every physics frame
@@ -21,9 +25,13 @@ func _physics_process(delta: float) -> void:
 		
 		# Update rotation to match current direction of linear_velocity
 		rotation = linear_velocity.angle()
+	else:
+		queue_free()
 
-func _on_body_entered(body: Node):
+func _on_body_entered(body):
 	print("PING")
+	particle_instance.position = position
+	get_tree().current_scene.add_child(particle_instance)
 	if body.is_in_group("player") or body.is_in_group("sam"):
 		pass
 		
