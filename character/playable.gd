@@ -8,16 +8,24 @@ extends CharacterBody2D
 @export var DECELERATION = 950.0  # Adjust this for how fast you slow down
 var current_state = State.IDLE
 var is_sprinting = false
+var is_aiming = false
 var target_speed = 0.0
+var mouse_direction
+var facing
 const bulletpath = preload('res://projectile/bullet.tscn')
 const shellpath = preload('res://projectile/shell.tscn')
 var gunshot = preload('res://SoundFX/pewpew/gunshot.wav')
+@onready var body_animation = get_node("PlayerSprite/Body")
+@onready var head = get_node("PlayerSprite/Body/Head")
+@onready var front_arm = get_node("PlayerSprite/Body/Front_Arm")
+@onready var back_arm = get_node("PlayerSprite/Body/Front_Arm")
 
 
 #Player states
 enum State {
 	IDLE,
 	WALK,
+	WALK_BACKWARDS,
 	RUN,
 	JUMP,
 	FALL,
@@ -46,8 +54,8 @@ func shoot():
 	shell.rotation = randf() * TAU
 
 	# Set position for both shell and bullet
-	shell.position = $Node2D/bullet_release.global_position
-	bullet.position = $Node2D/bullet_release.global_position
+	shell.position = front_arm.get_child(0).global_position
+	bullet.position = front_arm.get_child(0).global_position
 
 	# Set velocities for movement
 	var direction = (get_global_mouse_position() - bullet.position).normalized()
@@ -74,21 +82,57 @@ func _physics_process(delta: float) -> void:
 
 
 
-	#Placeholder input for gunplay
-	if Input.is_action_just_pressed('left_mouse'):
-		#print("POW!")
-		shoot()
+#Gunplay and Camera
+	if Input.is_action_pressed('RMB'):
+		is_aiming = true
+		front_arm.position.y = -4.0
+		if facing == "left":
+			front_arm.position.x = 2.7
+		elif facing == "right":
+			front_arm.position.x = -2.7
+
+		front_arm.play("AIM_ONE_HAND")
+		front_arm.look_at(get_global_mouse_position())
+
+		head.look_at(get_global_mouse_position())
+
+
+		if Input.is_action_just_pressed('LMB'):
+			#print("POW!")
+			shoot()
+	else:
+		front_arm.position.x = 0
+		front_arm.position.y = 0
+		front_arm.rotation = 0
+		is_aiming = false
+		head.rotation = 0
+		front_arm.position.x
 		
-	#For aiming via mouse
-	$Node2D.look_at(get_global_mouse_position())
+
+	
+	
+	
+	if get_global_mouse_position() < self.global_position and is_aiming:
+		#print("LEFT:mouse_directionTRUE")
+		head.flip_v = true
+		front_arm.flip_v = true
+		mouse_direction = true
+	else:
+		#print("RIGHT: mouse_directionFALSE")
+		head.flip_v = false
+		front_arm.flip_v = false
+		mouse_direction = false
 
 
+
+
+#------------------------------------------------------------------------------
 	#Ledge Grab
 	if current_state in [State.JUMP, State.FALL]:
 		check_ledge_grab()
 		if current_state == State.LEDGE:
 			#Ledge Animation
-			$AnimatedSprite2D.play("LEDGE")
+			body_animation.play("LEDGE")
 			#print("Ledge animation")
 			
 			#For edge-case ledge issues, adds some velocity towards the ledge so
@@ -96,11 +140,11 @@ func _physics_process(delta: float) -> void:
 			velocity.x = 0
 			var collider = $WallCheck.get_collision_normal(0)
 			if collider.x == -1:
-				$AnimatedSprite2D.flip_h = true
+				body_animation.flip_h = true
 				if not is_on_wall():
 					velocity.x = -25
 			else:
-				$AnimatedSprite2D.flip_h = false
+				body_animation.flip_h = false
 				if not is_on_wall():
 					velocity.x = 25
 		
@@ -111,18 +155,23 @@ func _physics_process(delta: float) -> void:
 		#If falling, ensure FALL animation is played only if not already in JUMP
 		if current_state != State.FALL and current_state != State.JUMP:
 			current_state = State.FALL
-			$AnimatedSprite2D.play("FALLING")
+			body_animation.play("FALLING")
 			#print("Transitioning to FALL state")  # Debugging
 
 	else:
 		# Handle landing
 		if current_state == State.FALL:
 			current_state = State.LAND
-			$AnimatedSprite2D.play("LANDING")
+			body_animation.play("LANDING")
 			#print("Transitioning to LAND state")  # Debugging
 
 	# Handle movement and sprinting
 	var direction = Input.get_axis("move_left", "move_right")
+	if direction < 0:
+		facing = "left"
+	elif direction > 0:
+		facing = "right"
+	print(facing)
 
 
 	# Only handle sprinting and walking when on the ground
@@ -135,27 +184,33 @@ func _physics_process(delta: float) -> void:
 			target_speed = SPRINT_SPEED
 			if current_state != State.RUN and current_state != State.JUMP:
 				current_state = State.RUN
-				$AnimatedSprite2D.play("START_RUN")  # Play START_RUN animation
+				body_animation.play("START_RUN")  # Play START_RUN animation
 				#print("Transitioning to RUN state")  # Debugging
 
 		elif direction != 0:
 			target_speed = SPEED
-			if current_state != State.WALK and current_state != State.JUMP:
+			if current_state != State.WALK and current_state != State.JUMP and current_state != State.WALK_BACKWARDS:
 				current_state = State.WALK
-				$AnimatedSprite2D.play("START_WALK")  # Play START_WALK animation
+				body_animation.play("START_WALK")  # Play START_WALK animation
 				#print("Transitioning to WALK state")  # Debugging
+				if is_aiming == true and mouse_direction == true:
+					if direction > 0:
+						current_state = State.WALK_BACKWARDS
+						print("WALKING BACKWARDS")
+					else:
+						current_state = State.WALK
 
 		else:
 			target_speed = 0  # No movement, stop gradually
 			if current_state != State.IDLE:
 				current_state = State.IDLE
-				$AnimatedSprite2D.play("IDLE")  # Play IDLE animation
+				body_animation.play("IDLE")  # Play IDLE animation
 				#print("Transitioning to IDLE state")  # Debugging
 
 	# Gradually change the horizontal velocity towards the target speed
 	if direction != 0 and !current_state == State.LEDGE:
 		velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
-		$AnimatedSprite2D.flip_h = direction < 0
+		body_animation.flip_h = direction < 0
 
 	else:
 		# Gradually slow down when no input is provided
@@ -168,7 +223,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		current_state = State.JUMP
-		$AnimatedSprite2D.play("START_JUMP")
+		body_animation.play("START_JUMP")
 		#print("Transitioning to JUMP state")  # Debugging
 		return  # Exit to avoid falling logic
 
@@ -188,9 +243,8 @@ func check_ledge_grab() -> void:
 
 
 
-# Function to handle animation when finished
-func _on_animated_sprite_2d_animation_finished() -> void:
-	#print("Animation finished: ", $AnimatedSprite2D.animation)  # Debugging
+func _on_body_animation_finished() -> void:
+		#print("Animation finished: ", body_animation.animation)  # Debugging
 	match current_state:
 
 
@@ -198,12 +252,12 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			# After landing, check for horizontal movement and transition accordingly
 			if velocity.x == 0:
 				current_state = State.IDLE
-				$AnimatedSprite2D.play("IDLE")  # Play IDLE animation
+				body_animation.play("IDLE")  # Play IDLE animation
 				#print("Transitioning to IDLE after LAND")  # Debugging
 				
 			else:
 				current_state = State.WALK
-				$AnimatedSprite2D.play("WALK")  # Loop WALK animation
+				body_animation.play("WALK")  # Loop WALK animation
 				#print("Transitioning to WALK after LAND")  # Debugging
 
 
@@ -211,7 +265,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			# After jumping, transition to FALL if in the air
 			if not is_on_floor():
 				current_state = State.FALL
-				$AnimatedSprite2D.play("FALLING")  # Play FALLING animation
+				body_animation.play("FALLING")  # Play FALLING animation
 				#print("Transitioning to FALL from JUMP")
 
 
@@ -219,21 +273,24 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			# If falling and landing detected
 			if is_on_floor():
 				current_state = State.LAND
-				$AnimatedSprite2D.play("LANDING")  # Play LANDING animation
+				body_animation.play("LANDING")  # Play LANDING animation
 				#print("Transitioning to LAND from FALL")
 
 
 		State.WALK:
 			# If walking, ensure walking animation plays
-			$AnimatedSprite2D.play("WALK")  # Loop WALK animation
+			body_animation.play("WALK")  # Loop WALK animation
 			#print("Continuing WALK animation")
 
 
 		State.RUN:
 			# If running, ensure running animation plays
-			$AnimatedSprite2D.play("RUN")  # Loop RUN animation
+			body_animation.play("RUN")  # Loop RUN animation
 			#print("Continuing RUN animation")
 
 
 		State.LEDGE:
 			pass#Forgot to integrate, fix this
+			
+		State.WALK_BACKWARDS:
+			print("Walk backwards")

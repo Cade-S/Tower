@@ -11,9 +11,9 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	state = get_parent().current_state
-	anim = get_parent().get_node("AnimatedSprite2D")
+	anim = get_parent().get_node("PlayerSprite/Body")
 	
 	#print(player_state)
 	#0 = idle

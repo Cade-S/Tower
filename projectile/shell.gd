@@ -15,6 +15,6 @@ func _ready():
 	# Connect to collision signal using Callable
 	connect("body_entered", Callable(self, "_on_first_collision"))
 
-func _on_first_collision(body):
+func _on_first_collision(_body):
 	# Unlock rotation after the first collision
 	lock_rotation = false
