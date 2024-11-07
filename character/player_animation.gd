@@ -14,6 +14,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+	#0 = idle
+	#1 = Walking
+	#2 = Walk Backwards
+	#3 = Running
+	#4 = Jump
+	#5 = FALL ??
+	#6 = LAND
 func _process(_delta: float) -> void:
 
 	var body_state = body.animation
@@ -26,7 +33,7 @@ func _process(_delta: float) -> void:
 		elif direction == true:
 			front_arm.flip_h = true
 			head.flip_h = true
-	elif player.current_state != 3: 
+	else: 
 		front_arm.flip_h = false
 		#body.flip_h = false
 		head.flip_h = false

@@ -11,7 +11,7 @@ var is_sprinting = false
 var is_aiming = false
 var target_speed = 0.0
 var mouse_direction
-var facing
+var facing = false
 const bulletpath = preload('res://projectile/bullet.tscn')
 const shellpath = preload('res://projectile/shell.tscn')
 var gunshot = preload('res://SoundFX/pewpew/gunshot.wav')
@@ -23,6 +23,7 @@ var gunshot = preload('res://SoundFX/pewpew/gunshot.wav')
 
 #Player states
 enum State {
+	
 	IDLE,
 	WALK,
 	WALK_BACKWARDS,
@@ -31,7 +32,9 @@ enum State {
 	FALL,
 	LAND,
 	LEDGE
+
 }
+
 
 
 #Shooting mechanic
@@ -80,60 +83,54 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 
+	# Handle movement and sprinting
+	var direction = Input.get_axis("move_left", "move_right")
+	
+	
+	
+	
+	
+	
+	if direction < 0 and not is_aiming:
+		facing = true
+	elif direction > 0 and not is_aiming:
+		facing = false
 
 
 #Gunplay and Camera
+
 	if Input.is_action_pressed('RMB'):
 		is_aiming = true
-		front_arm.position.y = -4.0
-		if facing == "left":
-			front_arm.position.x = 2.7
-		elif facing == "right":
-			front_arm.position.x = -2.7
+		front_arm.position.y = -4.0 #moves arm up to shooting position
+		if facing == true:
+			front_arm.position.x = 2.7 #moves to left side of body
+		elif facing == false:
+			front_arm.position.x = -2.7 #moves to right side of body
 
 		front_arm.play("AIM_ONE_HAND")
-		front_arm.look_at(get_global_mouse_position())
-
+		front_arm.look_at(get_global_mouse_position()) #Make head and arm follow mouse
 		head.look_at(get_global_mouse_position())
 
 
-		if Input.is_action_just_pressed('LMB'):
+		if Input.is_action_just_pressed('LMB'): #Only shoot if also holding RMB
 			#print("POW!")
-			shoot()
-	else:
+			shoot() 
+	else: #If not holding RMB, Reset position of arm and turn off is_aiming
 		front_arm.position.x = 0
 		front_arm.position.y = 0
 		front_arm.rotation = 0
 		is_aiming = false
 		head.rotation = 0
-		front_arm.position.x
 		
 
-	
-	
-	
-	if get_global_mouse_position() < self.global_position and is_aiming:
-		#print("LEFT:mouse_directionTRUE")
-		head.flip_v = true
-		front_arm.flip_v = true
-		mouse_direction = true
-	else:
-		#print("RIGHT: mouse_directionFALSE")
-		head.flip_v = false
-		front_arm.flip_v = false
-		mouse_direction = false
-
-
-
-
-#------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 	#Ledge Grab
 	if current_state in [State.JUMP, State.FALL]:
 		check_ledge_grab()
 		if current_state == State.LEDGE:
 			#Ledge Animation
 			body_animation.play("LEDGE")
-			#print("Ledge animation")
+			print("Ledge animation")
 			
 			#For edge-case ledge issues, adds some velocity towards the ledge so
 			#that the player is 'pushed' into the wall. Also handles sprite flipping
@@ -147,6 +144,85 @@ func _physics_process(delta: float) -> void:
 				body_animation.flip_h = false
 				if not is_on_wall():
 					velocity.x = 25
+	#------------------------------------------------------------------------------
+	# Handle movement and aim behavior
+	
+	if get_global_mouse_position().x < self.global_position.x and is_aiming:
+		# Aiming to the left
+		head.flip_v = true
+		front_arm.flip_v = true
+		mouse_direction = true
+		print("left")
+	else:
+		# Aiming to the right
+		head.flip_v = false
+		front_arm.flip_v = false
+		mouse_direction = false
+		print("right")
+
+
+
+	if direction == 0:
+		# Player is idle
+		current_state = State.IDLE
+		body_animation.play("IDLE")
+		body_animation.flip_h = facing  # Maintain facing direction in idle
+
+	elif current_state == State.RUN:
+		# Running overrides aiming
+		body_animation.flip_h = facing
+		front_arm.flip_h = facing
+		head.flip_h = facing
+		body_animation.play("RUN")
+
+
+	elif is_aiming:
+
+		# If moving from idle, always face movement direction initially
+		if current_state == State.IDLE:
+			facing = direction < 0  # Update facing to movement direction
+			body_animation.flip_h = facing
+			current_state = State.WALK
+			body_animation.play("WALK")
+		elif facing == mouse_direction:
+			# Walking towards aim direction
+			current_state = State.WALK
+			body_animation.flip_h = facing
+			body_animation.play("WALK")
+		else:
+			# Walking away from aim direction
+			current_state = State.WALK_BACKWARDS
+			body_animation.play("WALK_BACKWARDS")
+			
+
+
+	else:
+		# Not aiming, walk normally and face movement direction
+		current_state = State.WALK
+		facing = direction < 0
+		body_animation.flip_h = facing
+		body_animation.play("WALK")
+
+
+	# Ensure the script can go back to idle state if direction is 0 and not aiming
+	if direction == 0 and !is_aiming:
+		current_state = State.IDLE
+		body_animation.play("IDLE")
+
+
+
+	# Debugging prints
+	print("facing:", facing)
+	print("mouse_direction:", mouse_direction)
+	print("direction:", direction)
+	print("current_state:", current_state)
+
+	
+	
+	
+	
+	
+
 		
 	#Apply gravity
 	if !is_on_floor():
@@ -165,13 +241,11 @@ func _physics_process(delta: float) -> void:
 			body_animation.play("LANDING")
 			#print("Transitioning to LAND state")  # Debugging
 
-	# Handle movement and sprinting
-	var direction = Input.get_axis("move_left", "move_right")
-	if direction < 0:
-		facing = "left"
-	elif direction > 0:
-		facing = "right"
-	print(facing)
+
+		
+		
+
+	
 
 
 	# Only handle sprinting and walking when on the ground
@@ -192,13 +266,8 @@ func _physics_process(delta: float) -> void:
 			if current_state != State.WALK and current_state != State.JUMP and current_state != State.WALK_BACKWARDS:
 				current_state = State.WALK
 				body_animation.play("START_WALK")  # Play START_WALK animation
-				#print("Transitioning to WALK state")  # Debugging
-				if is_aiming == true and mouse_direction == true:
-					if direction > 0:
-						current_state = State.WALK_BACKWARDS
-						print("WALKING BACKWARDS")
-					else:
-						current_state = State.WALK
+				print("Transitioning to WALK state")  # Debugging
+
 
 		else:
 			target_speed = 0  # No movement, stop gradually
@@ -208,13 +277,20 @@ func _physics_process(delta: float) -> void:
 				#print("Transitioning to IDLE state")  # Debugging
 
 	# Gradually change the horizontal velocity towards the target speed
-	if direction != 0 and !current_state == State.LEDGE:
+	if direction != 0 and current_state not in [State.LEDGE]:
 		velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
-		body_animation.flip_h = direction < 0
+		if current_state == State.WALK_BACKWARDS:
+			body_animation.flip_h = direction > 0
+		else:
+			if direction == 0:
+				current_state = State.IDLE  # Ensure idle state is set while aiming
+			elif not is_sprinting:
+				current_state = State.WALK
 
 	else:
 		# Gradually slow down when no input is provided
 		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
+
 
 
 
@@ -258,7 +334,7 @@ func _on_body_animation_finished() -> void:
 			else:
 				current_state = State.WALK
 				body_animation.play("WALK")  # Loop WALK animation
-				#print("Transitioning to WALK after LAND")  # Debugging
+				print("Transitioning to WALK after LAND")  # Debugging
 
 
 		State.JUMP:
@@ -280,7 +356,7 @@ func _on_body_animation_finished() -> void:
 		State.WALK:
 			# If walking, ensure walking animation plays
 			body_animation.play("WALK")  # Loop WALK animation
-			#print("Continuing WALK animation")
+			print("Continuing WALK animation")
 
 
 		State.RUN:
@@ -293,4 +369,4 @@ func _on_body_animation_finished() -> void:
 			pass#Forgot to integrate, fix this
 			
 		State.WALK_BACKWARDS:
-			print("Walk backwards")
+			pass

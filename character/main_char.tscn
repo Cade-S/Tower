@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=131 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://c5lpg1rg3by6t" path="res://character/Human Male Model/Sections/LEDGE.png" id="4_r1l2b"]
@@ -172,14 +172,6 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("25_d8d45")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1smxx"]
-atlas = ExtResource("25_d8d45")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7y26"]
-atlas = ExtResource("25_d8d45")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7lku"]
 atlas = ExtResource("25_d8d45")
 region = Rect2(32, 0, 32, 32)
@@ -203,6 +195,10 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_di1mh"]
 atlas = ExtResource("25_d8d45")
 region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7y26"]
+atlas = ExtResource("25_d8d45")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vo1o3"]
 atlas = ExtResource("25_d8d45")
@@ -342,20 +338,14 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_y451x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1smxx")
 }],
 "loop": false,
 "name": &"START_WALK",
 "speed": 9.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j7y26")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e7lku")
 }, {
@@ -373,13 +363,16 @@ animations = [{
 }, {
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_di1mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7y26")
 }],
 "loop": true,
 "name": &"WALK",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_vo1o3")
 }, {
 "duration": 1.0,
@@ -402,7 +395,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WALK_BACKWARDS",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnj0l"]
@@ -512,17 +505,9 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("29_dk78i")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_23kg8"]
-atlas = ExtResource("30_swr6h")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ie6iu"]
 atlas = ExtResource("30_swr6h")
 region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cpbyo"]
-atlas = ExtResource("30_swr6h")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jq5sx"]
 atlas = ExtResource("30_swr6h")
@@ -547,6 +532,10 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cangd"]
 atlas = ExtResource("30_swr6h")
 region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpbyo"]
+atlas = ExtResource("30_swr6h")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1siut"]
 animations = [{
@@ -660,10 +649,7 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_23kg8")
-}, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_ie6iu")
 }],
 "loop": false,
@@ -671,9 +657,6 @@ animations = [{
 "speed": 9.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cpbyo")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jq5sx")
 }, {
@@ -691,6 +674,9 @@ animations = [{
 }, {
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_cangd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpbyo")
 }],
 "loop": true,
 "name": &"WALK",
@@ -872,35 +858,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_dvr76"]
-resource_name = "IDLE"
-capture_included = true
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:sprite_frames")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 2,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_i0jd2"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_60ydk"]
-resource_name = "running"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pji1o"]
-_data = {
-"IDLE": SubResource("Animation_dvr76"),
-"RESET": SubResource("Animation_i0jd2"),
-"running": SubResource("Animation_60ydk")
-}
-
 [node name="player_char" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-0.0936432, -0.0936441)
 collision_mask = 5
@@ -909,7 +866,6 @@ platform_floor_layers = 4294967288
 script = ExtResource("1_q25qh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-0.0625, 4.75)
 shape = SubResource("CapsuleShape2D_ogvc3")
 
@@ -921,12 +877,10 @@ script = SubResource("GDScript_eh3g6")
 script = ExtResource("9_vicmv")
 
 [node name="LedgeGrab" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-0.0394453, -5.99282)
 shape = SubResource("RectangleShape2D_nswjc")
 
 [node name="WallCheck" type="ShapeCast2D" parent="."]
-visible = false
 position = Vector2(-0.144752, -4.87944)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_aoujr")
@@ -934,12 +888,10 @@ target_position = Vector2(-0.00655772, 11.8982)
 collision_mask = 4
 
 [node name="FloorCheck" type="RayCast2D" parent="."]
-visible = false
 target_position = Vector2(0, 19.708)
 collision_mask = 5
 
 [node name="TopCheck" type="ShapeCast2D" parent="."]
-visible = false
 position = Vector2(-0.102322, -8.04155)
 shape = SubResource("RectangleShape2D_bdckq")
 target_position = Vector2(0, 0)
@@ -971,8 +923,7 @@ script = ExtResource("22_2txn4")
 
 [node name="Body" type="AnimatedSprite2D" parent="PlayerSprite"]
 sprite_frames = SubResource("SpriteFrames_fihmo")
-animation = &"IDLE"
-frame_progress = 0.53765
+animation = &"WALK_BACKWARDS"
 
 [node name="Head" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
 texture_filter = 1
@@ -998,8 +949,7 @@ z_index = 1
 position = Vector2(0, -3.8147e-06)
 rotation = 6.28319
 sprite_frames = SubResource("SpriteFrames_1siut")
-animation = &"AIM_ONE_HAND"
-frame_progress = 0.390651
+animation = &"WALK"
 
 [node name="bullet_release" type="Marker2D" parent="PlayerSprite/Body/Front_Arm"]
 position = Vector2(13.0573, -1.59475)
@@ -1015,11 +965,6 @@ visibility_rect = Rect2(-1, -51.6333, 2, 52.6265)
 z_index = -1
 position = Vector2(-0.148652, 0.303977)
 sprite_frames = SubResource("SpriteFrames_1h4ux")
-animation = &"IDLE"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
-libraries = {
-"": SubResource("AnimationLibrary_pji1o")
-}
+animation = &"START_WALK"
 
 [connection signal="animation_finished" from="PlayerSprite/Body" to="." method="_on_body_animation_finished"]

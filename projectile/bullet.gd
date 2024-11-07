@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 # Called every physics frame
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if linear_velocity.length() > 0:
 		
 		# Update rotation to match current direction of linear_velocity

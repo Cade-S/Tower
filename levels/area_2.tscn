@@ -48,7 +48,7 @@ texture = ExtResource("2_hkr7s")
 
 [node name="player_char" parent="." instance=ExtResource("1_7n61o")]
 z_index = 1
-position = Vector2(238, 425)
+position = Vector2(208, 418)
 
 [node name="Sam" parent="." instance=ExtResource("11_dyy4l")]
 z_index = 1
@@ -108,7 +108,7 @@ Camera_Zone1 = NodePath("CameraNodes/zone0-1/PhantomCamera2D")
 [node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
 
 [node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes" node_paths=PackedStringArray("follow_target")]
-position = Vector2(238, 425)
+position = Vector2(208, 418)
 script = ExtResource("2_hannj")
 follow_mode = 2
 follow_target = NodePath("../../../player_char")

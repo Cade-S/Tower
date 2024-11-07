@@ -23,6 +23,7 @@ stream_2/stream = ExtResource("5_2rkks")
 stream_3/stream = ExtResource("6_kxbnm")
 
 [node name="Bullet" type="Node2D"]
+modulate = Color(0.16297, 1, 0.975822, 1)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_layer = 8

@@ -52,5 +52,5 @@ func _process(_delta: float) -> void:
 
 
 
-func _on_zone_01_body_entered(body: Node2D) -> void:
+func _on_zone_01_body_entered(_body: Node2D) -> void:
 	update_current_zone(player,0,1)
