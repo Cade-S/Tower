@@ -29,8 +29,6 @@ ACCELERATION = null
 DECELERATION = null
 GRAVITY = null
 
-[node name="Dark Forest" parent="." instance=ExtResource("1_qdqi3")]
-
 [node name="player_char" parent="." instance=ExtResource("2_1d8fe")]
 position = Vector2(29, 392)
 
@@ -40,6 +38,8 @@ texture_scale = 0.1
 metadata/use_color_temperature = true
 metadata/color_temperature = 6500
 metadata/color_filter = Color(1, 1, 1, 0)
+
+[node name="Dark Forest" parent="." instance=ExtResource("1_qdqi3")]
 
 [node name="CameraManager" type="Node" parent="."]
 script = ExtResource("3_s0arg")
@@ -56,6 +56,7 @@ tween_resource = SubResource("Resource_jg7kj")
 tween_on_load = false
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
+draw_limits = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
 collision_layer = 6
