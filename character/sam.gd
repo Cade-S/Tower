@@ -24,7 +24,7 @@ func _ready() -> void:
 		target = get_tree().get_nodes_in_group("player")[0]
 
 func _physics_process(delta: float) -> void:
-	var player_state = target.current_state
+	var player_state = target.main_sm.get_active_state().name
 	#print(player_state)
 	#0 = idle
 	#1 = Walking
@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 		
 		
 	if following == true and $wall_check.is_colliding() == false: #if following player
-		if player_state == 0: #IDLE
+		if player_state == "IDLE": #IDLE
 			if distance <= 10:
 				current_state = State.IDLE
 			elif distance <= 75 and current_state != State.IDLE:
@@ -72,7 +72,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				current_state = State.RUN_TO_PLAYER
 				
-		if player_state == 1: #WALKING
+		if player_state == "WALK": #WALKING
 			if distance <= 70:
 				current_state = State.WALK_TO_PLAYER
 				catching_up = false
@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 				current_state = State.WALK_TO_PLAYER
 				catching_up = true
 				
-		if player_state == 2: #RUNNING
+		if player_state == "RUN": #RUNNING
 			if distance >= 60:
 				current_state = State.RUN_TO_PLAYER
 			elif distance >= 20 and current_state != State.RUN_TO_PLAYER:

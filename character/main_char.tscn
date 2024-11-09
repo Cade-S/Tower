@@ -909,7 +909,6 @@ platform_floor_layers = 4294967288
 script = ExtResource("1_q25qh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-0.0625, 4.75)
 shape = SubResource("CapsuleShape2D_ogvc3")
 
@@ -921,12 +920,10 @@ script = SubResource("GDScript_eh3g6")
 script = ExtResource("9_vicmv")
 
 [node name="LedgeGrab" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-0.0394453, -5.99282)
 shape = SubResource("RectangleShape2D_nswjc")
 
 [node name="WallCheck" type="ShapeCast2D" parent="."]
-visible = false
 position = Vector2(-0.144752, -4.87944)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_aoujr")
@@ -934,12 +931,10 @@ target_position = Vector2(-0.00655772, 11.8982)
 collision_mask = 4
 
 [node name="FloorCheck" type="RayCast2D" parent="."]
-visible = false
 target_position = Vector2(0, 19.708)
 collision_mask = 5
 
 [node name="TopCheck" type="ShapeCast2D" parent="."]
-visible = false
 position = Vector2(-0.102322, -8.04155)
 shape = SubResource("RectangleShape2D_bdckq")
 target_position = Vector2(0, 0)
@@ -971,8 +966,7 @@ script = ExtResource("22_2txn4")
 
 [node name="Body" type="AnimatedSprite2D" parent="PlayerSprite"]
 sprite_frames = SubResource("SpriteFrames_fihmo")
-animation = &"IDLE"
-frame_progress = 0.53765
+animation = &"LEDGE"
 
 [node name="Head" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
 texture_filter = 1
@@ -999,7 +993,7 @@ position = Vector2(0, -3.8147e-06)
 rotation = 6.28319
 sprite_frames = SubResource("SpriteFrames_1siut")
 animation = &"AIM_ONE_HAND"
-frame_progress = 0.390651
+frame_progress = 0.657979
 
 [node name="bullet_release" type="Marker2D" parent="PlayerSprite/Body/Front_Arm"]
 position = Vector2(13.0573, -1.59475)

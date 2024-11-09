@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 		elif direction == true:
 			front_arm.flip_h = true
 			head.flip_h = true
-	elif player.current_state != 3: 
+	elif player.main_sm.get_active_state().name != "SPRINT": 
 		front_arm.flip_h = false
 		#body.flip_h = false
 		head.flip_h = false

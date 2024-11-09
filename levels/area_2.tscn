@@ -51,9 +51,6 @@ z_index = 1
 position = Vector2(238, 425)
 
 [node name="Sam" parent="." instance=ExtResource("11_dyy4l")]
-z_index = 1
-position = Vector2(213, 434)
-platform_on_leave = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4

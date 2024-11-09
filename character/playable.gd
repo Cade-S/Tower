@@ -1,39 +1,122 @@
 extends CharacterBody2D
 
+var main_sm: LimboHSM
 @export var GRAVITY = 600
 @export var SPEED = 69.0
 @export var SPRINT_SPEED = 120.0
 @export var JUMP_VELOCITY = -250.0
 @export var ACCELERATION = 350.0  # Adjust this to control how fast you pick up speed
 @export var DECELERATION = 950.0  # Adjust this for how fast you slow down
-var current_state = State.IDLE
+var target_speed = 0.0
+
+var mouse_direction
+var direction
+
+
 var is_sprinting = false
 var is_aiming = false
-var target_speed = 0.0
-var mouse_direction
-var facing
+var jump
+var ledge
+var crouch 
+var facing #Legacy, replace
+
 const bulletpath = preload('res://projectile/bullet.tscn')
 const shellpath = preload('res://projectile/shell.tscn')
 var gunshot = preload('res://SoundFX/pewpew/gunshot.wav')
+
 @onready var body_animation = get_node("PlayerSprite/Body")
 @onready var head = get_node("PlayerSprite/Body/Head")
 @onready var front_arm = get_node("PlayerSprite/Body/Front_Arm")
 @onready var back_arm = get_node("PlayerSprite/Body/Front_Arm")
 
 
-#Player states
-enum State {
-	IDLE,
-	WALK,
-	WALK_BACKWARDS,
-	RUN,
-	JUMP,
-	FALL,
-	LAND,
-	LEDGE
-}
 
 
+
+func _ready():
+	initiate_state_machine()
+
+
+
+func _physics_process(delta: float) -> void:
+	print(main_sm.get_active_state().name)
+	direction = Input.get_axis("move_left", "move_right")
+	is_sprinting = Input.is_action_pressed("sprint")
+	velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
+	jump = Input.is_action_just_pressed("jump")
+	crouch = Input.is_action_pressed("crouch")
+	ledge = $WallCheck.is_colliding() and not $FloorCheck.is_colliding() and velocity.y == 0
+	
+	
+	if !is_aiming:
+		if direction < 0:
+			body_animation.flip_h = true
+		elif direction > 0:
+			body_animation.flip_h = false
+	
+
+
+#GRAVITY
+	if !is_on_floor():
+		velocity.y += GRAVITY * delta	
+	move_and_slide()
+
+
+#Gunplay and Camera
+	if Input.is_action_pressed('RMB'):
+		is_aiming = true
+		front_arm.position.y = -4.0
+		if facing == "left":
+			front_arm.position.x = 2.7
+		elif facing == "right":
+			front_arm.position.x = -2.7
+
+		front_arm.play("AIM_ONE_HAND")
+		front_arm.look_at(get_global_mouse_position())
+
+		head.look_at(get_global_mouse_position())
+#
+#
+		if Input.is_action_just_pressed('LMB'):
+			#print("POW!")
+			shoot()
+	else:
+		front_arm.position.x = 0
+		front_arm.position.y = 0
+		front_arm.rotation = 0
+		is_aiming = false
+		head.rotation = 0
+		front_arm.position.x
+		
+
+	
+	
+	
+	if get_global_mouse_position() < self.global_position and is_aiming:
+		#print("LEFT:mouse_directionTRUE")
+		head.flip_v = true
+		front_arm.flip_v = true
+		mouse_direction = true
+	else:
+		#print("RIGHT: mouse_directionFALSE")
+		head.flip_v = false
+		front_arm.flip_v = false
+		mouse_direction = false
+
+
+
+
+#------------------------------------------------------------------------------
+
+	
+
+	#Decides when the ledge grab collision should be disabled
+	$LedgeGrab.disabled = velocity.y < 0 or ($TopCheck.is_colliding() and main_sm.get_active_state().name != "LEDGE") or crouch
+
+
+
+
+#---------------------------------------------------------------------------------------------------
 #Shooting mechanic
 func shoot():
 	
@@ -69,228 +152,145 @@ func shoot():
 
 
 
+#---------------------------------------------------------------------------------------------------
+#STATE MACHINE
+#LimboAI for ver: 4.3
+
+func initiate_state_machine():
+	main_sm = LimboHSM.new()
+	add_child(main_sm)	
+	
 
 
+	var IDLE_state = LimboState.new().named("IDLE").call_on_enter(IDLE_START).call_on_update(IDLE_UPDATE)
+	var WALK_state = LimboState.new().named("WALK").call_on_enter(WALK_START).call_on_update(WALK_UPDATE)
+	var WALK_BACKWARDS_state = LimboState.new().named("WALK_BACKWARDS").call_on_enter(WALK_BACKWARDS_START).call_on_update(WALK_BACKWARDS_UPDATE)
+	var SPRINT_state = LimboState.new().named("SPRINT").call_on_enter(SPRINT_START).call_on_update(SPRINT_UPDATE)
+	var JUMP_state = LimboState.new().named("JUMP").call_on_enter(JUMP_START).call_on_update(JUMP_UPDATE)
+	var FALL_state = LimboState.new().named("FALL").call_on_enter(FALL_START).call_on_update(FALL_UPDATE)
+	var LAND_state = LimboState.new().named("LAND").call_on_enter(LAND_START).call_on_update(LAND_UPDATE)
+	var LEDGE_state = LimboState.new().named("LEDGE").call_on_enter(LEDGE_START).call_on_update(LEDGE_UPDATE)	
 
 
-func _ready():
+	main_sm.add_child(IDLE_state)
+	main_sm.add_child(WALK_state)
+	main_sm.add_child(WALK_BACKWARDS_state)
+	main_sm.add_child(SPRINT_state)
+	main_sm.add_child(JUMP_state)
+	main_sm.add_child(FALL_state)
+	main_sm.add_child(LAND_state)
+	main_sm.add_child(LEDGE_state)
+	
+	main_sm.initial_state = IDLE_state
+	
+	main_sm.add_transition(IDLE_state, WALK_state, &"to_walk")
+	main_sm.add_transition(main_sm.ANYSTATE, IDLE_state, &"state_ended")
+	main_sm.add_transition(WALK_state, SPRINT_state, &"to_sprint")
+	main_sm.add_transition(IDLE_state, JUMP_state, &"to_jump")
+	main_sm.add_transition(WALK_state, JUMP_state, &"to_jump")
+	main_sm.add_transition(WALK_BACKWARDS_state, JUMP_state, &"to_jump")
+	main_sm.add_transition(SPRINT_state, JUMP_state, &"to_jump")
+	main_sm.add_transition(JUMP_state, LEDGE_state, &"to_ledge")
+	
+	main_sm.initialize(self)
+	main_sm.set_active(true)
+#------------------------------------------------------------------------------------------------
+
+
+func IDLE_START():
+	body_animation.play("IDLE")
+	
+func IDLE_UPDATE(delta: float):
+	
+	if direction != 0:
+		main_sm.dispatch(&"to_walk")
+	if jump:
+		main_sm.dispatch(&"to_jump")
+	
+func WALK_START():
+	body_animation.play("START_WALK")
+	print("Animation set")
+	
+func WALK_UPDATE(delta: float):
+	target_speed = SPEED
+	if direction == 0:
+		main_sm.dispatch(&"state_ended")
+	if is_sprinting:
+		main_sm.dispatch(&"to_sprint")
+	if jump:
+		main_sm.dispatch(&"to_jump")
+	
+	
+func WALK_BACKWARDS_START():
 	pass
-
-
-
-func _physics_process(delta: float) -> void:
-
-
-
-#Gunplay and Camera
-	if Input.is_action_pressed('RMB'):
-		is_aiming = true
-		front_arm.position.y = -4.0
-		if facing == "left":
-			front_arm.position.x = 2.7
-		elif facing == "right":
-			front_arm.position.x = -2.7
-
-		front_arm.play("AIM_ONE_HAND")
-		front_arm.look_at(get_global_mouse_position())
-
-		head.look_at(get_global_mouse_position())
-
-
-		if Input.is_action_just_pressed('LMB'):
-			#print("POW!")
-			shoot()
-	else:
-		front_arm.position.x = 0
-		front_arm.position.y = 0
-		front_arm.rotation = 0
-		is_aiming = false
-		head.rotation = 0
-		front_arm.position.x
-		
+func WALK_BACKWARDS_UPDATE(delta: float):
+	if jump:
+		main_sm.dispatch(&"to_jump")
+	
+	
+func SPRINT_START():
+	body_animation.play("START_RUN")
+func SPRINT_UPDATE(delta: float):
+	target_speed = SPRINT_SPEED
+	if !is_sprinting:
+		main_sm.dispatch(&"state_ended")
+	if jump:
+		main_sm.dispatch(&"to_jump")
+	
+func JUMP_START():
+	body_animation.play("START_JUMP")
+	velocity.y += JUMP_VELOCITY
+func JUMP_UPDATE(delta: float):
+	if is_on_floor():
+		main_sm.dispatch(&"state_ended")
+	if ledge:
+		main_sm.dispatch(&"to_ledge")
 
 	
 	
+func FALL_START():
+	pass
+func FALL_UPDATE(delta: float):
+	pass
 	
-	if get_global_mouse_position() < self.global_position and is_aiming:
-		#print("LEFT:mouse_directionTRUE")
-		head.flip_v = true
-		front_arm.flip_v = true
-		mouse_direction = true
-	else:
-		#print("RIGHT: mouse_directionFALSE")
-		head.flip_v = false
-		front_arm.flip_v = false
-		mouse_direction = false
+	
+func LAND_START():
+	pass
+func LAND_UPDATE(delta: float):
+	pass
+	
+
+func LEDGE_START():
+	body_animation.play("LEDGE")
 
 
-
-
-#------------------------------------------------------------------------------
-	#Ledge Grab
-	if current_state in [State.JUMP, State.FALL]:
-		check_ledge_grab()
-		if current_state == State.LEDGE:
-			#Ledge Animation
-			body_animation.play("LEDGE")
-			#print("Ledge animation")
-			
-			#For edge-case ledge issues, adds some velocity towards the ledge so
-			#that the player is 'pushed' into the wall. Also handles sprite flipping
-			velocity.x = 0
-			var collider = $WallCheck.get_collision_normal(0)
-			if collider.x == -1:
-				body_animation.flip_h = true
-				if not is_on_wall():
-					velocity.x = -25
-			else:
-				body_animation.flip_h = false
-				if not is_on_wall():
-					velocity.x = 25
-		
-	#Apply gravity
-	if !is_on_floor():
-		velocity.y += GRAVITY * delta
-
-		#If falling, ensure FALL animation is played only if not already in JUMP
-		if current_state != State.FALL and current_state != State.JUMP:
-			current_state = State.FALL
-			body_animation.play("FALLING")
-			#print("Transitioning to FALL state")  # Debugging
-
-	else:
-		# Handle landing
-		if current_state == State.FALL:
-			current_state = State.LAND
-			body_animation.play("LANDING")
-			#print("Transitioning to LAND state")  # Debugging
-
-	# Handle movement and sprinting
-	var direction = Input.get_axis("move_left", "move_right")
-	if direction < 0:
-		facing = "left"
-	elif direction > 0:
-		facing = "right"
-	print(facing)
-
-
-	# Only handle sprinting and walking when on the ground
-	if is_on_floor() and current_state != State.LEDGE:
-		is_sprinting = Input.is_action_pressed("sprint") && direction != 0  # Check if sprinting
-		
-		
-		
-		if is_sprinting:
-			target_speed = SPRINT_SPEED
-			if current_state != State.RUN and current_state != State.JUMP:
-				current_state = State.RUN
-				body_animation.play("START_RUN")  # Play START_RUN animation
-				#print("Transitioning to RUN state")  # Debugging
-
-		elif direction != 0:
-			target_speed = SPEED
-			if current_state != State.WALK and current_state != State.JUMP and current_state != State.WALK_BACKWARDS:
-				current_state = State.WALK
-				body_animation.play("START_WALK")  # Play START_WALK animation
-				#print("Transitioning to WALK state")  # Debugging
-				if is_aiming == true and mouse_direction == true:
-					if direction > 0:
-						current_state = State.WALK_BACKWARDS
-						print("WALKING BACKWARDS")
-					else:
-						current_state = State.WALK
-
+func LEDGE_UPDATE(delta: float):
+	velocity.x = 0
+	var collider = $WallCheck.get_collision_normal(0)
+	if collider.x == -1:
+		body_animation.flip_h = true
+		if not is_on_wall():
+			velocity.x = -25
 		else:
-			target_speed = 0  # No movement, stop gradually
-			if current_state != State.IDLE:
-				current_state = State.IDLE
-				body_animation.play("IDLE")  # Play IDLE animation
-				#print("Transitioning to IDLE state")  # Debugging
-
-	# Gradually change the horizontal velocity towards the target speed
-	if direction != 0 and !current_state == State.LEDGE:
-		velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
-		body_animation.flip_h = direction < 0
-
-	else:
-		# Gradually slow down when no input is provided
-		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
-
-
-
-
-	#Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		current_state = State.JUMP
-		body_animation.play("START_JUMP")
-		#print("Transitioning to JUMP state")  # Debugging
-		return  # Exit to avoid falling logic
-
-
-
-	# Apply movement
-	move_and_slide()
-
-	#Decides when the ledge grab collision should be disabled
-	$LedgeGrab.disabled = current_state in [State.RUN, State.IDLE] or velocity.y < 0 or ($TopCheck.is_colliding() and current_state != State.LEDGE) or Input.is_action_pressed("crouch")
-
-#Checks if in ledge grab state
-func check_ledge_grab() -> void:
-	if $WallCheck.is_colliding() and not $FloorCheck.is_colliding() and velocity.y == 0:
-		current_state = State.LEDGE
-
-
+			body_animation.flip_h = false
+			if not is_on_wall():
+				velocity.x = 25
+				
+	if !ledge:
+		main_sm.dispatch(&"state_ended")
 
 
 func _on_body_animation_finished() -> void:
 		#print("Animation finished: ", body_animation.animation)  # Debugging
-	match current_state:
+	match body_animation.get_animation():
 
-
-		State.LAND:
-			# After landing, check for horizontal movement and transition accordingly
-			if velocity.x == 0:
-				current_state = State.IDLE
-				body_animation.play("IDLE")  # Play IDLE animation
-				#print("Transitioning to IDLE after LAND")  # Debugging
-				
-			else:
-				current_state = State.WALK
-				body_animation.play("WALK")  # Loop WALK animation
-				#print("Transitioning to WALK after LAND")  # Debugging
-
-
-		State.JUMP:
-			# After jumping, transition to FALL if in the air
-			if not is_on_floor():
-				current_state = State.FALL
-				body_animation.play("FALLING")  # Play FALLING animation
-				#print("Transitioning to FALL from JUMP")
-
-
-		State.FALL:
-			# If falling and landing detected
-			if is_on_floor():
-				current_state = State.LAND
-				body_animation.play("LANDING")  # Play LANDING animation
-				#print("Transitioning to LAND from FALL")
-
-
-		State.WALK:
-			# If walking, ensure walking animation plays
-			body_animation.play("WALK")  # Loop WALK animation
-			#print("Continuing WALK animation")
-
-
-		State.RUN:
-			# If running, ensure running animation plays
-			body_animation.play("RUN")  # Loop RUN animation
-			#print("Continuing RUN animation")
-
-
-		State.LEDGE:
-			pass#Forgot to integrate, fix this
+		"START_WALK":
+			body_animation.play("WALK")
+		"START_RUN":
+			body_animation.play("RUN")
 			
-		State.WALK_BACKWARDS:
-			print("Walk backwards")
+		"START_JUMP":
+			body_animation.play("FALLING")
+			
+		"FALLING":
+			pass
