@@ -1,7 +1,8 @@
-[gd_scene load_steps=137 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=138 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://c5lpg1rg3by6t" path="res://character/Human Male Model/Sections/LEDGE.png" id="4_r1l2b"]
+[ext_resource type="AudioStream" uid="uid://c7l18wubl8lxd" path="res://SoundFX/pewpew/159406__jackjan__handgun-reload.mp3" id="5_0bbie"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="9_meuls"]
 [ext_resource type="Script" path="res://character/pusher.gd" id="9_vicmv"]
 [ext_resource type="Texture2D" uid="uid://dsib7mkqq33n0" path="res://character/Human Male Model/Sections/arm.png" id="9_xxn86"]
@@ -277,7 +278,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"LANDING",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -903,10 +904,11 @@ _data = {
 
 [node name="player_char" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-0.0936432, -0.0936441)
-collision_mask = 5
+collision_mask = 4
 platform_on_leave = 2
 platform_floor_layers = 4294967288
 script = ExtResource("1_q25qh")
+shoot_cooldown = 0.15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0625, 4.75)
@@ -956,6 +958,9 @@ position = Vector2(-0.389191, -2.80112)
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_6s7n2")
 
+[node name="reload" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0bbie")
+
 [node name="footstep_sound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_p3bc5")
 volume_db = 10.0
@@ -966,7 +971,7 @@ script = ExtResource("22_2txn4")
 
 [node name="Body" type="AnimatedSprite2D" parent="PlayerSprite"]
 sprite_frames = SubResource("SpriteFrames_fihmo")
-animation = &"LEDGE"
+animation = &"LANDING"
 
 [node name="Head" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
 texture_filter = 1

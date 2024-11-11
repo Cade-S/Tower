@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://svpl3j0isep4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ncfbm"]
+particle_flag_disable_z = true
+angular_velocity_min = -549.46
+angular_velocity_max = 498.49
+gravity = Vector3(0, -40, 0)
+linear_accel_min = -71.27
+linear_accel_max = -49.05
+
+[node name="bullet_release" type="Marker2D"]
+position = Vector2(13.0573, -1.59475)
+gizmo_extents = 17.2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(2.58871, -4.32885)
+process_material = SubResource("ParticleProcessMaterial_ncfbm")
+visibility_rect = Rect2(-1, -51.6333, 2, 52.6265)

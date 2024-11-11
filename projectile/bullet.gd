@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var bullet_speed = 900
+@export var bullet_speed = 1000
 var bullet_velocity = Vector2.ZERO
 var particle = preload("res://projectile/test_particle.tscn")
 var particle_instance = particle.instantiate()
@@ -11,6 +11,7 @@ func _ready() -> void:
 	linear_velocity = bullet_velocity
 	self.contact_monitor = true
 	self.max_contacts_reported = 1
+
 
 	
 	
@@ -32,7 +33,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body):
 	get_parent().get_node("ricochet").play()
 	
-	print("PINGALING")
+	print("SHOT")
 	particle_instance.position = self.global_position
 	particle_instance.get_node("GPUParticles2D").emitting = true
 	get_tree().current_scene.add_child(particle_instance)
@@ -43,7 +44,7 @@ func _on_body_entered(body):
 		queue_free()
 
 		self.visible = false
-		print("invisible")
+		#print("invisible")
 		
 
 		var timer = Timer.new()

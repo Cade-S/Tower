@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://e1c7tn4qy2od"]
+
+[ext_resource type="Script" path="res://enemies/turret/turret.gd" id="1_a858f"]
+[ext_resource type="Texture2D" uid="uid://b7aq7gpbjlovo" path="res://enemies/turret/Turret_head.png" id="2_r2b0c"]
+[ext_resource type="Texture2D" uid="uid://024qcjpyaeyv" path="res://enemies/turret/Turret_base.png" id="3_1wyqj"]
+[ext_resource type="AudioStream" uid="uid://fh6vsqays7nt" path="res://SoundFX/pewpew/gunshot.wav" id="8_ujd7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg0o7"]
+size = Vector2(12.0879, 26.3342)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3nrh"]
+atlas = ExtResource("2_r2b0c")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nssc4"]
+atlas = ExtResource("2_r2b0c")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb8rj"]
+atlas = ExtResource("2_r2b0c")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7afg6"]
+atlas = ExtResource("2_r2b0c")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e40ae"]
+atlas = ExtResource("2_r2b0c")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0b7ft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3nrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nssc4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb8rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7afg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e40ae")
+}],
+"loop": true,
+"name": &"firing",
+"speed": 5.0
+}]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lbnow"]
+particle_flag_disable_z = true
+angular_velocity_min = -549.46
+angular_velocity_max = 498.49
+gravity = Vector3(0, -40, 0)
+linear_accel_min = -71.27
+linear_accel_max = -49.05
+
+[node name="Turret" type="CharacterBody2D"]
+collision_mask = 12
+script = ExtResource("1_a858f")
+health = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.157154, 1.85391)
+shape = SubResource("RectangleShape2D_sg0o7")
+
+[node name="turret_head" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -3.8147e-06)
+sprite_frames = SubResource("SpriteFrames_0b7ft")
+flip_h = true
+
+[node name="bullet_release" type="Marker2D" parent="turret_head"]
+position = Vector2(23.9119, -5.48823)
+gizmo_extents = 17.2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="turret_head/bullet_release"]
+visible = false
+position = Vector2(2.58871, -4.32885)
+process_material = SubResource("ParticleProcessMaterial_lbnow")
+visibility_rect = Rect2(-1, -51.6333, 2, 52.6265)
+
+[node name="RayCast2D" type="RayCast2D" parent="turret_head/bullet_release"]
+position = Vector2(-20.9033, 0.165123)
+target_position = Vector2(215, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_1wyqj")
+flip_h = true
+
+[node name="gunshot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ujd7f")

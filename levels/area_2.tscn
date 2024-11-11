@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ct0kak7yufm38"]
+[gd_scene load_steps=18 format=3 uid="uid://ct0kak7yufm38"]
 
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_7n61o"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_hannj"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="11_dyy4l"]
 [ext_resource type="Script" path="res://levels/camera_manager.gd" id="11_w8kwl"]
 [ext_resource type="PackedScene" uid="uid://bbs85ji7vcjv7" path="res://UI/ui.tscn" id="12_wptlh"]
+[ext_resource type="PackedScene" uid="uid://e1c7tn4qy2od" path="res://enemies/turret/Turret.tscn" id="14_chd4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5y6y"]
 size = Vector2(3364, 32)
@@ -48,9 +49,10 @@ texture = ExtResource("2_hkr7s")
 
 [node name="player_char" parent="." instance=ExtResource("1_7n61o")]
 z_index = 1
-position = Vector2(238, 425)
+position = Vector2(249, 298)
 
 [node name="Sam" parent="." instance=ExtResource("11_dyy4l")]
+position = Vector2(190.919, 432.649)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -105,7 +107,7 @@ Camera_Zone1 = NodePath("CameraNodes/zone0-1/PhantomCamera2D")
 [node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
 
 [node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes" node_paths=PackedStringArray("follow_target")]
-position = Vector2(238, 425)
+position = Vector2(249, 298)
 script = ExtResource("2_hannj")
 follow_mode = 2
 follow_target = NodePath("../../../player_char")
@@ -156,6 +158,9 @@ position = Vector2(1239, -6)
 position = Vector2(1247, -27)
 
 [node name="UI" parent="." instance=ExtResource("12_wptlh")]
+
+[node name="Turret" parent="." instance=ExtResource("14_chd4k")]
+position = Vector2(-229.241, 431.513)
 
 [connection signal="body_entered" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_entered"]
 [connection signal="body_exited" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_exited"]

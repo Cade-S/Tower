@@ -24,28 +24,28 @@ stream_3/stream = ExtResource("6_kxbnm")
 
 [node name="Bullet" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="Bullet" type="RigidBody2D" parent="."]
 collision_layer = 8
 collision_mask = 7
 script = ExtResource("1_lato1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
 position = Vector2(1.0006, 0.0257227)
 rotation = 1.5708
 scale = Vector2(0.6, 0.6)
 shape = SubResource("CapsuleShape2D_3vp2k")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Bullet"]
 z_index = 1
 position = Vector2(0.508233, 0.0662909)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_at426")
 
-[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+[node name="Area2D" type="Area2D" parent="Bullet"]
 position = Vector2(-1.82097, -1.22637)
 scale = Vector2(0.6, 0.6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet/Area2D"]
 position = Vector2(4.71409, 2.0804)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_n4711")

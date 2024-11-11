@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#region Init vars
+
 var main_sm: LimboHSM
 @export var GRAVITY = 600
 @export var SPEED = 69.0
@@ -7,7 +9,7 @@ var main_sm: LimboHSM
 @export var JUMP_VELOCITY = -250.0
 @export var ACCELERATION = 350.0  # Adjust this to control how fast you pick up speed
 @export var DECELERATION = 950.0  # Adjust this for how fast you slow down
-var target_speed = 0.0
+@export var target_speed = 0.0
 
 var mouse_direction
 var direction
@@ -16,6 +18,7 @@ var direction
 var is_sprinting = false
 var is_aiming = false
 var jump
+var land_finished = true
 var ledge
 var crouch 
 var facing #Legacy, replace
@@ -23,23 +26,40 @@ var facing #Legacy, replace
 const bulletpath = preload('res://projectile/bullet.tscn')
 const shellpath = preload('res://projectile/shell.tscn')
 var gunshot = preload('res://SoundFX/pewpew/gunshot.wav')
+var reload = preload('res://SoundFX/pewpew/159406__jackjan__handgun-reload.mp3')
+@export var shoot_cooldown = 0.5
+@export var reload_time = 1.5
+@onready var cooldown_timer = Timer.new()
+@onready var reload_timer = Timer.new()
+@export var clip_size = 7
+var rounds_left = 7
+var reloading = true
+var try_to_shoot = false
 
 @onready var body_animation = get_node("PlayerSprite/Body")
 @onready var head = get_node("PlayerSprite/Body/Head")
 @onready var front_arm = get_node("PlayerSprite/Body/Front_Arm")
 @onready var back_arm = get_node("PlayerSprite/Body/Front_Arm")
+#endregion
 
+#--------------------------------------------------------------------------------------------------
 
-
-
+#region ready()
 
 func _ready():
 	initiate_state_machine()
+	cooldown_timer.wait_time = shoot_cooldown
+	cooldown_timer.one_shot = true
+	reload_timer.wait_time = reload_time
+	reload_timer.one_shot = true
+	add_child(cooldown_timer)
+	add_child(reload_timer)
+#endregion
 
-
+#--------------------------------------------------------------------------------------------------
 
 func _physics_process(delta: float) -> void:
-	print(main_sm.get_active_state().name)
+	#print(main_sm.get_active_state().name)
 	direction = Input.get_axis("move_left", "move_right")
 	is_sprinting = Input.is_action_pressed("sprint")
 	velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
@@ -47,20 +67,31 @@ func _physics_process(delta: float) -> void:
 	crouch = Input.is_action_pressed("crouch")
 	ledge = $WallCheck.is_colliding() and not $FloorCheck.is_colliding() and velocity.y == 0
 	
+	#reload
+	if reload_timer.is_stopped() and reloading == true:
+		rounds_left = clip_size
+		reloading = false
 	
+	
+	#body_flip
 	if !is_aiming:
 		if direction < 0:
 			body_animation.flip_h = true
 		elif direction > 0:
 			body_animation.flip_h = false
+			
 	
 
+#--------------------------------------------------------------------------------------------------
 
-#GRAVITY
+#region Physics
+
 	if !is_on_floor():
 		velocity.y += GRAVITY * delta	
 	move_and_slide()
+#endregion
 
+#--------------------------------------------------------------------------------------------------
 
 #Gunplay and Camera
 	if Input.is_action_pressed('RMB'):
@@ -75,9 +106,8 @@ func _physics_process(delta: float) -> void:
 		front_arm.look_at(get_global_mouse_position())
 
 		head.look_at(get_global_mouse_position())
-#
-#
-		if Input.is_action_just_pressed('LMB'):
+
+		if Input.is_action_just_pressed('LMB') and cooldown_timer.is_stopped() and reload_timer.is_stopped():
 			#print("POW!")
 			shoot()
 	else:
@@ -87,11 +117,7 @@ func _physics_process(delta: float) -> void:
 		is_aiming = false
 		head.rotation = 0
 		front_arm.position.x
-		
 
-	
-	
-	
 	if get_global_mouse_position() < self.global_position and is_aiming:
 		#print("LEFT:mouse_directionTRUE")
 		head.flip_v = true
@@ -103,58 +129,62 @@ func _physics_process(delta: float) -> void:
 		front_arm.flip_v = false
 		mouse_direction = false
 
-
-
-
-#------------------------------------------------------------------------------
-
-	
+#--------------------------------------------------------------------------------------------------
 
 	#Decides when the ledge grab collision should be disabled
 	$LedgeGrab.disabled = velocity.y < 0 or ($TopCheck.is_colliding() and main_sm.get_active_state().name != "LEDGE") or crouch
 
-
-
-
 #---------------------------------------------------------------------------------------------------
-#Shooting mechanic
+
+#region Shoot Function
+
 func shoot():
-	
-	
-	#gunshot sound
-	$gunshot.stream = gunshot
-	$gunshot.play()
-	
-	#Instantiate new shell and bullet
-	var shell = shellpath.instantiate()
-	var bullet = bulletpath.instantiate()
+	try_to_shoot = true
+	if rounds_left > 0: #If you have ammo, shoot
+		rounds_left -= 1
+		#gunshot sound
+		$gunshot.stream = gunshot
+		$gunshot.play()
+		
+		#Instantiate new shell and bullet
+		var shell = shellpath.instantiate()
+		var bullet = bulletpath.instantiate()
 
-	#Add them to scene
-	get_parent().add_child(bullet)
-	get_parent().add_child(shell)
-	
-	# Set a random initial rotation
-	shell.rotation = randf() * TAU
+		#Add them to scene
+		get_parent().add_child(bullet)
+		get_parent().add_child(shell)
+		
+		# Set a random initial rotation
+		shell.rotation = randf() * TAU
 
-	# Set position for both shell and bullet
-	shell.position = front_arm.get_child(0).global_position
-	bullet.position = front_arm.get_child(0).global_position
+		# Set position for both shell and bullet
+		shell.position = front_arm.get_child(0).global_position
+		bullet.position = front_arm.get_child(0).global_position
 
-	# Set velocities for movement
-	var direction = (get_global_mouse_position() - bullet.position).normalized()
-	var bullet_velocity = direction * bullet.get_node("RigidBody2D").bullet_speed
-	var shell_velocity = direction * shell.shell_speed
+		# Set velocities for movement
+		var direction = (get_global_mouse_position() - bullet.position).normalized()
+		var bullet_velocity = direction * bullet.get_node("Bullet").bullet_speed
+		var shell_velocity = direction * shell.shell_speed
 
-	# Apply velocity
-	bullet.get_node("RigidBody2D").linear_velocity = bullet_velocity
-	shell.apply_force(shell_velocity, shell.position)
+		# Apply velocity
+		bullet.get_node("Bullet").linear_velocity = bullet_velocity
+		shell.apply_force(shell_velocity, shell.position)
+		cooldown_timer.start()
+	else: #RELOAD
+		reload_timer.start()
+		reloading = true
+		$reload.stream = reload
+		$reload.play()
+	try_to_shoot = false
 
 
-
+#endregion
 
 #---------------------------------------------------------------------------------------------------
-#STATE MACHINE
-#LimboAI for ver: 4.3
+
+#region State Machine
+
+#LimboAI for Godot ver: 4.3
 
 func initiate_state_machine():
 	main_sm = LimboHSM.new()
@@ -191,6 +221,8 @@ func initiate_state_machine():
 	main_sm.add_transition(WALK_BACKWARDS_state, JUMP_state, &"to_jump")
 	main_sm.add_transition(SPRINT_state, JUMP_state, &"to_jump")
 	main_sm.add_transition(JUMP_state, LEDGE_state, &"to_ledge")
+	main_sm.add_transition(main_sm.ANYSTATE, FALL_state, &"to_fall")
+	main_sm.add_transition(FALL_state, LAND_state, &"to_land")
 	
 	main_sm.initialize(self)
 	main_sm.set_active(true)
@@ -199,18 +231,17 @@ func initiate_state_machine():
 
 func IDLE_START():
 	body_animation.play("IDLE")
-	
 func IDLE_UPDATE(delta: float):
-	
 	if direction != 0:
 		main_sm.dispatch(&"to_walk")
 	if jump:
 		main_sm.dispatch(&"to_jump")
-	
+	if velocity.y != 0:
+		main_sm.dispatch(&"to_fall")
+
 func WALK_START():
 	body_animation.play("START_WALK")
-	print("Animation set")
-	
+	#print("Animation set")
 func WALK_UPDATE(delta: float):
 	target_speed = SPEED
 	if direction == 0:
@@ -219,51 +250,47 @@ func WALK_UPDATE(delta: float):
 		main_sm.dispatch(&"to_sprint")
 	if jump:
 		main_sm.dispatch(&"to_jump")
-	
-	
+
 func WALK_BACKWARDS_START():
 	pass
 func WALK_BACKWARDS_UPDATE(delta: float):
 	if jump:
 		main_sm.dispatch(&"to_jump")
-	
-	
+
 func SPRINT_START():
 	body_animation.play("START_RUN")
 func SPRINT_UPDATE(delta: float):
 	target_speed = SPRINT_SPEED
-	if !is_sprinting:
+	if !is_sprinting or velocity.x == 0:
 		main_sm.dispatch(&"state_ended")
 	if jump:
 		main_sm.dispatch(&"to_jump")
-	
+
 func JUMP_START():
 	body_animation.play("START_JUMP")
 	velocity.y += JUMP_VELOCITY
+	land_finished = false
 func JUMP_UPDATE(delta: float):
-	if is_on_floor():
-		main_sm.dispatch(&"state_ended")
 	if ledge:
 		main_sm.dispatch(&"to_ledge")
+	if not is_on_floor() and velocity.y > 0:
+		main_sm.dispatch(&"state_ended")
 
-	
-	
 func FALL_START():
-	pass
+	body_animation.play("FALLING")
 func FALL_UPDATE(delta: float):
-	pass
-	
-	
+	if is_on_floor():
+		main_sm.dispatch(&"to_land")
+
 func LAND_START():
-	pass
+	body_animation.play("LANDING")
 func LAND_UPDATE(delta: float):
-	pass
-	
+	if land_finished:
+		#print("Animation finished")
+		main_sm.dispatch(&"state_ended")
 
 func LEDGE_START():
 	body_animation.play("LEDGE")
-
-
 func LEDGE_UPDATE(delta: float):
 	velocity.x = 0
 	var collider = $WallCheck.get_collision_normal(0)
@@ -275,22 +302,23 @@ func LEDGE_UPDATE(delta: float):
 			body_animation.flip_h = false
 			if not is_on_wall():
 				velocity.x = 25
-				
 	if !ledge:
 		main_sm.dispatch(&"state_ended")
 
+#-------------------------------------------------------------------------------
 
 func _on_body_animation_finished() -> void:
-		#print("Animation finished: ", body_animation.animation)  # Debugging
+	#print("Animation finished: ", body_animation.animation)  # Debugging
 	match body_animation.get_animation():
-
+		
 		"START_WALK":
 			body_animation.play("WALK")
 		"START_RUN":
 			body_animation.play("RUN")
-			
-		"START_JUMP":
-			body_animation.play("FALLING")
-			
 		"FALLING":
 			pass
+		"LANDING":
+			land_finished = true
+#endregion
+
+#---------------------------------------------------------------------------------------------------
