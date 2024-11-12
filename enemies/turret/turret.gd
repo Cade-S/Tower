@@ -2,6 +2,7 @@ extends CharacterBody2D
 const bulletpath = preload('res://projectile/bullet.tscn')
 const shellpath = preload('res://projectile/shell.tscn')
 var gunshot = preload('res://SoundFX/pewpew/gunshot.wav')
+var turret_explosion = load("res://enemies/turret/turret_explosion.tscn")
 @export var GRAVITY = 600
 @onready var turret_head = get_node("turret_head")
 var target
@@ -14,7 +15,7 @@ var current_angle = 0
 @onready var ray_cast = $turret_head/bullet_release/RayCast2D
 var scan_speed = 0.3
 @export var angle_range = 40
-var timer = Timer.new()
+@onready var timer = Timer.new()
 var beeped = false
 @onready var point_light = $turret_head/PointLight2D
 var engine_sound = preload("res://SoundFX/pewpew/turret_engine.ogg")
@@ -58,6 +59,10 @@ func _process(delta: float) -> void:
 		print("HEALTH:", health)
 		
 	if health <= 0:
+			
+			var explosion = turret_explosion.instantiate()
+			explosion.global_position = self.global_position
+			get_parent().add_child(explosion)
 			queue_free()
 
 func shoot():
@@ -114,8 +119,8 @@ func SCAN_START():
 	turret_head.play("default")
 	timer.timeout.disconnect(shoot)
 func SCAN_UPDATE(delta: float):
-	print("Direction:", direction)
-	print("current angle:", current_angle)
+	#print("Direction:", direction)
+	#print("current angle:", current_angle)
 	
 	if turret_head.get_frame() == 1:
 		if beeped == false:

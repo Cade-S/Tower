@@ -30,8 +30,8 @@ func _process(_delta: float) -> void:
 	# Check if the current frame is one of the specified frames and playable is true
 		if current_frame in [1, 4] and playable:
 			self.play()
-			print("step sound played my boy")
-			print(current_frame)  # Print current frame instead of anim.get_frame()
+			#print("step sound played my boy")
+			#print(current_frame)  # Print current frame instead of anim.get_frame()
 			playable = false  # Set playable to false after playing the sound
 
 		if current_frame not in [1, 4]:  # Only reset if not in the specified frames

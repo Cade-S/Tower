@@ -35,6 +35,8 @@ var reload = preload('res://SoundFX/pewpew/159406__jackjan__handgun-reload.mp3')
 var rounds_left = 8
 var reloading = true
 var try_to_shoot = false
+var health = 100
+var shot = false
 
 @onready var body_animation = get_node("PlayerSprite/Body")
 @onready var head = get_node("PlayerSprite/Body/Head")
@@ -80,6 +82,17 @@ func _physics_process(delta: float) -> void:
 		elif direction > 0:
 			body_animation.flip_h = false
 			
+			
+	for i in self.get_slide_collision_count():
+		var c = self.get_slide_collision(i)
+		if c.get_collider().name == "Bullet":
+			shot = true
+		
+	if shot:
+		health -= 1
+		shot = false
+		print("HEALTH:", health)
+			
 	
 
 #--------------------------------------------------------------------------------------------------
@@ -116,7 +129,6 @@ func _physics_process(delta: float) -> void:
 		front_arm.rotation = 0
 		is_aiming = false
 		head.rotation = 0
-		front_arm.position.x
 
 	if get_global_mouse_position() < self.global_position and is_aiming:
 		#print("LEFT:mouse_directionTRUE")
@@ -149,7 +161,8 @@ func shoot():
 		#Instantiate new shell and bullet
 		var shell = shellpath.instantiate()
 		var bullet = bulletpath.instantiate()
-
+		shell.position = front_arm.get_child(0).global_position
+		bullet.position = front_arm.get_child(0).global_position
 		#Add them to scene
 		get_parent().add_child(bullet)
 		get_parent().add_child(shell)
@@ -158,8 +171,7 @@ func shoot():
 		shell.rotation = randf() * TAU
 
 		# Set position for both shell and bullet
-		shell.position = front_arm.get_child(0).global_position
-		bullet.position = front_arm.get_child(0).global_position
+
 
 		# Set velocities for movement
 		var direction = (get_global_mouse_position() - bullet.position).normalized()
@@ -298,10 +310,14 @@ func LEDGE_UPDATE(delta: float):
 		body_animation.flip_h = true
 		if not is_on_wall():
 			velocity.x = -25
-		else:
-			body_animation.flip_h = false
-			if not is_on_wall():
-				velocity.x = 25
+	else:
+		body_animation.flip_h = false
+		if not is_on_wall():
+			velocity.x = 25
+	if $WallCheck.is_colliding() and !is_on_floor() and velocity.y == 0:
+		ledge = true
+	else:
+		ledge = false
 	if !ledge:
 		main_sm.dispatch(&"state_ended")
 

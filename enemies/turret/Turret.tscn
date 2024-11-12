@@ -80,6 +80,7 @@ shape = SubResource("RectangleShape2D_sg0o7")
 
 [node name="turret_head" type="AnimatedSprite2D" parent="."]
 z_index = 1
+texture_filter = 1
 position = Vector2(0, -3.8147e-06)
 sprite_frames = SubResource("SpriteFrames_0b7ft")
 flip_h = true
@@ -110,6 +111,7 @@ metadata/color_temperature = 6500
 metadata/color_filter = Color(1, 0, 0, 0.921569)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("3_1wyqj")
 flip_h = true
 

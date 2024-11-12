@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=134 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://c5lpg1rg3by6t" path="res://character/Human Male Model/Sections/LEDGE.png" id="4_r1l2b"]
@@ -873,38 +873,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_dvr76"]
-resource_name = "IDLE"
-capture_included = true
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:sprite_frames")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 2,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_i0jd2"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_60ydk"]
-resource_name = "running"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pji1o"]
-_data = {
-"IDLE": SubResource("Animation_dvr76"),
-"RESET": SubResource("Animation_i0jd2"),
-"running": SubResource("Animation_60ydk")
-}
-
 [node name="player_char" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-0.0936432, -0.0936441)
-collision_mask = 4
+collision_mask = 12
 platform_on_leave = 2
 platform_floor_layers = 4294967288
 script = ExtResource("1_q25qh")
@@ -934,13 +905,13 @@ collision_mask = 4
 
 [node name="FloorCheck" type="RayCast2D" parent="."]
 target_position = Vector2(0, 19.708)
-collision_mask = 5
+collision_mask = 4
 
 [node name="TopCheck" type="ShapeCast2D" parent="."]
 position = Vector2(-0.102322, -8.04155)
 shape = SubResource("RectangleShape2D_bdckq")
 target_position = Vector2(0, 0)
-collision_mask = 5
+collision_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.7, 2.7)
@@ -1015,10 +986,5 @@ z_index = -1
 position = Vector2(-0.148652, 0.303977)
 sprite_frames = SubResource("SpriteFrames_1h4ux")
 animation = &"IDLE"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
-libraries = {
-"": SubResource("AnimationLibrary_pji1o")
-}
 
 [connection signal="animation_finished" from="PlayerSprite/Body" to="." method="_on_body_animation_finished"]

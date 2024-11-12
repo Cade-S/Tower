@@ -1,7 +1,100 @@
-[gd_scene format=3 uid="uid://bjhy3djbyuya1"]
+[gd_scene load_steps=8 format=3 uid="uid://bjhy3djbyuya1"]
+
+[ext_resource type="Script" path="res://enemies/turret/turret_explosion.gd" id="1_8a1i3"]
+[ext_resource type="Texture2D" uid="uid://024qcjpyaeyv" path="res://enemies/turret/Turret_base.png" id="1_o7gp8"]
+[ext_resource type="Texture2D" uid="uid://b7aq7gpbjlovo" path="res://enemies/turret/Turret_head.png" id="2_gipva"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fctfm"]
+points = PackedVector2Array(0, -5, 13, 10, -15, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4blq7"]
+size = Vector2(32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gp6j"]
+atlas = ExtResource("2_gipva")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpm1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gp6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="turret_explosion" type="Node2D"]
+script = ExtResource("1_8a1i3")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-explosiveness = 0.76
+[node name="sparks" type="CPUParticles2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(0.3, 0.3)
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.29
+emission_shape = 2
+emission_sphere_radius = 64.53
 spread = 143.47
+initial_velocity_min = 248.18
+initial_velocity_max = 408.76
+tangential_accel_min = -4.38
+tangential_accel_max = 18.98
+scale_amount_max = 3.0
+color = Color(1, 1, 0.509804, 1)
+hue_variation_min = -0.16
+hue_variation_max = 0.32
+
+[node name="flames" type="CPUParticles2D" parent="."]
+position = Vector2(-1, -8)
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 37
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 1.0
+spread = 143.47
+gravity = Vector2(0, 600)
+initial_velocity_min = 248.18
+initial_velocity_max = 408.76
+angular_velocity_min = -315.33
+angular_velocity_max = 325.84
+linear_accel_min = 39.48
+linear_accel_max = 100.0
+scale_amount_min = 3.0
+scale_amount_max = 10.0
+color = Color(0.996148, 0.449133, 7.70092e-07, 1)
+
+[node name="base" type="RigidBody2D" parent="."]
+collision_layer = 0
+collision_mask = 12
+angular_velocity = 0.174533
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base"]
+position = Vector2(-1, 6)
+shape = SubResource("ConvexPolygonShape2D_fctfm")
+
+[node name="base" type="Sprite2D" parent="base"]
+texture_filter = 1
+texture = ExtResource("1_o7gp8")
+
+[node name="head" type="RigidBody2D" parent="."]
+collision_layer = 0
+collision_mask = 12
+angular_velocity = 1.0472
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="head"]
+position = Vector2(-8, -8)
+shape = SubResource("RectangleShape2D_4blq7")
+
+[node name="head" type="AnimatedSprite2D" parent="head"]
+texture_filter = 1
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_qpm1l")

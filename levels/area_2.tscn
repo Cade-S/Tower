@@ -34,6 +34,9 @@ size = Vector2(11, 203)
 
 [node name="Test_Area 2" type="Node2D"]
 
+[node name="UI" parent="." instance=ExtResource("12_wptlh")]
+follow_viewport_scale = 1000.0
+
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(-544, 80)
@@ -52,7 +55,7 @@ position = Vector2(190.919, 432.649)
 
 [node name="player_char" parent="." instance=ExtResource("1_7n61o")]
 z_index = 1
-position = Vector2(249, 298)
+position = Vector2(231, 414)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -109,7 +112,7 @@ Camera_Zone1 = NodePath("CameraNodes/zone0-1/PhantomCamera2D")
 [node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
 
 [node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes" node_paths=PackedStringArray("follow_target")]
-position = Vector2(249, 298)
+position = Vector2(231, 414)
 script = ExtResource("2_hannj")
 follow_mode = 2
 follow_target = NodePath("../../../player_char")
@@ -158,8 +161,6 @@ position = Vector2(1239, -6)
 
 [node name="triangle3" parent="." instance=ExtResource("4_ga365")]
 position = Vector2(1247, -27)
-
-[node name="UI" parent="." instance=ExtResource("12_wptlh")]
 
 [node name="Turret" parent="." instance=ExtResource("14_chd4k")]
 position = Vector2(-229.241, 431.513)
