@@ -11,15 +11,21 @@ var ammo
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-		if get_tree().has_group("sam"):
-			sam = get_tree().get_nodes_in_group("sam")[0]
-		if get_tree().has_group("player"):
-			player = get_tree().get_nodes_in_group("player")[0]
+	$heartrate.play()
+	if get_tree().has_group("sam"):
+		sam = get_tree().get_nodes_in_group("sam")[0]
+	if get_tree().has_group("player"):
+		player = get_tree().get_nodes_in_group("player")[0]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	ammo = player.rounds_left
+	
+	if player.reloading == false:
+		$ammo.frame = ammo
+	else:
+		$ammo.frame = 9
 	
 	if player.is_aiming == true:
 		Input.set_custom_mouse_cursor(aim_cursor)

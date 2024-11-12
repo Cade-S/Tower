@@ -47,12 +47,12 @@ texture = ExtResource("2_hkr7s")
 position = Vector2(1312, 80)
 texture = ExtResource("2_hkr7s")
 
+[node name="Sam" parent="." instance=ExtResource("11_dyy4l")]
+position = Vector2(190.919, 432.649)
+
 [node name="player_char" parent="." instance=ExtResource("1_7n61o")]
 z_index = 1
 position = Vector2(249, 298)
-
-[node name="Sam" parent="." instance=ExtResource("11_dyy4l")]
-position = Vector2(190.919, 432.649)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -68,6 +68,8 @@ polygon = PackedVector2Array(-1588, 448, -1588, 480, 1776, 480, 1776, 449, 1776,
 
 [node name="box_16x48" parent="." instance=ExtResource("5_38m6v")]
 position = Vector2(616, 432)
+collision_layer = 4
+collision_mask = 7
 
 [node name="box_32x48" parent="." instance=ExtResource("6_8ikge")]
 position = Vector2(700, 416)

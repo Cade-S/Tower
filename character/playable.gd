@@ -31,8 +31,8 @@ var reload = preload('res://SoundFX/pewpew/159406__jackjan__handgun-reload.mp3')
 @export var reload_time = 1.5
 @onready var cooldown_timer = Timer.new()
 @onready var reload_timer = Timer.new()
-@export var clip_size = 7
-var rounds_left = 7
+@export var clip_size = 8
+var rounds_left = 8
 var reloading = true
 var try_to_shoot = false
 

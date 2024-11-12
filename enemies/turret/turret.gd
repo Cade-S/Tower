@@ -9,15 +9,22 @@ var shot = false
 @export var health = 10
 var main_sm = LimboHSM
 var player_detected = false
-var direction = 1
+@export var direction = 1
 var current_angle = 0
 @onready var ray_cast = $turret_head/bullet_release/RayCast2D
 var scan_speed = 0.3
 @export var angle_range = 40
 var timer = Timer.new()
+var beeped = false
+@onready var point_light = $turret_head/PointLight2D
+var engine_sound = preload("res://SoundFX/pewpew/turret_engine.ogg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	engine_sound.loop = true
+	$engine.stream = engine_sound
+	$engine.play()
+
 	initiate_state_machine()
 	ray_cast.enabled = true
 	
@@ -49,6 +56,7 @@ func _process(delta: float) -> void:
 		health -= 1
 		shot = false
 		print("HEALTH:", health)
+		
 	if health <= 0:
 			queue_free()
 
@@ -102,11 +110,21 @@ func initiate_state_machine():
 	
 	
 func SCAN_START():
+	point_light.enabled = false
 	turret_head.play("default")
 	timer.timeout.disconnect(shoot)
 func SCAN_UPDATE(delta: float):
 	print("Direction:", direction)
 	print("current angle:", current_angle)
+	
+	if turret_head.get_frame() == 1:
+		if beeped == false:
+			beeped = true
+			$single_beep.play()
+		point_light.enabled = true
+	else:
+		beeped = false
+		point_light.enabled = false
 	
 	if abs(current_angle) > deg_to_rad(angle_range):
 		direction *= -1
@@ -119,8 +137,19 @@ func SCAN_UPDATE(delta: float):
 		
 func SHOOT_START():
 	turret_head.play("firing")
-	timer.timeout.connect(shoot)
+	$five_beeps.play()
+	point_light.enabled = true
+
 func SHOOT_UPDATE(delta: float):
-	if not ray_cast.is_colliding():
-		main_sm.dispatch(&"to_scan")
-	turret_head.look_at(target.position)
+	if !$five_beeps.is_playing():
+		timer.timeout.connect(shoot)
+		if not ray_cast.is_colliding():
+			main_sm.dispatch(&"to_scan")
+		var target_direction = (target.global_position - turret_head.global_position).normalized()
+		var target_angle = target_direction.angle()
+		
+		# Smoothly interpolate the rotation with damping
+		var current_angle = turret_head.rotation
+		var angle_difference = wrapf(target_angle - current_angle, -PI, PI)
+		var smooth_factor = 1  # Adjust this factor for smoother transitions
+		turret_head.rotation += angle_difference * smooth_factor * delta

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bjhy3djbyuya1"]
+
+[node name="turret_explosion" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+explosiveness = 0.76
+spread = 143.47

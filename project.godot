@@ -21,8 +21,7 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/size/always_on_top=true
 window/stretch/scale_mode="integer"
 mouse_cursor/custom_image="res://UI/sam_cursor.png"
 
@@ -103,3 +102,4 @@ common/max_physics_steps_per_frame=16
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/ssao/quality=3
