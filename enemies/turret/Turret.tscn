@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://e1c7tn4qy2od"]
+[gd_scene load_steps=18 format=3 uid="uid://e1c7tn4qy2od"]
 
 [ext_resource type="Script" path="res://enemies/turret/turret.gd" id="1_a858f"]
 [ext_resource type="Texture2D" uid="uid://b7aq7gpbjlovo" path="res://enemies/turret/Turret_head.png" id="2_r2b0c"]
@@ -68,6 +68,9 @@ gravity = Vector3(0, -40, 0)
 linear_accel_min = -71.27
 linear_accel_max = -49.05
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goqcy"]
+size = Vector2(228.375, 117.617)
+
 [node name="Turret" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 12
@@ -131,3 +134,11 @@ max_distance = 600.0
 
 [node name="five_beeps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_xgjl8")
+
+[node name="safe_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="safe_area"]
+position = Vector2(104.188, -42.8373)
+shape = SubResource("RectangleShape2D_goqcy")
+
+[connection signal="body_exited" from="safe_area" to="." method="_on_safe_area_body_exited"]

@@ -33,6 +33,7 @@ ease = 2
 size = Vector2(11, 203)
 
 [node name="Test_Area 2" type="Node2D"]
+position = Vector2(-19.0488, -5.95276)
 
 [node name="UI" parent="." instance=ExtResource("12_wptlh")]
 follow_viewport_scale = 1000.0
@@ -112,7 +113,7 @@ Camera_Zone1 = NodePath("CameraNodes/zone0-1/PhantomCamera2D")
 [node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
 
 [node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes" node_paths=PackedStringArray("follow_target")]
-position = Vector2(231, 414)
+position = Vector2(211.951, 408.047)
 script = ExtResource("2_hannj")
 follow_mode = 2
 follow_target = NodePath("../../../player_char")
@@ -163,7 +164,7 @@ position = Vector2(1239, -6)
 position = Vector2(1247, -27)
 
 [node name="Turret" parent="." instance=ExtResource("14_chd4k")]
-position = Vector2(-229.241, 431.513)
+position = Vector2(-99.8614, 416.669)
 
 [connection signal="body_entered" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_entered"]
 [connection signal="body_exited" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_exited"]

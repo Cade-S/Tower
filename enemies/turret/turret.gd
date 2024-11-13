@@ -19,9 +19,12 @@ var scan_speed = 0.3
 var beeped = false
 @onready var point_light = $turret_head/PointLight2D
 var engine_sound = preload("res://SoundFX/pewpew/turret_engine.ogg")
+var shooting = false
+var safe = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	engine_sound.loop = true
 	$engine.stream = engine_sound
 	$engine.play()
@@ -37,7 +40,7 @@ func _ready() -> void:
 	timer.autostart = true  # Starts automatically when the scene loads
 	timer.one_shot = false  # Makes the timer repeat after each timeout
 	add_child(timer)
-	#timer.timeout.connect(shoot)
+	timer.timeout.connect(shoot)
 	
 
 
@@ -56,7 +59,7 @@ func _process(delta: float) -> void:
 	if shot:
 		health -= 1
 		shot = false
-		print("HEALTH:", health)
+		#print("HEALTH:", health)
 		
 	if health <= 0:
 			
@@ -66,32 +69,34 @@ func _process(delta: float) -> void:
 			queue_free()
 
 func shoot():
-	$gunshot.stream = gunshot
-	$gunshot.play()
-	
-	#Instantiate new shell and bullet
-	var shell = shellpath.instantiate()
-	var bullet = bulletpath.instantiate()
+	#print("Shoot")
+	if shooting == true and safe == false:
+		$gunshot.stream = gunshot
+		$gunshot.play()
+		
+		#Instantiate new shell and bullet
+		var shell = shellpath.instantiate()
+		var bullet = bulletpath.instantiate()
 
-	#Add them to scene
-	get_parent().add_child(bullet)
-	get_parent().add_child(shell)
-	
-	# Set a random initial rotation
-	shell.rotation = randf() * TAU
+		#Add them to scene
+		get_parent().add_child(bullet)
+		get_parent().add_child(shell)
+		
+		# Set a random initial rotation
+		shell.rotation = randf() * TAU
 
-	# Set position for both shell and bullet
-	shell.position = turret_head.get_child(0).global_position
-	bullet.position = turret_head.get_child(0).global_position
+		# Set position for both shell and bullet
+		shell.position = turret_head.get_child(0).global_position
+		bullet.position = turret_head.get_child(0).global_position
 
-	# Set velocities for movement
-	var direction = (target.global_position - bullet.position).normalized()
-	var bullet_velocity = direction * bullet.get_node("Bullet").bullet_speed
-	var shell_velocity = direction * shell.shell_speed
+		# Set velocities for movement
+		var direction = (target.global_position - bullet.position).normalized()
+		var bullet_velocity = direction * bullet.get_node("Bullet").bullet_speed
+		var shell_velocity = direction * shell.shell_speed
 
-	# Apply velocity
-	bullet.get_node("Bullet").linear_velocity = bullet_velocity
-	shell.apply_force(shell_velocity, shell.position)
+		# Apply velocity
+		bullet.get_node("Bullet").linear_velocity = bullet_velocity
+		shell.apply_force(shell_velocity, shell.position)
 	
 func initiate_state_machine():
 	main_sm = LimboHSM.new()
@@ -117,7 +122,8 @@ func initiate_state_machine():
 func SCAN_START():
 	point_light.enabled = false
 	turret_head.play("default")
-	timer.timeout.disconnect(shoot)
+	shooting = false
+	
 func SCAN_UPDATE(delta: float):
 	#print("Direction:", direction)
 	#print("current angle:", current_angle)
@@ -143,12 +149,11 @@ func SCAN_UPDATE(delta: float):
 func SHOOT_START():
 	turret_head.play("firing")
 	$five_beeps.play()
-	point_light.enabled = true
+	safe = false
 
 func SHOOT_UPDATE(delta: float):
-	if !$five_beeps.is_playing():
-		timer.timeout.connect(shoot)
-		if not ray_cast.is_colliding():
+	if $five_beeps.is_playing():
+		if safe:
 			main_sm.dispatch(&"to_scan")
 		var target_direction = (target.global_position - turret_head.global_position).normalized()
 		var target_angle = target_direction.angle()
@@ -158,3 +163,10 @@ func SHOOT_UPDATE(delta: float):
 		var angle_difference = wrapf(target_angle - current_angle, -PI, PI)
 		var smooth_factor = 1  # Adjust this factor for smoother transitions
 		turret_head.rotation += angle_difference * smooth_factor * delta
+	else:
+		turret_head.look_at(target.global_position)
+		shooting = true
+
+
+func _on_safe_area_body_exited(body: Node2D) -> void:
+	safe = true

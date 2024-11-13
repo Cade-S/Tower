@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body):
 	get_parent().get_node("ricochet").play()
 	
-	print("SHOT")
+	#print("SHOT")
 	particle_instance.position = self.global_position
 	particle_instance.get_node("GPUParticles2D").emitting = true
 	get_tree().current_scene.add_child(particle_instance)
