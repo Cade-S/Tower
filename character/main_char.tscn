@@ -1,9 +1,8 @@
-[gd_scene load_steps=134 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=136 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://c5lpg1rg3by6t" path="res://character/Human Male Model/Sections/LEDGE.png" id="4_r1l2b"]
 [ext_resource type="AudioStream" uid="uid://c7l18wubl8lxd" path="res://SoundFX/pewpew/159406__jackjan__handgun-reload.mp3" id="5_0bbie"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="9_meuls"]
 [ext_resource type="Script" path="res://character/pusher.gd" id="9_vicmv"]
 [ext_resource type="Texture2D" uid="uid://dsib7mkqq33n0" path="res://character/Human Male Model/Sections/arm.png" id="9_xxn86"]
 [ext_resource type="AudioStream" uid="uid://fh6vsqays7nt" path="res://SoundFX/pewpew/gunshot.wav" id="10_6s7n2"]
@@ -873,6 +872,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_sbroa"]
+resource_name = "HEAD_IDLE"
+length = 1.3333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6667, 1.3333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-0.992096, -7.97789), Vector2(-1.01551, -6.78427), Vector2(-0.992096, -7.97789)]
+}
+
+[sub_resource type="Animation" id="Animation_oauhu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.992096, -7.97789)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j0hxv"]
+_data = {
+"HEAD_IDLE": SubResource("Animation_sbroa"),
+"RESET": SubResource("Animation_oauhu")
+}
+
 [node name="player_char" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-0.0936432, -0.0936441)
 collision_mask = 12
@@ -882,6 +919,7 @@ script = ExtResource("1_q25qh")
 shoot_cooldown = 0.15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.0625, 4.75)
 shape = SubResource("CapsuleShape2D_ogvc3")
 
@@ -893,10 +931,12 @@ script = SubResource("GDScript_eh3g6")
 script = ExtResource("9_vicmv")
 
 [node name="LedgeGrab" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.0394453, -5.99282)
 shape = SubResource("RectangleShape2D_nswjc")
 
 [node name="WallCheck" type="ShapeCast2D" parent="."]
+visible = false
 position = Vector2(-0.144752, -4.87944)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_aoujr")
@@ -904,27 +944,31 @@ target_position = Vector2(-0.00655772, 11.8982)
 collision_mask = 4
 
 [node name="FloorCheck" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(0, 19.708)
 collision_mask = 4
 
 [node name="TopCheck" type="ShapeCast2D" parent="."]
+visible = false
 position = Vector2(-0.102322, -8.04155)
 shape = SubResource("RectangleShape2D_bdckq")
 target_position = Vector2(0, 0)
 collision_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.7, 2.7)
+offset = Vector2(0, -14)
+zoom = Vector2(3.7, 3.7)
+process_callback = 0
 limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
 drag_vertical_offset = -1.0
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-process_priority = 300
-process_physics_priority = 300
-script = ExtResource("9_meuls")
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-0.389191, -2.80112)
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_6s7n2")
@@ -942,11 +986,11 @@ script = ExtResource("22_2txn4")
 
 [node name="Body" type="AnimatedSprite2D" parent="PlayerSprite"]
 sprite_frames = SubResource("SpriteFrames_fihmo")
-animation = &"LANDING"
+animation = &"IDLE"
 
 [node name="Head" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
 texture_filter = 1
-position = Vector2(-0.815398, -7.06535)
+position = Vector2(-0.992096, -7.97789)
 sprite_frames = SubResource("SpriteFrames_u1k1t")
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
@@ -972,7 +1016,7 @@ animation = &"AIM_ONE_HAND"
 frame_progress = 0.657979
 
 [node name="bullet_release" type="Marker2D" parent="PlayerSprite/Body/Front_Arm"]
-position = Vector2(13.0573, -1.59475)
+position = Vector2(-0.027997, 0.134995)
 gizmo_extents = 17.2
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="PlayerSprite/Body/Front_Arm/bullet_release"]
@@ -987,4 +1031,12 @@ position = Vector2(-0.148652, 0.303977)
 sprite_frames = SubResource("SpriteFrames_1h4ux")
 animation = &"IDLE"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
+deterministic = true
+libraries = {
+"": SubResource("AnimationLibrary_j0hxv")
+}
+
+[connection signal="animation_changed" from="PlayerSprite/Body" to="PlayerSprite" method="_on_body_animation_changed"]
 [connection signal="animation_finished" from="PlayerSprite/Body" to="." method="_on_body_animation_finished"]
+[connection signal="frame_changed" from="PlayerSprite/Body" to="PlayerSprite" method="_on_body_frame_changed"]

@@ -69,7 +69,7 @@ linear_accel_min = -71.27
 linear_accel_max = -49.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goqcy"]
-size = Vector2(228.375, 117.617)
+size = Vector2(256.552, 117.617)
 
 [node name="Turret" type="CharacterBody2D"]
 collision_layer = 0
@@ -89,7 +89,7 @@ sprite_frames = SubResource("SpriteFrames_0b7ft")
 flip_h = true
 
 [node name="bullet_release" type="Marker2D" parent="turret_head"]
-position = Vector2(23.9119, -5.48823)
+position = Vector2(46.1844, -5.93368)
 gizmo_extents = 17.2
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="turret_head/bullet_release"]
@@ -138,7 +138,7 @@ stream = ExtResource("7_xgjl8")
 [node name="safe_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="safe_area"]
-position = Vector2(104.188, -42.8373)
+position = Vector2(118.277, -42.8373)
 shape = SubResource("RectangleShape2D_goqcy")
 
 [connection signal="body_exited" from="safe_area" to="." method="_on_safe_area_body_exited"]

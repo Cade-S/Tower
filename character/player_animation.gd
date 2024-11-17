@@ -1,6 +1,7 @@
 extends Node2D
 @onready var body = $Body
 @onready var head = get_node("Body/Head")
+@onready var head_player = get_node("AnimationPlayer")
 @onready var front_arm = get_node("Body/Front_Arm")
 @onready var back_arm = get_node("Body/Back_Arm")
 @onready var player = get_parent()
@@ -35,7 +36,7 @@ func _process(_delta: float) -> void:
 		
 		"IDLE":
 			#head.play("IDLE")
-			
+			head_player.play("HEAD_IDLE")
 			back_arm.play("IDLE")
 			if player.is_aiming != true:
 				front_arm.play("IDLE")
@@ -80,3 +81,13 @@ func _process(_delta: float) -> void:
 			if player.is_aiming != true:
 				front_arm.play("WALK")
 			back_arm.play("WALK")
+
+
+func _on_body_frame_changed() -> void:
+	var body_frame = body.frame
+	var sync_time = body_frame / body.frame.size()
+	if head_player.is_playing():
+		head_player.seek(sync_time, true)
+
+func _on_body_animation_changed() -> void:
+	pass # I should probably move physics process code to this for optimization one day...

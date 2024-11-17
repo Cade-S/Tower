@@ -1,77 +1,77 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6fc38naw5gpa"]
+[gd_scene load_steps=6 format=3 uid="uid://c6fc38naw5gpa"]
 
-[ext_resource type="PackedScene" uid="uid://da1cocq3rvbon" path="res://backgrounds/Dark Forest/dark_forest.tscn" id="1_qdqi3"]
-[ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="2_1d8fe"]
-[ext_resource type="Script" path="res://levels/camera_manager.gd" id="3_s0arg"]
-[ext_resource type="Texture2D" uid="uid://c80pmsdtcb6iw" path="res://Lighting Textures/light_ball_512.png" id="3_y5p5a"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_228ef"]
-[ext_resource type="Texture2D" uid="uid://lfd6qxupisqj" path="res://backgrounds/Dark Forest/Background layers/Layer_0000_9.png" id="4_h2rdb"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_u51od"]
-[ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="8_slsag"]
+[ext_resource type="PackedScene" uid="uid://bbs85ji7vcjv7" path="res://UI/ui.tscn" id="1_q8nhq"]
+[ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_vk00b"]
+[ext_resource type="PackedScene" uid="uid://c4nuovw5frchg" path="res://misc art/grass.tscn" id="2_vahc2"]
+[ext_resource type="Texture2D" uid="uid://ddiyj1b6fjxvj" path="res://objects/tree.png" id="4_judt8"]
 
-[sub_resource type="Resource" id="Resource_jg7kj"]
-script = ExtResource("5_u51od")
-duration = 0.2
-transition = 8
-ease = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s48wq"]
+size = Vector2(20, 332.331)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bbrk"]
-size = Vector2(1019, 20)
+[node name="house" type="Node2D"]
 
-[node name="level_house" type="Node2D"]
+[node name="UI" parent="." instance=ExtResource("1_q8nhq")]
 
-[node name="Sam" parent="." instance=ExtResource("8_slsag")]
-position = Vector2(60, 394)
-WALK_SPEED = null
-RUN_SPEED = null
-JUMP_VELOCITY = null
-ACCELERATION = null
-DECELERATION = null
-GRAVITY = null
+[node name="player_char" parent="." instance=ExtResource("1_vk00b")]
+position = Vector2(202.083, 288.964)
 
-[node name="player_char" parent="." instance=ExtResource("2_1d8fe")]
-position = Vector2(29, 392)
+[node name="Wall-n-floor" type="Node" parent="."]
 
-[node name="PointLight2D" type="PointLight2D" parent="player_char"]
-texture = ExtResource("3_y5p5a")
-texture_scale = 0.1
-metadata/use_color_temperature = true
-metadata/color_temperature = 6500
-metadata/color_filter = Color(1, 1, 1, 0)
+[node name="Left_barrier" type="StaticBody2D" parent="Wall-n-floor"]
+position = Vector2(23.0173, -26.1921)
+collision_layer = 4
+collision_mask = 31
 
-[node name="Dark Forest" parent="." instance=ExtResource("1_qdqi3")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall-n-floor/Left_barrier"]
+position = Vector2(149.004, 166.901)
+shape = SubResource("RectangleShape2D_s48wq")
 
-[node name="CameraManager" type="Node" parent="."]
-script = ExtResource("3_s0arg")
+[node name="ground" type="StaticBody2D" parent="Wall-n-floor"]
+collision_layer = 4
+collision_mask = 31
 
-[node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
+[node name="Polygon2D" type="Polygon2D" parent="Wall-n-floor/ground"]
+position = Vector2(40.4787, 304.781)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-1.08353, -0.546204, 307.599, 0.289398, 484.399, -1.20892, 594.525, 0.289398, 767.58, 3.28598, 951.871, 7.78091, 1098.35, 8.9736, 1214.32, 7.55939, 1300.59, 2.60962, 1408.07, -10.8254, 1527.57, -42.6452, 1637.17, -72.3437, 1702.22, -90.7285, 1900.21, -126.084, 2072.04, -135.276, 2214.17, -133.862, 2382.46, -122.548, 2467.31, -104.163, 2539.44, -75.1721, 2598.13, -64.5655, 2740.96, -42.6452, 2861.17, -20.0178, 2943.9, -0.925873, 3025.93, 16.0446, 3187.15, 32.3081, 3255.73, 37.2579, 3337.76, 40.0863, 3459.38, 36.5508, 3583.83, 20.2873, 3593.02, 66.9564, -3.5584, 55.3152)
 
-[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes" node_paths=PackedStringArray("follow_target")]
-position = Vector2(29, 392)
-script = ExtResource("4_228ef")
-follow_mode = 1
-follow_target = NodePath("../../../player_char")
-zoom = Vector2(3, 3)
-tween_resource = SubResource("Resource_jg7kj")
-tween_on_load = false
-follow_damping = true
-follow_damping_value = Vector2(0.2, 0.2)
-draw_limits = true
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall-n-floor/ground"]
+position = Vector2(23.554, 321.067)
+polygon = PackedVector2Array(14.446, -16.0674, 235.446, -15.0674, 484.383, -18.2242, 601.851, -17.4305, 795.514, -11.8746, 986.443, -6.78488, 1080.94, -6.78488, 1217.64, -8.67474, 1314.65, -13.0845, 1418.6, -25.6837, 1541.44, -57.8117, 1644.75, -85.5299, 1719.72, -106.949, 1795.94, -121.438, 1915.63, -141.596, 2087.61, -151.676, 2234.39, -150.416, 2400.07, -138.447, 2480.71, -121.438, 2556.93, -91.1996, 2602.92, -82.3801, 2733.95, -62.8513, 2861.27, -39.7141, 3041.38, 0.545471, 3231.03, 18.5564, 3349.69, 23.8537, 3475.76, 20.6753, 3599.72, 2.66443, 3609.53, 50.718, 13.595, 38.7316)
 
-[node name="Floor" type="StaticBody2D" parent="."]
-collision_layer = 6
-collision_mask = 3
+[node name="grass" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(54.3527, 301.206)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(414, 428)
-shape = SubResource("RectangleShape2D_8bbrk")
+[node name="grass2" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(86.1399, 301.47)
 
-[node name="Grass" type="Sprite2D" parent="Floor"]
-position = Vector2(229, 244)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_h2rdb")
+[node name="grass3" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(117.232, 301.652)
 
-[node name="Grass2" type="Sprite2D" parent="Floor"]
-position = Vector2(693, 243)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_h2rdb")
+[node name="grass4" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(148.3, 301.652)
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(171.358, 247.164)
+texture = ExtResource("4_judt8")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.051971, 0.0519709, 0.051971, 1)
+
+[node name="grass5" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(200.214, 301.652)
+
+[node name="grass6" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(231.362, 301.933)
+
+[node name="grass7" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(261.949, 301.652)
+
+[node name="grass8" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(292.817, 301.652)
+
+[node name="grass9" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(322.843, 301.652)
+
+[node name="grass10" parent="." instance=ExtResource("2_vahc2")]
+position = Vector2(353.149, 301.652)

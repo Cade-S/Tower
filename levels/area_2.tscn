@@ -1,36 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://ct0kak7yufm38"]
+[gd_scene load_steps=12 format=3 uid="uid://ct0kak7yufm38"]
 
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_7n61o"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_hannj"]
 [ext_resource type="Texture2D" uid="uid://biqvgiah3aybr" path="res://backgrounds/Dark Forest/Background layers/Layer_0010_1.png" id="2_hkr7s"]
 [ext_resource type="PackedScene" uid="uid://mpd77kh13ptd" path="res://objects/square.tscn" id="3_af1c0"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_t3pur"]
 [ext_resource type="PackedScene" uid="uid://vkr8gkmbkd1j" path="res://objects/triangle.tscn" id="4_ga365"]
 [ext_resource type="PackedScene" uid="uid://bp44e56avxafr" path="res://objects/box_16x_48.tscn" id="5_38m6v"]
 [ext_resource type="PackedScene" uid="uid://dcthmq51mneco" path="res://objects/box_32x_48.tscn" id="6_8ikge"]
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="7_ufyi3"]
 [ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="11_dyy4l"]
-[ext_resource type="Script" path="res://levels/camera_manager.gd" id="11_w8kwl"]
 [ext_resource type="PackedScene" uid="uid://bbs85ji7vcjv7" path="res://UI/ui.tscn" id="12_wptlh"]
 [ext_resource type="PackedScene" uid="uid://e1c7tn4qy2od" path="res://enemies/turret/Turret.tscn" id="14_chd4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5y6y"]
 size = Vector2(3364, 32)
-
-[sub_resource type="Resource" id="Resource_g5e7v"]
-script = ExtResource("3_t3pur")
-duration = 1.0
-transition = 5
-ease = 2
-
-[sub_resource type="Resource" id="Resource_vs2bl"]
-script = ExtResource("3_t3pur")
-duration = 1.0
-transition = 3
-ease = 2
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iduc7"]
-size = Vector2(11, 203)
 
 [node name="Test_Area 2" type="Node2D"]
 position = Vector2(-19.0488, -5.95276)
@@ -105,42 +87,6 @@ position = Vector2(390, 384)
 [node name="Bridge" parent="." instance=ExtResource("7_ufyi3")]
 position = Vector2(832, 337)
 
-[node name="CameraManager" type="Node" parent="." node_paths=PackedStringArray("Camera_Zone0", "Camera_Zone1")]
-script = ExtResource("11_w8kwl")
-Camera_Zone0 = NodePath("CameraNodes/PhantomCamera2D")
-Camera_Zone1 = NodePath("CameraNodes/zone0-1/PhantomCamera2D")
-
-[node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
-
-[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes" node_paths=PackedStringArray("follow_target")]
-position = Vector2(211.951, 408.047)
-script = ExtResource("2_hannj")
-follow_mode = 2
-follow_target = NodePath("../../../player_char")
-zoom = Vector2(3, 3)
-tween_resource = SubResource("Resource_g5e7v")
-tween_on_load = false
-follow_damping = true
-follow_damping_value = Vector2(0.15, 0.15)
-draw_limits = true
-
-[node name="zone0-1" type="Area2D" parent="CameraManager/CameraNodes"]
-visible = false
-position = Vector2(858, 330)
-collision_mask = 0
-
-[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/CameraNodes/zone0-1"]
-position = Vector2(-58, 9)
-script = ExtResource("2_hannj")
-zoom = Vector2(1.8, 1.8)
-tween_resource = SubResource("Resource_vs2bl")
-draw_limits = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/CameraNodes/zone0-1"]
-position = Vector2(-186, 27)
-shape = SubResource("RectangleShape2D_iduc7")
-disabled = true
-
 [node name="square" parent="." instance=ExtResource("3_af1c0")]
 position = Vector2(1272, 32)
 
@@ -165,6 +111,3 @@ position = Vector2(1247, -27)
 
 [node name="Turret" parent="." instance=ExtResource("14_chd4k")]
 position = Vector2(-99.8614, 416.669)
-
-[connection signal="body_entered" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_entered"]
-[connection signal="body_exited" from="CameraManager/CameraNodes/zone0-1" to="CameraManager" method="_on_zone_01_body_exited"]

@@ -13,6 +13,7 @@ var main_sm: LimboHSM
 
 var mouse_direction
 var direction
+var backwards = false
 
 
 var is_sprinting = false
@@ -21,7 +22,6 @@ var jump
 var land_finished = true
 var ledge
 var crouch 
-var facing #Legacy, replace
 
 const bulletpath = preload('res://projectile/bullet.tscn')
 const shellpath = preload('res://projectile/shell.tscn')
@@ -76,11 +76,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	#body_flip
-	if !is_aiming:
-		if direction < 0:
-			body_animation.flip_h = true
-		elif direction > 0:
-			body_animation.flip_h = false
+
 			
 			
 	for i in self.get_slide_collision_count():
@@ -109,11 +105,7 @@ func _physics_process(delta: float) -> void:
 #Gunplay and Camera
 	if Input.is_action_pressed('RMB'):
 		is_aiming = true
-		front_arm.position.y = -4.0
-		if facing == "left":
-			front_arm.position.x = 2.7
-		elif facing == "right":
-			front_arm.position.x = -2.7
+
 
 		front_arm.play("AIM_ONE_HAND")
 		front_arm.look_at(get_global_mouse_position())
@@ -131,15 +123,15 @@ func _physics_process(delta: float) -> void:
 		head.rotation = 0
 
 	if get_global_mouse_position() < self.global_position and is_aiming:
-		#print("LEFT:mouse_directionTRUE")
+		#LEFT = mouse_direction = -1
 		head.flip_v = true
 		front_arm.flip_v = true
-		mouse_direction = true
+		mouse_direction = -1
 	else:
-		#print("RIGHT: mouse_directionFALSE")
+		#RIGHT = mouse_direction = 1)
 		head.flip_v = false
 		front_arm.flip_v = false
-		mouse_direction = false
+		mouse_direction = 1
 
 #--------------------------------------------------------------------------------------------------
 
@@ -174,9 +166,9 @@ func shoot():
 
 
 		# Set velocities for movement
-		var direction = (get_global_mouse_position() - bullet.position).normalized()
-		var bullet_velocity = direction * bullet.get_node("Bullet").bullet_speed
-		var shell_velocity = direction * shell.shell_speed
+		var veldirection = (get_global_mouse_position() - bullet.position).normalized()
+		var bullet_velocity = veldirection * bullet.get_node("Bullet").bullet_speed
+		var shell_velocity = veldirection * shell.shell_speed
 
 		# Apply velocity
 		bullet.get_node("Bullet").linear_velocity = bullet_velocity
@@ -262,6 +254,19 @@ func WALK_UPDATE(delta: float):
 		main_sm.dispatch(&"to_sprint")
 	if jump:
 		main_sm.dispatch(&"to_jump")
+	if direction != mouse_direction and is_aiming:
+		body_animation.play_backwards()
+		backwards = true
+	elif backwards == true:
+		body_animation.play
+		backwards = false
+	
+	if !is_aiming:
+		if direction < 0:
+			body_animation.flip_h = true
+		elif direction > 0:
+			body_animation.flip_h = false
+
 
 func WALK_BACKWARDS_START():
 	pass
@@ -277,6 +282,10 @@ func SPRINT_UPDATE(delta: float):
 		main_sm.dispatch(&"state_ended")
 	if jump:
 		main_sm.dispatch(&"to_jump")
+	if direction < 0:
+		body_animation.flip_h = true
+	elif direction > 0:
+		body_animation.flip_h = false
 
 func JUMP_START():
 	body_animation.play("START_JUMP")
