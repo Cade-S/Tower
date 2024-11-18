@@ -73,10 +73,7 @@ func _physics_process(delta: float) -> void:
 	if reload_timer.is_stopped() and reloading == true:
 		rounds_left = clip_size
 		reloading = false
-	
-	
-	#body_flip
-
+		
 			
 			
 	for i in self.get_slide_collision_count():
@@ -88,8 +85,12 @@ func _physics_process(delta: float) -> void:
 		health -= 1
 		shot = false
 		print("HEALTH:", health)
-			
 	
+	print(direction)
+	if direction > 0:
+		self.scale.x = 1
+	elif direction < 0:
+		self.scale.x = -1
 
 #--------------------------------------------------------------------------------------------------
 
@@ -116,22 +117,12 @@ func _physics_process(delta: float) -> void:
 			#print("POW!")
 			shoot()
 	else:
-		front_arm.position.x = 0
-		front_arm.position.y = 0
+		head.rotation = 0
 		front_arm.rotation = 0
 		is_aiming = false
-		head.rotation = 0
 
-	if get_global_mouse_position() < self.global_position and is_aiming:
-		#LEFT = mouse_direction = -1
-		head.flip_v = true
-		front_arm.flip_v = true
-		mouse_direction = -1
-	else:
-		#RIGHT = mouse_direction = 1)
-		head.flip_v = false
-		front_arm.flip_v = false
-		mouse_direction = 1
+
+
 
 #--------------------------------------------------------------------------------------------------
 
@@ -260,12 +251,6 @@ func WALK_UPDATE(delta: float):
 	elif backwards == true:
 		body_animation.play
 		backwards = false
-	
-	if !is_aiming:
-		if direction < 0:
-			body_animation.flip_h = true
-		elif direction > 0:
-			body_animation.flip_h = false
 
 
 func WALK_BACKWARDS_START():
@@ -282,10 +267,6 @@ func SPRINT_UPDATE(delta: float):
 		main_sm.dispatch(&"state_ended")
 	if jump:
 		main_sm.dispatch(&"to_jump")
-	if direction < 0:
-		body_animation.flip_h = true
-	elif direction > 0:
-		body_animation.flip_h = false
 
 func JUMP_START():
 	body_animation.play("START_JUMP")

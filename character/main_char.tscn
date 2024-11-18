@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=141 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://c5lpg1rg3by6t" path="res://character/Human Male Model/Sections/LEDGE.png" id="4_r1l2b"]
@@ -19,11 +19,11 @@
 [ext_resource type="Script" path="res://character/player_animation.gd" id="22_2txn4"]
 [ext_resource type="Texture2D" uid="uid://eppiwhd8ev4d" path="res://character/Player/Jumping/Body/jump_body.png" id="22_3rvn6"]
 [ext_resource type="Script" path="res://character/footstep_sound.gd" id="22_6i1u1"]
+[ext_resource type="Texture2D" uid="uid://dghkna3wkr7n6" path="res://character/Player/Idle/Head/idle_head.png" id="22_kuim0"]
 [ext_resource type="Texture2D" uid="uid://dh6yrjsbh5mmr" path="res://character/Player/Idle/Body/idle_body.png" id="23_r82fi"]
 [ext_resource type="Texture2D" uid="uid://bclwb8wghhpxs" path="res://character/Player/Running/Body/run_body.png" id="24_kd0fn"]
 [ext_resource type="Texture2D" uid="uid://w60wfxnp1clw" path="res://character/Player/Walk/Body/walk_body.png" id="25_d8d45"]
 [ext_resource type="Texture2D" uid="uid://coftu8oqjp7d0" path="res://character/Player/Jumping/FrontArm/jump_front_arm.png" id="27_4j2ku"]
-[ext_resource type="Texture2D" uid="uid://bwjp7s122tfb7" path="res://character/Player/head.png" id="27_fn00p"]
 [ext_resource type="Texture2D" uid="uid://bya74t78l6h26" path="res://character/Player/Idle/FrontArm/idle_front_arm.png" id="28_gwxen"]
 [ext_resource type="Texture2D" uid="uid://dw7odvqq4yoq" path="res://character/Player/Running/FrontArm/run_front_arm.png" id="29_dk78i"]
 [ext_resource type="Texture2D" uid="uid://biejmn72vyf1" path="res://character/Player/Walk/FrontArm/walk_front_arm.png" id="30_swr6h"]
@@ -405,20 +405,143 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rnj0l"]
-atlas = ExtResource("27_fn00p")
-region = Rect2(0, 0, 4, 4)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksjoe"]
+atlas = ExtResource("22_kuim0")
+region = Rect2(12, 6, 6, 6)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1k1t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rnj0l")
+"texture": SubResource("AtlasTexture_ksjoe")
 }],
 "loop": false,
-"name": &"default",
+"name": &"IDLE",
 "speed": 0.0
 }]
+
+[sub_resource type="Animation" id="Animation_3lj6b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.06642, -6.93733)]
+}
+
+[sub_resource type="Animation" id="Animation_wo8je"]
+resource_name = "HEAD_WALK"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.06642, -5.93733), Vector2(-1.0196, -5.00089), Vector2(-1.06642, -5.93733), Vector2(-1.0196, -5.00089), Vector2(-1.06642, -5.93733)]
+}
+
+[sub_resource type="Animation" id="Animation_dmt15"]
+resource_name = "IDLE_HEAD"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-1.06642, -6.93733), Vector2(-1.06642, -5.93733)]
+}
+
+[sub_resource type="Animation" id="Animation_6lnn7"]
+resource_name = "HEAD_RUN"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.81096, -4.94928), Vector2(3.92458, -4.83792), Vector2(3.98026, -5.00496), Vector2(3.81322, -6.00722)]
+}
+
+[sub_resource type="Animation" id="Animation_0xgu1"]
+resource_name = "HEAD_START_JUMP"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.04751, -6.91359), Vector2(-1.04751, -6.91359), Vector2(-0.97735, -5.93143), Vector2(-0.97735, -4.94928)]
+}
+
+[sub_resource type="Animation" id="Animation_iukr5"]
+resource_name = "HEAD_FALL"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.04751, -4.94928), Vector2(-2.16997, -4.94928), Vector2(0.0749569, -4.94928), Vector2(1.96911, -4.94928)]
+}
+
+[sub_resource type="Animation" id="Animation_w27mv"]
+resource_name = "HEAD_LANDING"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.96911, -3.96713), Vector2(0.0048027, -4.80898), Vector2(-1.11766, -5.93144), Vector2(-1.11766, -5.93144)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gp1oh"]
+_data = {
+"HEAD_FALLING": SubResource("Animation_iukr5"),
+"HEAD_IDLE": SubResource("Animation_dmt15"),
+"HEAD_LANDING": SubResource("Animation_w27mv"),
+"HEAD_RUN": SubResource("Animation_6lnn7"),
+"HEAD_START_JUMP": SubResource("Animation_0xgu1"),
+"HEAD_WALK": SubResource("Animation_wo8je"),
+"RESET": SubResource("Animation_3lj6b")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgo2w"]
 atlas = ExtResource("9_xxn86")
@@ -872,44 +995,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_sbroa"]
-resource_name = "HEAD_IDLE"
-length = 1.3333
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Head:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6667, 1.3333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2(-0.992096, -7.97789), Vector2(-1.01551, -6.78427), Vector2(-0.992096, -7.97789)]
-}
-
-[sub_resource type="Animation" id="Animation_oauhu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Head:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-0.992096, -7.97789)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j0hxv"]
-_data = {
-"HEAD_IDLE": SubResource("Animation_sbroa"),
-"RESET": SubResource("Animation_oauhu")
-}
-
 [node name="player_char" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-0.0936432, -0.0936441)
 collision_mask = 12
@@ -919,7 +1004,6 @@ script = ExtResource("1_q25qh")
 shoot_cooldown = 0.15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-0.0625, 4.75)
 shape = SubResource("CapsuleShape2D_ogvc3")
 
@@ -931,12 +1015,10 @@ script = SubResource("GDScript_eh3g6")
 script = ExtResource("9_vicmv")
 
 [node name="LedgeGrab" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-0.0394453, -5.99282)
 shape = SubResource("RectangleShape2D_nswjc")
 
 [node name="WallCheck" type="ShapeCast2D" parent="."]
-visible = false
 position = Vector2(-0.144752, -4.87944)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_aoujr")
@@ -944,12 +1026,10 @@ target_position = Vector2(-0.00655772, 11.8982)
 collision_mask = 4
 
 [node name="FloorCheck" type="RayCast2D" parent="."]
-visible = false
 target_position = Vector2(0, 19.708)
 collision_mask = 4
 
 [node name="TopCheck" type="ShapeCast2D" parent="."]
-visible = false
 position = Vector2(-0.102322, -8.04155)
 shape = SubResource("RectangleShape2D_bdckq")
 target_position = Vector2(0, 0)
@@ -982,16 +1062,19 @@ volume_db = 10.0
 script = ExtResource("22_6i1u1")
 
 [node name="PlayerSprite" type="Node2D" parent="."]
+position = Vector2(0.946581, -0.0556803)
 script = ExtResource("22_2txn4")
 
 [node name="Body" type="AnimatedSprite2D" parent="PlayerSprite"]
 sprite_frames = SubResource("SpriteFrames_fihmo")
-animation = &"IDLE"
+animation = &"LANDING"
+frame = 2
 
 [node name="Head" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
 texture_filter = 1
-position = Vector2(-0.992096, -7.97789)
+position = Vector2(-1.06642, -6.93733)
 sprite_frames = SubResource("SpriteFrames_u1k1t")
+animation = &"IDLE"
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
 "output_section": false,
@@ -1007,9 +1090,15 @@ metadata/_aseprite_wizard_interface_config_ = {
 "slice_section": false
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite/Body/Head"]
+libraries = {
+"": SubResource("AnimationLibrary_gp1oh")
+}
+
 [node name="Front_Arm" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
+visible = false
 z_index = 1
-position = Vector2(0, -3.8147e-06)
+position = Vector2(-1.05405, -1.9108)
 rotation = 6.28319
 sprite_frames = SubResource("SpriteFrames_1siut")
 animation = &"AIM_ONE_HAND"
@@ -1026,17 +1115,11 @@ process_material = SubResource("ParticleProcessMaterial_ncfbm")
 visibility_rect = Rect2(-1, -51.6333, 2, 52.6265)
 
 [node name="Back_Arm" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
+visible = false
 z_index = -1
 position = Vector2(-0.148652, 0.303977)
 sprite_frames = SubResource("SpriteFrames_1h4ux")
 animation = &"IDLE"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
-deterministic = true
-libraries = {
-"": SubResource("AnimationLibrary_j0hxv")
-}
-
-[connection signal="animation_changed" from="PlayerSprite/Body" to="PlayerSprite" method="_on_body_animation_changed"]
 [connection signal="animation_finished" from="PlayerSprite/Body" to="." method="_on_body_animation_finished"]
 [connection signal="frame_changed" from="PlayerSprite/Body" to="PlayerSprite" method="_on_body_frame_changed"]

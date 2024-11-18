@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ct0kak7yufm38"]
+[gd_scene load_steps=11 format=3 uid="uid://ct0kak7yufm38"]
 
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_7n61o"]
 [ext_resource type="Texture2D" uid="uid://biqvgiah3aybr" path="res://backgrounds/Dark Forest/Background layers/Layer_0010_1.png" id="2_hkr7s"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="7_ufyi3"]
 [ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="11_dyy4l"]
 [ext_resource type="PackedScene" uid="uid://bbs85ji7vcjv7" path="res://UI/ui.tscn" id="12_wptlh"]
-[ext_resource type="PackedScene" uid="uid://e1c7tn4qy2od" path="res://enemies/turret/Turret.tscn" id="14_chd4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5y6y"]
 size = Vector2(3364, 32)
@@ -108,6 +107,3 @@ position = Vector2(1239, -6)
 
 [node name="triangle3" parent="." instance=ExtResource("4_ga365")]
 position = Vector2(1247, -27)
-
-[node name="Turret" parent="." instance=ExtResource("14_chd4k")]
-position = Vector2(-99.8614, 416.669)
