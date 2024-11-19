@@ -7,9 +7,7 @@ extends Node2D
 @onready var player = get_parent()
 @onready var aim_direction = player.mouse_direction
 @onready var body_state = body.animation
-							#True = RIGHT
-							#False = LEFT
-
+var direction
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -17,23 +15,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	direction = player.direction
 	body_state = body.animation
-	var direction = body.flip_h
-	
-	#if not player.is_aiming:
-		#if direction == false:
-			#self.scale.x = -1
-			##front_arm.flip_h = false
-			##head.flip_h = false
-		#elif direction == true:
-			##front_arm.flip_h = true
-			##head.flip_h = true
-			#self.scale.x = 1
-	#elif player.main_sm.get_active_state().name != "SPRINT": 
-		#front_arm.flip_h = false
-		##body.flip_h = false
-		#head.flip_h = false
+
 		
+	if player.is_aiming:
+		print(body_state)
+		if body_state == "RUN" or "START_RUN":
+			if body.frame == 0:
+				front_arm.position = Vector2(-1,-2)
+			elif body.frame in [1,3,4]:
+				front_arm.position = Vector2(1,-2)
+			elif body.frame in [2,5]:
+				front_arm.position = Vector2(2,-3)
+		elif body_state == "IDLE" or "WALK" or "START_WALK":
+			front_arm.position = Vector2(-4,-3)
+	else:
+		front_arm.position = Vector2(0,0)
 	match body_state:
 		
 		"IDLE":

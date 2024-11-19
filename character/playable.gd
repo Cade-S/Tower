@@ -42,6 +42,7 @@ var shot = false
 @onready var head = get_node("PlayerSprite/Body/Head")
 @onready var front_arm = get_node("PlayerSprite/Body/Front_Arm")
 @onready var back_arm = get_node("PlayerSprite/Body/Front_Arm")
+@onready var sprite = get_node("PlayerSprite")
 #endregion
 
 #--------------------------------------------------------------------------------------------------
@@ -86,11 +87,6 @@ func _physics_process(delta: float) -> void:
 		shot = false
 		print("HEALTH:", health)
 	
-	print(direction)
-	if direction > 0:
-		self.scale.x = 1
-	elif direction < 0:
-		self.scale.x = -1
 
 #--------------------------------------------------------------------------------------------------
 
@@ -251,6 +247,16 @@ func WALK_UPDATE(delta: float):
 	elif backwards == true:
 		body_animation.play
 		backwards = false
+		
+	if direction == -1 and !is_aiming:
+		body_animation.flip_h = true
+		front_arm.flip_h = true
+		head.flip_h = true
+
+	elif direction == 1 and !is_aiming:
+		body_animation.flip_h = false
+		front_arm.flip_h = false
+		head.flip_h = false
 
 
 func WALK_BACKWARDS_START():
