@@ -1101,7 +1101,8 @@ libraries = {
 
 [node name="Front_Arm" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
 z_index = 1
-position = Vector2(-4, -4)
+position = Vector2(-4.66893, -4.11149)
+rotation = -4.67748
 sprite_frames = SubResource("SpriteFrames_1siut")
 animation = &"AIM_ONE_HAND"
 

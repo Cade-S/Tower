@@ -14,6 +14,7 @@ var main_sm: LimboHSM
 var mouse_direction
 var direction
 var backwards = false
+var facing = 1
 
 
 var is_sprinting = false
@@ -62,8 +63,27 @@ func _ready():
 #--------------------------------------------------------------------------------------------------
 
 func _physics_process(delta: float) -> void:
+	
+#DEBUG STATEMENTS
 	#print(main_sm.get_active_state().name)
+	print("Direction::",direction)
+	print("Facing::", facing)
+	print("Mouse Direction::", mouse_direction)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	direction = Input.get_axis("move_left", "move_right")
+	if direction != 0: facing = direction
 	is_sprinting = Input.is_action_pressed("sprint")
 	velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
 	jump = Input.is_action_just_pressed("jump")
@@ -85,8 +105,13 @@ func _physics_process(delta: float) -> void:
 	if shot:
 		health -= 1
 		shot = false
-		print("HEALTH:", health)
-	
+		#print("HEALTH:", health)
+		
+	if global_position > get_global_mouse_position():
+		mouse_direction = -1
+	else:
+		mouse_direction = 1
+
 
 #--------------------------------------------------------------------------------------------------
 
@@ -140,6 +165,7 @@ func shoot():
 		#Instantiate new shell and bullet
 		var shell = shellpath.instantiate()
 		var bullet = bulletpath.instantiate()
+		#Set Position of bullet/shell based on arm position. NEEDS FIXING
 		shell.position = front_arm.get_child(0).global_position
 		bullet.position = front_arm.get_child(0).global_position
 		#Add them to scene
@@ -148,8 +174,6 @@ func shoot():
 		
 		# Set a random initial rotation
 		shell.rotation = randf() * TAU
-
-		# Set position for both shell and bullet
 
 
 		# Set velocities for movement
@@ -229,6 +253,24 @@ func IDLE_UPDATE(delta: float):
 		main_sm.dispatch(&"to_jump")
 	if velocity.y != 0:
 		main_sm.dispatch(&"to_fall")
+		
+	if is_aiming:
+		front_arm.position = Vector2(-4,-3)
+		front_arm.flip_v = true
+		head.flip_v = true
+		if direction == -1:
+			front_arm.flip_h = true
+			head.flip_h = true
+		elif direction == 1:
+			front_arm.flip_h = false
+			head.flip_h = false
+		if mouse_direction == 1:
+			front_arm.flip_v = false
+			head.flip_v = false
+	else:
+		front_arm.position = Vector2(0,0)
+		front_arm.flip_v = false
+		head.flip_v = false
 
 func WALK_START():
 	body_animation.play("START_WALK")
@@ -241,23 +283,33 @@ func WALK_UPDATE(delta: float):
 		main_sm.dispatch(&"to_sprint")
 	if jump:
 		main_sm.dispatch(&"to_jump")
-	if direction != mouse_direction and is_aiming:
-		body_animation.play_backwards()
-		backwards = true
-	elif backwards == true:
-		body_animation.play
-		backwards = false
+	
+	if is_aiming:
+		front_arm.position = Vector2(-4,-3)
+		front_arm.flip_v = true
+		head.flip_v = true
+		if direction == -1:
+			front_arm.flip_h = true
+			head.flip_h = true
+		elif direction == 1:
+			front_arm.flip_h = false
+			head.flip_h = false
+		if mouse_direction == 1:
+			front_arm.flip_v = false
+			head.flip_v = false
+	else:
+		front_arm.position = Vector2(0,0)
 		
-	if direction == -1 and !is_aiming:
-		body_animation.flip_h = true
-		front_arm.flip_h = true
-		head.flip_h = true
-
-	elif direction == 1 and !is_aiming:
-		body_animation.flip_h = false
-		front_arm.flip_h = false
-		head.flip_h = false
-
+		if facing == 1:
+			body_animation.flip_h = false
+			front_arm.flip_h = false
+			head.flip_h = false
+			back_arm.flip_h = false
+		elif facing == -1:
+			body_animation.flip_h = true
+			front_arm.flip_h = true
+			head.flip_h = true
+			back_arm.flip_h = true
 
 func WALK_BACKWARDS_START():
 	pass
@@ -268,11 +320,20 @@ func WALK_BACKWARDS_UPDATE(delta: float):
 func SPRINT_START():
 	body_animation.play("START_RUN")
 func SPRINT_UPDATE(delta: float):
+	
 	target_speed = SPRINT_SPEED
 	if !is_sprinting or velocity.x == 0:
 		main_sm.dispatch(&"state_ended")
 	if jump:
 		main_sm.dispatch(&"to_jump")
+		
+	if is_aiming:
+		if body_animation.frame == 0:
+			front_arm.position = Vector2(-1,-2)
+		elif body_animation.frame in [1,3,4]:
+			front_arm.position = Vector2(1,-2)
+		elif body_animation.frame in [2,5]:
+			front_arm.position = Vector2(2,-3)
 
 func JUMP_START():
 	body_animation.play("START_JUMP")
