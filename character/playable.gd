@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	direction = Input.get_axis("move_left", "move_right")
-	if direction != 0: facing = direction
+	if direction != 0 and (!is_aiming and main_sm.get_active_state().name not in ["WALK", "START_WALK"]): facing = direction
 	is_sprinting = Input.is_action_pressed("sprint")
 	velocity.x = move_toward(velocity.x, direction * target_speed, ACCELERATION * delta)
 	jump = Input.is_action_just_pressed("jump")
@@ -255,22 +255,42 @@ func IDLE_UPDATE(delta: float):
 		main_sm.dispatch(&"to_fall")
 		
 	if is_aiming:
-		front_arm.position = Vector2(-4,-3)
-		front_arm.flip_v = true
-		head.flip_v = true
-		if direction == -1:
-			front_arm.flip_h = true
-			head.flip_h = true
-		elif direction == 1:
+		front_arm.position.y = -3
+		
+		# Adjust horizontal position and flips based on facing direction
+		if facing == -1:
+			front_arm.position.x = 4
 			front_arm.flip_h = false
 			head.flip_h = false
-		if mouse_direction == 1:
+			front_arm.flip_v = true
+			head.flip_v = true
+		else:
+			front_arm.position.x = -4
+			front_arm.flip_h = false
+			head.flip_h = false
+
+		# Adjust vertical flip (flip_v) for aiming behind
+		# Invert mouse_direction when facing left
+		var adjusted_mouse_direction = mouse_direction * facing
+		if adjusted_mouse_direction == -1:
+			front_arm.flip_v = true
+			head.flip_v = true
+		else:
 			front_arm.flip_v = false
 			head.flip_v = false
 	else:
-		front_arm.position = Vector2(0,0)
+		# Reset position and flips when not aiming
 		front_arm.flip_v = false
 		head.flip_v = false
+		front_arm.position = Vector2(0, 0)
+		if facing == -1:
+			front_arm.flip_h = true
+			head.flip_h = true
+			body_animation.flip_h = true
+		else:
+			front_arm.flip_h = false
+			head.flip_h = false
+			body_animation.flip_h = false
 
 func WALK_START():
 	body_animation.play("START_WALK")
@@ -285,31 +305,44 @@ func WALK_UPDATE(delta: float):
 		main_sm.dispatch(&"to_jump")
 	
 	if is_aiming:
-		front_arm.position = Vector2(-4,-3)
-		front_arm.flip_v = true
-		head.flip_v = true
-		if direction == -1:
-			front_arm.flip_h = true
-			head.flip_h = true
-		elif direction == 1:
+		front_arm.position.y = -3
+		
+		# Adjust horizontal position and flips based on facing direction
+		if facing == -1:
+			front_arm.position.x = 4
 			front_arm.flip_h = false
 			head.flip_h = false
-		if mouse_direction == 1:
+			front_arm.flip_v = true
+			head.flip_v = true
+		else:
+			front_arm.position.x = -4
+			front_arm.flip_h = false
+			head.flip_h = false
+
+		# Adjust vertical flip (flip_v) for aiming behind
+		# Invert mouse_direction when facing left
+		var adjusted_mouse_direction = mouse_direction * facing
+		if adjusted_mouse_direction == -1:
+			front_arm.flip_v = true
+			head.flip_v = true
+		else:
 			front_arm.flip_v = false
 			head.flip_v = false
 	else:
-		front_arm.position = Vector2(0,0)
-		
-		if facing == 1:
-			body_animation.flip_h = false
-			front_arm.flip_h = false
-			head.flip_h = false
-			back_arm.flip_h = false
-		elif facing == -1:
-			body_animation.flip_h = true
+		# Reset position and flips when not aiming
+		front_arm.flip_v = false
+		head.flip_v = false
+		front_arm.position = Vector2(0, 0)
+		if facing == -1:
 			front_arm.flip_h = true
 			head.flip_h = true
+			body_animation.flip_h = true
 			back_arm.flip_h = true
+		else:
+			front_arm.flip_h = false
+			head.flip_h = false
+			body_animation.flip_h = false
+			back_arm.flip_h = false
 
 func WALK_BACKWARDS_START():
 	pass

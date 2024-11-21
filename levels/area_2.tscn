@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ct0kak7yufm38"]
+[gd_scene load_steps=12 format=3 uid="uid://ct0kak7yufm38"]
 
 [ext_resource type="PackedScene" uid="uid://crxydjrkbrxsk" path="res://character/main_char.tscn" id="1_7n61o"]
 [ext_resource type="Texture2D" uid="uid://biqvgiah3aybr" path="res://backgrounds/Dark Forest/Background layers/Layer_0010_1.png" id="2_hkr7s"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bp44e56avxafr" path="res://objects/box_16x_48.tscn" id="5_38m6v"]
 [ext_resource type="PackedScene" uid="uid://dcthmq51mneco" path="res://objects/box_32x_48.tscn" id="6_8ikge"]
 [ext_resource type="PackedScene" uid="uid://c8uqnjraa50b2" path="res://objects/bridge.tscn" id="7_ufyi3"]
+[ext_resource type="PackedScene" uid="uid://l5wleki0j5th" path="res://enemies/Enemy/enemy.tscn" id="10_mugkw"]
 [ext_resource type="PackedScene" uid="uid://cldsdra4amy41" path="res://character/sam.tscn" id="11_dyy4l"]
 [ext_resource type="PackedScene" uid="uid://bbs85ji7vcjv7" path="res://UI/ui.tscn" id="12_wptlh"]
 
@@ -107,3 +108,9 @@ position = Vector2(1239, -6)
 
 [node name="triangle3" parent="." instance=ExtResource("4_ga365")]
 position = Vector2(1247, -27)
+
+[node name="Enemy" parent="." instance=ExtResource("10_mugkw")]
+position = Vector2(410.357, 353.177)
+
+[node name="Enemy2" parent="." instance=ExtResource("10_mugkw")]
+position = Vector2(353.177, 428.857)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://crxydjrkbrxsk"]
+[gd_scene load_steps=140 format=3 uid="uid://crxydjrkbrxsk"]
 
 [ext_resource type="Script" path="res://character/playable.gd" id="1_q25qh"]
 [ext_resource type="Texture2D" uid="uid://c5lpg1rg3by6t" path="res://character/Human Male Model/Sections/LEDGE.png" id="4_r1l2b"]
@@ -820,14 +820,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ncfbm"]
-particle_flag_disable_z = true
-angular_velocity_min = -549.46
-angular_velocity_max = 498.49
-gravity = Vector3(0, -40, 0)
-linear_accel_min = -71.27
-linear_accel_max = -49.05
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_o86e8"]
 atlas = ExtResource("31_cwg53")
 region = Rect2(0, 0, 32, 32)
@@ -1102,19 +1094,13 @@ libraries = {
 [node name="Front_Arm" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
 z_index = 1
 position = Vector2(-4.66893, -4.11149)
-rotation = -4.67748
+rotation = -1.36136
 sprite_frames = SubResource("SpriteFrames_1siut")
 animation = &"AIM_ONE_HAND"
 
 [node name="bullet_release" type="Marker2D" parent="PlayerSprite/Body/Front_Arm"]
 position = Vector2(13, -1)
 gizmo_extents = 15.7
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="PlayerSprite/Body/Front_Arm/bullet_release"]
-visible = false
-position = Vector2(2.58871, -4.32885)
-process_material = SubResource("ParticleProcessMaterial_ncfbm")
-visibility_rect = Rect2(-1, -51.6333, 2, 52.6265)
 
 [node name="Back_Arm" type="AnimatedSprite2D" parent="PlayerSprite/Body"]
 z_index = -1
